@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "itemInventario",
+  "title": "ItemInventario",
+  "type": "object",
+  "properties": {
+    "id_item_inventario": { "type": "string" },
+    "cantidad": { "type": "number", "minimum": 0 },
+    "tipo": { "type": "string", "enum": ["forraje", "medicina", "herramienta", "consumible", "otro"] },
+    "observaciones": { "type": "string" }
+  },
+  "required": ["id_item_inventario", "cantidad", "tipo"]
+}
