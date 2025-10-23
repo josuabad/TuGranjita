@@ -1,0 +1,129 @@
+[
+  {
+    "id": "C-1001",
+    "nombre": "Soluciones Tecnológicas S.L.",
+    "direccion": "Avda. de la Innovación, 45, 28005 Madrid",
+    "nif": "B87654321",
+    "correo_electronico": "ventas@soluciones-tech.es",
+    "numero_telefono": "+34911234567"
+  },
+  {
+    "id": "C-1002",
+    "nombre": "Distribuciones Alimentarias A.B.",
+    "nif": "A12345678"
+  },
+  {
+    "id": "C-1003",
+    "nombre": "Hardware Industrial, C.A.",
+    "direccion": "Pol. Ind. El Pino, Nave 12",
+    "nif": "J90123456",
+    "correo_electronico": "pedidos@hardware-ind.com",
+    "numero_telefono": "555-876-5432"
+  },
+  {
+    "id": "C-1004",
+    "nombre": "María López (Freelance)",
+    "nif": "48765432H",
+    "correo_electronico": "maria.lopez@ejemplo.net"
+  },
+  {
+    "id": "C-1005",
+    "nombre": "Proveedor de Servicios Globales",
+    "nif": "Z00000001",
+    "numero_telefono": "001-212-9876543"
+  },
+  {
+    "id": "C-1006",
+    "nombre": "Estudios Creativos D&V",
+    "direccion": "Calle de las Artes, 5, 08001 Barcelona",
+    "nif": "G60543210",
+    "correo_electronico": "info@estudiosdv.com",
+    "numero_telefono": "93 222 33 44"
+  },
+  {
+    "id": "C-1007",
+    "nombre": "Logística Rápida Sur",
+    "nif": "B98765432"
+  },
+  {
+    "id": "C-1008",
+    "nombre": "Ingeniería y Sistemas XYZ",
+    "direccion": "Paseo de la Industria, 101",
+    "nif": "A11223344",
+    "correo_electronico": "soporte@ingenieriaxyz.net",
+    "numero_telefono": "+34 600 555 111"
+  },
+  {
+    "id": "C-1009",
+    "nombre": "Pilar Giménez - Consultora",
+    "nif": "25487630T",
+    "correo_electronico": "p.gimenez@email.es"
+  },
+  {
+    "id": "C-1010",
+    "nombre": "Tecnología del Norte S.A.",
+    "nif": "S45678901",
+    "numero_telefono": "981-70-10-20"
+  },
+  {
+    "id": "C-1011",
+    "nombre": "El Rincón del Café, SL",
+    "direccion": "Plaza Mayor, 3, 41001 Sevilla",
+    "nif": "F54321098",
+    "correo_electronico": "gerencia@rinconcafe.com"
+  },
+  {
+    "id": "C-1012",
+    "nombre": "Alquiler de Maquinaria M.B.",
+    "nif": "C13579246",
+    "numero_telefono": "900 123 456"
+  },
+  {
+    "id": "C-1013",
+    "nombre": "Farmacia Central",
+    "nif": "78901234P",
+    "direccion": "C/ Salud, 14",
+    "correo_electronico": "farmacia.central@salud.net"
+  },
+  {
+    "id": "C-1014",
+    "nombre": "Distribución Mayorista",
+    "nif": "V24680135"
+  },
+  {
+    "id": "C-1015",
+    "nombre": "Inmobiliaria Mediterránea",
+    "direccion": "Paseo Marítimo, 22",
+    "nif": "L98765432",
+    "correo_electronico": "contacto@inmomediterranea.com",
+    "numero_telefono": "678901234"
+  },
+  {
+    "id": "C-I01",
+    "nombre": "Falta NIF S.A."
+  },
+  {
+    "id": "C-I02",
+    "nombre": "Tipo Incorrecto Co.",
+    "direccion": "C/ Falsa, 123",
+    "nif": "B12345678",
+    "numero_telefono": 910111213
+  },
+  {
+    "id": "C-I03",
+    "nombre": "Formato Email Inválido",
+    "nif": "A98765432",
+    "correo_electronico": "contacto[at]ejemplo.com"
+  },
+  {
+    "id": "C-I04",
+    "nombre": "Teléfono Demasiado Corto",
+    "nif": "Z00000000",
+    "numero_telefono": "123456"
+  },
+  {
+    "id": 105,
+    "nombre": "ID es Número Corp.",
+    "nif": "X11223344"
+  }
+]
