@@ -32,7 +32,7 @@ El objetivo principal es exponer listados de **sensores** y **lecturas** simulad
   - **Datos**: Ficheros JSON estáticos en la carpeta `./services/iot/data/` (e.g., `sensores.json` y `lecturas.json`).
   - **Esquemas**: Ficheros JSON Schema en la carpeta `./schemas/` (e.g., `sensor.schema.json` y `lectura.schema.json`).
 
-### 2. Entidades Mínimas y Datos Semilla
+#### 2. Entidades Mínimas y Datos Semilla
 
 El servicio debe exponer las entidades operativas (IoT) definidas:
 
@@ -40,7 +40,7 @@ El servicio debe exponer las entidades operativas (IoT) definidas:
 - **Lectura**: `id`, `sensorId`, `valor`, `unidad`, `timestamp` (formato **ISO-8601**).
 - **Datos Semilla**: Se recomienda disponer de **≥ 3 sensores** y **≥ 5 lecturas por sensor** para pruebas de filtros.
 
-### 3. Endpoints Mínimos Requeridos
+#### 3. Endpoints Mínimos Requeridos
 
 El servicio debe implementar los siguientes _endpoints_ con las capacidades de filtrado especificadas:
 
@@ -49,7 +49,7 @@ El servicio debe implementar los siguientes _endpoints_ con las capacidades de f
 | `/sensores` | `GET`  | Devolver el listado de sensores desde `sensores.json`.             | (Opcional: `tipo` o `ubicacionId`).                                                                          |
 | `/lecturas` | `GET`  | Cargar `lecturas.json` y devolver el listado filtrado y recortado. | `sensorId`, `ubicacionId`, `from` (ISO 8601), `to` (ISO 8601), `limit` (entero; por defecto 100, máx. 1000). |
 
-### 4. Reglas Funcionales y de Datos
+#### 4. Reglas Funcionales y de Datos
 
 - **Validación de Salida**: Todas las **lecturas** devueltas por el _endpoint_ deben **validarse** contra `lectura.schema.json` **antes de responder**.
 - **Orden de Filtros**: Los filtros de `/lecturas` deben aplicarse en el siguiente orden estricto: `sensorId` → `ubicacionId` → `from` → `to`.
@@ -58,7 +58,7 @@ El servicio debe implementar los siguientes _endpoints_ con las capacidades de f
   - Las fechas `from`/`to` deben tratarse como objetos `datetime`, interpretando la `Z` como **UTC (`+00:00`)**.
 - **Manejo de `limit`**: El resultado final debe recortarse a `limit` elementos.
 
-### 5. Gestión de Errores y Códigos HTTP
+#### 5. Gestión de Errores y Códigos HTTP
 
 El servicio debe responder con el código HTTP correcto y un cuerpo de error en formato **JSON** (`{"error": "mensaje descriptivo"}`).
 
@@ -68,7 +68,7 @@ El servicio debe responder con el código HTTP correcto y un cuerpo de error en 
 |   **400**   | Solicitud inválida | Parámetros de consulta inválidos (ej. fechas mal formateadas o fuera de rango). Se debe rechazar la consulta si `from > to`. |
 |   **500**   | Error interno      | Datos no conformes con el **JSON Schema** o error de lectura/IO.                                                             |
 
-### 6. Dependencias Recomendadas (Python)
+#### 6. Dependencias Recomendadas (Python)
 
 - `fastapi`: Para la definición de rutas.
 - `uvicorn`: Servidor ASGI.
