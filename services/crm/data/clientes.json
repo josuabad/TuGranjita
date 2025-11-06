@@ -34,96 +34,622 @@
   },
   {
     "id": "C-1006",
-    "nombre": "Estudios Creativos D&V",
-    "direccion": "Calle de las Artes, 5, 08001 Barcelona",
-    "nif": "G60543210",
-    "correo_electronico": "info@estudiosdv.com",
-    "numero_telefono": "93 222 33 44"
+    "nombre": "Consultoría Financiera Atlántico",
+    "direccion": "Rúa do Comercio, 15, 15701 Santiago de Compostela",
+    "nif": "B56789012",
+    "correo_electronico": "info@cfa-es.com",
+    "numero_telefono": "+34 981 10 20 30"
   },
   {
     "id": "C-1007",
-    "nombre": "Logística Rápida Sur",
-    "nif": "B98765432"
+    "nombre": "Tecnología Avanzada del Levante",
+    "nif": "A23456789",
+    "correo_electronico": "support@tal.net"
   },
   {
     "id": "C-1008",
-    "nombre": "Ingeniería y Sistemas XYZ",
-    "direccion": "Paseo de la Industria, 101",
-    "nif": "A11223344",
-    "correo_electronico": "soporte@ingenieriaxyz.net",
-    "numero_telefono": "+34 600 555 111"
+    "nombre": "Distribuidora de Componentes Electrónicos",
+    "direccion": "Pol. Ind. Las Mercedes, Nave 5",
+    "nif": "B98765432",
+    "numero_telefono": "918-555-444"
   },
   {
     "id": "C-1009",
-    "nombre": "Pilar Giménez - Consultora",
-    "nif": "25487630T",
-    "correo_electronico": "p.gimenez@email.es"
+    "nombre": "Laura Pérez (Diseñadora)",
+    "nif": "54321098P",
+    "correo_electronico": "laura.perez.design@ejemplo.com",
+    "numero_telefono": "677 123 456"
   },
   {
     "id": "C-1010",
-    "nombre": "Tecnología del Norte S.A.",
-    "nif": "S45678901",
-    "numero_telefono": "981-70-10-20"
+    "nombre": "Logística y Transporte Rápido S.A.",
+    "nif": "A11223344",
+    "direccion": "Carrer de la Logística, 8, 08040 Barcelona"
   },
   {
     "id": "C-1011",
-    "nombre": "El Rincón del Café, SL",
-    "direccion": "Plaza Mayor, 3, 41001 Sevilla",
-    "nif": "F54321098",
-    "correo_electronico": "gerencia@rinconcafe.com"
+    "nombre": "Suministros de Oficina del Sur",
+    "nif": "B33445566",
+    "correo_electronico": "pedidos@suministros-sur.es"
   },
   {
     "id": "C-1012",
-    "nombre": "Alquiler de Maquinaria M.B.",
-    "nif": "C13579246",
-    "numero_telefono": "900 123 456"
+    "nombre": "Ricardo Gómez",
+    "direccion": "Calle Ficticia, 12, 41001 Sevilla",
+    "nif": "21098765G",
+    "numero_telefono": "954-111-222"
   },
   {
     "id": "C-1013",
-    "nombre": "Farmacia Central",
-    "nif": "78901234P",
-    "direccion": "C/ Salud, 14",
-    "correo_electronico": "farmacia.central@salud.net"
+    "nombre": "Construcciones Modernas C.B.",
+    "nif": "E76543210",
+    "correo_electronico": "contacto@conmo.es",
+    "numero_telefono": "+34600-99-88-77"
   },
   {
     "id": "C-1014",
-    "nombre": "Distribución Mayorista",
-    "nif": "V24680135"
+    "nombre": "Inmobiliaria Centro",
+    "direccion": "Gran Vía, 1, 28013 Madrid",
+    "nif": "A00112233"
   },
   {
     "id": "C-1015",
-    "nombre": "Inmobiliaria Mediterránea",
-    "direccion": "Paseo Marítimo, 22",
-    "nif": "L98765432",
-    "correo_electronico": "contacto@inmomediterranea.com",
-    "numero_telefono": "678901234"
+    "nombre": "Software de Gestión Empresarial",
+    "nif": "B40000000",
+    "correo_electronico": "ventas@sge-corp.net",
+    "numero_telefono": "555 987 6543"
   },
   {
-    "id": "C-I01",
-    "nombre": "Falta NIF S.A."
+    "id": "C-1016",
+    "nombre": "Recursos Humanos 360, S.L.",
+    "direccion": "Paseo de la Castellana, 150, 28046 Madrid",
+    "nif": "B12300456",
+    "correo_electronico": "rrhh@rh360.es",
+    "numero_telefono": "+34 919 001 002"
   },
   {
-    "id": "C-I02",
-    "nombre": "Tipo Incorrecto Co.",
-    "direccion": "C/ Falsa, 123",
-    "nif": "B12345678",
-    "numero_telefono": 910111213
+    "id": "C-1017",
+    "nombre": "Asesoría Contable Global",
+    "nif": "A76500321",
+    "correo_electronico": "asesoria@acglobal.com"
   },
   {
-    "id": "C-I03",
-    "nombre": "Formato Email Inválido",
-    "nif": "A98765432",
-    "correo_electronico": "contacto[at]ejemplo.com"
+    "id": "C-1018",
+    "nombre": "Ferretería y Herramientas Pro",
+    "direccion": "Pol. Ind. Oeste, Calle 5, Nave 3",
+    "nif": "B87600543",
+    "numero_telefono": "968-333-000"
   },
   {
-    "id": "C-I04",
-    "nombre": "Teléfono Demasiado Corto",
-    "nif": "Z00000000",
-    "numero_telefono": "123456"
+    "id": "C-1019",
+    "nombre": "Javier Martín (Arquitecto)",
+    "nif": "40000000J",
+    "correo_electronico": "javier.martin.arq@mail.net"
   },
   {
-    "id": 105,
-    "nombre": "ID es Número Corp.",
-    "nif": "X11223344"
+    "id": "C-1020",
+    "nombre": "Agencia de Viajes Sol y Mar",
+    "nif": "A10000022",
+    "direccion": "Avenida del Puerto, 20, 46024 Valencia",
+    "numero_telefono": "963 123 789"
+  },
+  {
+    "id": "C-1021",
+    "nombre": "Productos Ecológicos Km 0",
+    "nif": "B55544433",
+    "correo_electronico": "info@km0eco.es",
+    "numero_telefono": "650-999-888"
+  },
+  {
+    "id": "C-1022",
+    "nombre": "Mobiliario de Oficina Deluxe",
+    "nif": "A90001000"
+  },
+  {
+    "id": "C-1023",
+    "nombre": "Instalaciones Eléctricas Rápidas",
+    "direccion": "Calle de la Luz, 10, 08001 Barcelona",
+    "nif": "B00998877",
+    "correo_electronico": "servicios@ierapidas.com",
+    "numero_telefono": "+34600100200"
+  },
+  {
+    "id": "C-1024",
+    "nombre": "Carla Ruiz (Fotógrafa)",
+    "nif": "39988776C",
+    "numero_telefono": "555-123-4567"
+  },
+  {
+    "id": "C-1025",
+    "nombre": "Editorial Libros Nuevos, S.A.",
+    "nif": "A44455566",
+    "direccion": "Plaza Mayor, 5, 37001 Salamanca",
+    "correo_electronico": "edicion@librosnuevos.net"
+  },
+  {
+    "id": "C-1026",
+    "nombre": "Distribución de Bebidas Frías",
+    "nif": "B70707070",
+    "numero_telefono": "922 456 789"
+  },
+  {
+    "id": "C-1027",
+    "nombre": "Desarrollo de Software Innovador",
+    "direccion": "Parque Tecnológico, Edificio 3",
+    "nif": "A80000008",
+    "correo_electronico": "tech@dsinnovador.com"
+  },
+  {
+    "id": "C-1028",
+    "nombre": "Miguel Ángel Torres",
+    "nif": "71122334M",
+    "correo_electronico": "miguel.a.torres@mail.es",
+    "numero_telefono": "609-876-543"
+  },
+  {
+    "id": "C-1029",
+    "nombre": "Centro Médico Integral",
+    "nif": "B01020304"
+  },
+  {
+    "id": "C-1030",
+    "nombre": "Academia de Idiomas Global",
+    "direccion": "Calle Larga, 7, 11001 Cádiz",
+    "nif": "G55443322",
+    "correo_electronico": "matriculas@aiglobal.es",
+    "numero_telefono": "+34956112233"
+  },
+  {
+    "id": "C-1031",
+    "nombre": "Sistemas de Seguridad Avanzada",
+    "nif": "B99887766",
+    "numero_telefono": "001-800-555-1234"
+  },
+  {
+    "id": "C-1032",
+    "nombre": "Elisa Fernández (Consultora)",
+    "nif": "45678901E",
+    "direccion": "Avda. Principal, 22, 03001 Alicante"
+  },
+  {
+    "id": "C-1033",
+    "nombre": "Hostelería Moderna del Norte",
+    "nif": "A11100099",
+    "correo_electronico": "gerencia@hmnorte.com"
+  },
+  {
+    "id": "C-1034",
+    "nombre": "Reparaciones de Vehículos Rápidos",
+    "direccion": "Pol. Ind. La Campana, Parcela 1",
+    "nif": "B60606060",
+    "numero_telefono": "944-777-666"
+  },
+  {
+    "id": "C-1035",
+    "nombre": "Proveedores de Materias Primas",
+    "nif": "Z99999999",
+    "correo_electronico": "ventas@pmpr.eu",
+    "numero_telefono": "622 334 455"
+  },
+  {
+    "id": "C-1036",
+    "nombre": "Estudios de Mercado Global, S.L.",
+    "direccion": "Calle de la Investigación, 8, 28001 Madrid",
+    "nif": "B80080080",
+    "correo_electronico": "contact@emglobal.es",
+    "numero_telefono": "+34 912 345 678"
+  },
+  {
+    "id": "C-1037",
+    "nombre": "Materiales de Construcción Segura",
+    "nif": "A19988776",
+    "numero_telefono": "955-111-999"
+  },
+  {
+    "id": "C-1038",
+    "nombre": "Repuestos Industriales del Norte",
+    "direccion": "Pol. Ind. Jundiz, Pabellón 1",
+    "nif": "B33322211",
+    "correo_electronico": "pedidos@rinorte.com"
+  },
+  {
+    "id": "C-1039",
+    "nombre": "Elena García (Consultora IT)",
+    "nif": "49876543E",
+    "correo_electronico": "elena.garcia.it@mailficticio.net"
+  },
+  {
+    "id": "C-1040",
+    "nombre": "Agencia de Publicidad Creativa",
+    "nif": "A50050050",
+    "direccion": "Rambla de Cataluña, 55, 08007 Barcelona",
+    "numero_telefono": "934 000 111"
+  },
+  {
+    "id": "C-1041",
+    "nombre": "Servicios de Limpieza Profesional 24h",
+    "nif": "B77700111",
+    "correo_electronico": "info@slp24h.es",
+    "numero_telefono": "690-900-900"
+  },
+  {
+    "id": "C-1042",
+    "nombre": "Taller Mecánico Rápido",
+    "nif": "B00112233"
+  },
+  {
+    "id": "C-1043",
+    "nombre": "María Isabel Santos",
+    "direccion": "Avda. de los Naranjos, 10, 46022 Valencia",
+    "nif": "70000000M",
+    "correo_electronico": "m.isabel.santos@correo.org",
+    "numero_telefono": "+34611112222"
+  },
+  {
+    "id": "C-1044",
+    "nombre": "Telecomunicaciones del Sur",
+    "nif": "A12121212",
+    "numero_telefono": "950 555 444"
+  },
+  {
+    "id": "C-1045",
+    "nombre": "Mayorista de Frutas y Verduras",
+    "direccion": "Mercado Central, Nave 3",
+    "nif": "B40404040",
+    "correo_electronico": "compras@frutas-mv.com"
+  },
+  {
+    "id": "C-1046",
+    "nombre": "Formación Online y Cursos",
+    "nif": "B88877766",
+    "numero_telefono": "555-800-0000"
+  },
+  {
+    "id": "C-1047",
+    "nombre": "David López (Desarrollador)",
+    "nif": "34543454D",
+    "correo_electronico": "david.lopez.dev@mail.co"
+  },
+  {
+    "id": "C-1048",
+    "nombre": "Sistemas de Climatización Industrial",
+    "direccion": "Calle del Aire, 20, 08030 Barcelona",
+    "nif": "A60060060",
+    "numero_telefono": "936-000-000"
+  },
+  {
+    "id": "C-1049",
+    "nombre": "Inversiones de Capital Riesgo",
+    "nif": "Z11122233"
+  },
+  {
+    "id": "C-1050",
+    "nombre": "Vigilancia y Seguridad Integral",
+    "direccion": "Avda. de la Protección, 4, 41008 Sevilla",
+    "nif": "B90909090",
+    "correo_electronico": "operaciones@vsi.es",
+    "numero_telefono": "+34 670 123 456"
+  },
+  {
+    "id": "C-1051",
+    "nombre": "Exportadora de Productos Artesanales",
+    "nif": "A20000020",
+    "numero_telefono": "001-212-900-1000"
+  },
+  {
+    "id": "C-1052",
+    "nombre": "Pablo Jiménez (Abogado)",
+    "nif": "25252525P",
+    "correo_electronico": "pablo.jimenez@lex.net"
+  },
+  {
+    "id": "C-1053",
+    "nombre": "Hostelería Servicios Integrales",
+    "direccion": "Calle de la Gastronomía, 3",
+    "nif": "B10101010",
+    "numero_telefono": "941-888-777"
+  },
+  {
+    "id": "C-1054",
+    "nombre": "Distribución Farmacéutica Europa",
+    "nif": "A33300099",
+    "correo_electronico": "ventas@dfeuro.com"
+  },
+  {
+    "id": "C-1055",
+    "nombre": "Transporte Marítimo Internacional",
+    "nif": "Z44455566",
+    "direccion": "Puerto Principal, Terminal 2"
+  },
+  {
+    "id": "C-1056",
+    "nombre": "Proveedores de Energía Renovable",
+    "nif": "A70007000",
+    "correo_electronico": "info@per.es",
+    "numero_telefono": "986 123 789"
+  },
+  {
+    "id": "C-1057",
+    "nombre": "Cristina Soto (Marketing)",
+    "nif": "11223344C",
+    "numero_telefono": "+34666000111"
+  },
+  {
+    "id": "C-1058",
+    "nombre": "Venta de Automóviles de Lujo",
+    "direccion": "Avda. del Concesionario, 1",
+    "nif": "B50505050",
+    "correo_electronico": "lujo@autosval.com"
+  },
+  {
+    "id": "C-1059",
+    "nombre": "Software de Contabilidad en la Nube",
+    "nif": "A99887766",
+    "numero_telefono": "918 000 000"
+  },
+  {
+    "id": "C-1060",
+    "nombre": "Gestión de Eventos y Congresos",
+    "nif": "B20202020",
+    "correo_electronico": "eventos@gec.net",
+    "numero_telefono": "654-765-432"
+  },
+  {
+    "id": "C-1061",
+    "nombre": "Diseño Gráfico Profesional 2D",
+    "direccion": "Calle de la Creatividad, 5, 29001 Málaga",
+    "nif": "B13579246",
+    "correo_electronico": "creatividad@dgp2d.es",
+    "numero_telefono": "+34 952 111 222"
+  },
+  {
+    "id": "C-1062",
+    "nombre": "Sistemas de Información Avanzada",
+    "nif": "A98765000",
+    "numero_telefono": "678 901 234"
+  },
+  {
+    "id": "C-1063",
+    "nombre": "Comercio Electrónico Fácil, S.L.",
+    "direccion": "Pol. Ind. de Internet, Nave 10",
+    "nif": "B00011122",
+    "correo_electronico": "ventas@cef-sl.com"
+  },
+  {
+    "id": "C-1064",
+    "nombre": "Jorge Nieto (Programador)",
+    "nif": "41112233J",
+    "correo_electronico": "jorge.nieto.dev@ejemplo.info"
+  },
+  {
+    "id": "C-1065",
+    "nombre": "Proveedores de Metales Especiales",
+    "nif": "A55566677",
+    "direccion": "Zona Industrial Pesada, Bloque A"
+  },
+  {
+    "id": "C-1066",
+    "nombre": "Consultores de Gestión de Calidad",
+    "nif": "B24680135",
+    "correo_electronico": "calidad@cgc.es",
+    "numero_telefono": "913-000-999"
+  },
+  {
+    "id": "C-1067",
+    "nombre": "Servicios de Mantenimiento Integral",
+    "nif": "A10101010"
+  },
+  {
+    "id": "C-1068",
+    "nombre": "Almacenes Logísticos del Centro",
+    "direccion": "Avda. de los Almacenes, 50, 47008 Valladolid",
+    "nif": "B77700011",
+    "correo_electronico": "logistica@alc.net",
+    "numero_telefono": "+34983456789"
+  },
+  {
+    "id": "C-1069",
+    "nombre": "Sara Ruiz (Interiorista)",
+    "nif": "23456789S",
+    "numero_telefono": "600-111-222"
+  },
+  {
+    "id": "C-1070",
+    "nombre": "Tienda de Ropa Deportiva Online",
+    "nif": "A30000040",
+    "direccion": "Calle del Deporte, 1, 08003 Barcelona",
+    "correo_electronico": "atencion@tros.com"
+  },
+  {
+    "id": "C-1071",
+    "nombre": "Empresa de Sonido e Iluminación",
+    "nif": "B66677788",
+    "numero_telefono": "555-999-0000"
+  },
+  {
+    "id": "C-1072",
+    "nombre": "Ricardo Castro (Traductor)",
+    "nif": "00000001R",
+    "correo_electronico": "traducciones@ricardocastro.es"
+  },
+  {
+    "id": "C-1073",
+    "nombre": "Distribuidora de Juguetes Infantiles",
+    "direccion": "Pol. Ind. del Juguete, Parcela 7",
+    "nif": "A50000011",
+    "numero_telefono": "960 123 456"
+  },
+  {
+    "id": "C-1074",
+    "nombre": "Gestión de Propiedades Urbanas",
+    "nif": "B99988877",
+    "correo_electronico": "info@gpu.es"
+  },
+  {
+    "id": "C-1075",
+    "nombre": "Servicios de Catering Gourmet",
+    "direccion": "Calle de la Cocina, 1, 08010 Barcelona",
+    "nif": "B20020020",
+    "numero_telefono": "+34690909090"
+  },
+  {
+    "id": "C-1076",
+    "nombre": "Importadora de Electrónica Asia",
+    "nif": "Z33300011",
+    "correo_electronico": "import@iea.net"
+  },
+  {
+    "id": "C-1077",
+    "nombre": "Laura Méndez (Analista)",
+    "nif": "76543210L",
+    "direccion": "Plaza del Análisis, 3, 28004 Madrid"
+  },
+  {
+    "id": "C-1078",
+    "nombre": "Empresa de Ingeniería Civil",
+    "nif": "A40040040",
+    "numero_telefono": "923 111 222"
+  },
+  {
+    "id": "C-1079",
+    "nombre": "Venta de Maquinaria Industrial",
+    "direccion": "Pol. Ind. de la Maquinaria, Nave 15",
+    "nif": "B70000700",
+    "correo_electronico": "ventas@vmi.com"
+  },
+  {
+    "id": "C-1080",
+    "nombre": "Academia de Formación Profesional",
+    "nif": "G87654321",
+    "numero_telefono": "955-444-333"
+  },
+  {
+    "id": "C-1081",
+    "nombre": "Marketing de Contenidos 2.0",
+    "direccion": "Avenida del Éxito, 1, 41002 Sevilla",
+    "nif": "B10010010",
+    "correo_electronico": "info@mc20.es"
+  },
+  {
+    "id": "C-1082",
+    "nombre": "Distribuciones Alimentarias de Calidad",
+    "nif": "A56789123"
+  },
+  {
+    "id": "C-1083",
+    "nombre": "Servicios Técnicos de Informática",
+    "direccion": "Calle de la Tecnología, 15",
+    "nif": "B90090090",
+    "correo_electronico": "soporte@sti.net",
+    "numero_telefono": "+34680808080"
+  },
+  {
+    "id": "C-1084",
+    "nombre": "Manuel Blanco (Gestor)",
+    "nif": "10101010M",
+    "numero_telefono": "555-777-6666"
+  },
+  {
+    "id": "C-1085",
+    "nombre": "Construcción y Reformas Rápidas",
+    "nif": "B30000030",
+    "direccion": "Calle del Ladrillo, 5, 46001 Valencia"
+  },
+  {
+    "id": "C-1086",
+    "nombre": "Agencia de Eventos Corporativos",
+    "nif": "A22334455",
+    "correo_electronico": "eventos@aevents.com",
+    "numero_telefono": "937 111 222"
+  },
+  {
+    "id": "C-1087",
+    "nombre": "Tienda de Deportes de Montaña",
+    "nif": "B88800077"
+  },
+  {
+    "id": "C-1088",
+    "nombre": "Inmobiliaria de Lujo Costa",
+    "direccion": "Paseo Marítimo, 100, 03002 Alicante",
+    "nif": "A11223344",
+    "correo_electronico": "ventas@ilcosta.es",
+    "numero_telefono": "+34965123456"
+  },
+  {
+    "id": "C-1089",
+    "nombre": "Fernando Díaz (Freelance)",
+    "nif": "77665544F",
+    "numero_telefono": "600-987-654"
+  },
+  {
+    "id": "C-1090",
+    "nombre": "Venta de Neumáticos y Accesorios",
+    "nif": "B44433322",
+    "direccion": "Avda. de los Talleres, 30"
+  },
+  {
+    "id": "C-1091",
+    "nombre": "Distribución de Productos Químicos",
+    "nif": "A90090090",
+    "correo_electronico": "logistica@dpq.net",
+    "numero_telefono": "944 555 666"
+  },
+  {
+    "id": "C-1092",
+    "nombre": "Sofía Pérez (Periodista)",
+    "nif": "45000000S"
+  },
+  {
+    "id": "C-1093",
+    "nombre": "Centro de Idiomas y Culturas",
+    "direccion": "Calle de las Lenguas, 20",
+    "nif": "G00011122",
+    "correo_electronico": "info@ciculturas.es",
+    "numero_telefono": "910 101 010"
+  },
+  {
+    "id": "C-1094",
+    "nombre": "Hardware y Software para Empresas",
+    "nif": "B76543210",
+    "numero_telefono": "555-111-2222"
+  },
+  {
+    "id": "C-1095",
+    "nombre": "Transporte de Mercancías Refrigeradas",
+    "direccion": "Pol. Ind. del Frío, Nave 8",
+    "nif": "A10000100",
+    "correo_electronico": "frio@tmr.com"
+  },
+  {
+    "id": "C-1096",
+    "nombre": "Estudio de Arquitectura Bio",
+    "nif": "B33300333",
+    "numero_telefono": "+34633-44-55-66"
+  },
+  {
+    "id": "C-1097",
+    "nombre": "Elena Torres (Finanzas)",
+    "nif": "12345678E",
+    "direccion": "Paseo del Ahorro, 10"
+  },
+  {
+    "id": "C-1098",
+    "nombre": "Agencia de Viajes de Negocios",
+    "nif": "A90009000",
+    "correo_electronico": "corporate@avnegocios.net"
+  },
+  {
+    "id": "C-1099",
+    "nombre": "Consultoría de Estrategia Digital",
+    "nif": "B50000500",
+    "numero_telefono": "914 999 888"
+  },
+  {
+    "id": "C-1100",
+    "nombre": "Sistemas de Automatización y Control",
+    "direccion": "Calle de la Robótica, 4, 08038 Barcelona",
+    "nif": "A60000600",
+    "correo_electronico": "automatizacion@sac.es",
+    "numero_telefono": "938-123-456"
   }
 ]

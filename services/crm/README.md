@@ -1,74 +1,83 @@
-# CRM
+# CRM Mini
 
-## Uso
+## Python
 
-Dev:
-
-```bash
-# Desde el directorio raíz
-fastapi dev services/crm/main.py
-
-# O con Uvicorn
-uvicorn services/crm/main:app --host 0.0.0.0 --port 8001 --reload
-```
-
-Prod:
+### Uso
 
 ```bash
 # Desde el directorio raíz
-fastapi run services/crm/main.py
-
-# O con Uvicorn
-uvicorn services/crm/main:app --host 0.0.0.0 --port 8001
+python -m uvicorn services.crm.main:app --host 127.0.0.1 --port 8001 --reload
 ```
 
-### Probar endpoints
+### Contexto
+
+Nuestra empresa (TuGranjita.com) va a desarrollar los sistemas tecnológicos de integración para una granja que actualmente está operando de manera muy rudimentaria y poco automatizada.
+
+### Objetivo
+
+Debemos pasar de las definiciones teóricas de la práctica 1 a una implementación mínima funcional.
+
+Objetivo principal: Implementar 2 servicios REST reales: CRM e IoT, ambos simulados. La API unificada llegará en el siguiente tema; ahora hay que centrarse en que estos dos sistemas devuelven datos válidos y estables.
+
+### Requisitos
+
+- Rutas mínimas
+  - GET /clientes
+    - Query params: q (texto libre para buscar por nombre/email), page (nº de página, por defecto 1), pageSize (tamaño de página, por defecto 25; recomendable máximo 100).
+    - Comportamiento: leer el fichero clientes.json, filtrar por coincidencia parcial (no sensible a mayúsculas) en nombre o email, paginar, validar cada cliente de la página con el schema y devolver { total, page, pageSize, data }.
+    - Errores: 500 si algún elemento no cumple el schema; 400 si los parámetros no son numéricos o son inválidos.
+  - GET /clientes/{id}.
+    - Comportamiento: localizar el cliente por id, validarlo y devolverlo.
+    - Errores: 404 si no existe; 500 si el objeto no valida.
+- Parámetros: ?q=, ?page=, ?pageSize=, ?ubicacionId=.
+- Códigos: 200, 404, 400.
+- Reglas de validación: Siempre validar antes de responder: si cualquiera de los elementos de la página de resultados no valida, responder error. El schema debe comprobar tipos, obligatoriedad, y formatos (email, date-time, etc.).
+- Consideraciones de implementación
+  - Normalizar texto a minúsculas para la búsqueda.
+  - Convertir page y pageSize a número y limitar rangos razonables.
+  - Calcular start = (page - 1) \* pageSize y hacer slice sobre el array filtrado.
+  - Compilar el schema una sola vez y reutilizar el validador.
+
+### Pruebas con CURL
+
+- Obtener todos los clientes (200 OK)
 
 ```bash
-# listar
-curl "http://127.0.0.1:8001/clientes"
-
-# búsqueda y paginación
-curl "http://127.0.0.1:8001/clientes?q=soluciones&page=1&pageSize=10"
-
-# obtener por id
-curl "http://127.0.0.1:8001/clientes/C-1001"
+curl -i http://localhost:8001/clientes
 ```
 
-## Notas
+- Buscar clientes por nombre/correo (200 OK)
 
-Los últimos 5 clientes no clumplen las validaciones definidas
+```bash
+curl -i "http://localhost:8001/clientes?q=Soluciones%20Tecnológicas%20S.L."
+```
 
-```json
-[
-  {
-    "id": "C-I01",
-    "nombre": "Falta NIF S.A."
-    // ❌ Razón: Falta el campo obligatorio "nif"
-  },
-  {
-    "id": "C-I02",
-    "nombre": "Tipo Incorrecto Co.",
-    "direccion": "C/ Falsa, 123",
-    "nif": "B12345678",
-    "numero_telefono": 910111213 // ❌ Razón: "numero_telefono" es un número (debe ser un string)
-  },
-  {
-    "id": "C-I03",
-    "nombre": "Formato Email Inválido",
-    "nif": "A98765432",
-    "correo_electronico": "contacto[at]ejemplo.com" // ❌ Razón: No cumple el formato "email" (falta el '@' principal)
-  },
-  {
-    "id": "C-I04",
-    "nombre": "Teléfono Demasiado Corto",
-    "nif": "Z00000000",
-    "numero_telefono": "123456" // ❌ Razón: No cumple el patrón (mínimo 7 caracteres)
-  },
-  {
-    "id": 105, // ❌ Razón: "id" es un número (debe ser un string)
-    "nombre": "ID es Número Corp.",
-    "nif": "X11223344"
-  }
-]
+- Paginación (200 OK)
+
+```bash
+curl -i "http://localhost:8001/clientes?page=2&pageSize=3"
+```
+
+- Buscar por ubicación (si implementas el filtro, actualmente no está en el código)
+
+```bash
+curl -i "http://localhost:8001/clientes?ubicacionId=Avda.%20de%20la%20Innovación,%2045,%2028005%20Madrid"
+```
+
+- Obtener cliente por ID (200 OK o 404 Not Found)
+
+```bash
+curl -i http://localhost:8001/clientes/C-1002
+```
+
+- Cliente no encontrado (404 Not Found)
+
+```bash
+curl -i http://localhost:8001/clientes/id_inexistente
+```
+
+- Parámetro inválido (400 Bad Request, por ejemplo, pageSize fuera de rango)
+
+```bash
+curl -i "http://localhost:8001/clientes?pageSize=200"
 ```

@@ -1,15 +1,18 @@
 from typing import List, Optional, Dict, Any
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.responses import JSONResponse
 import json
 from jsonschema import validate, ValidationError
 from pathlib import Path
+from uvicorn import run
+from starlette.status import HTTP_400_BAD_REQUEST
+from fastapi.exceptions import RequestValidationError
 
 BASE_DIR = Path(__file__).resolve().parent
 DATA_FILE = BASE_DIR / "data" / "clientes.json"
-SCHEMA_FILE_CLIENTE_PROVEEDOR = BASE_DIR.parent.parent / "schemas" / "ClienteProveedor.schema.json"
+SCHEMA_FILE = BASE_DIR.parent.parent / "schemas" / "cliente.schema.json"
 
-app = FastAPI(title="CRM")
+app = FastAPI(title="CRM Mini (clientes)")
 
 
 def load_clients() -> List[Dict[str, Any]]:
@@ -20,7 +23,7 @@ def load_clients() -> List[Dict[str, Any]]:
 
 def load_schema() -> Dict[str, Any]:
     # Carga y devuelve el esquema JSON desde el archivo
-    with SCHEMA_FILE_CLIENTE_PROVEEDOR.open("r", encoding="utf-8") as file:
+    with SCHEMA_FILE.open("r", encoding="utf-8") as file:
         return json.load(file)
 
 
@@ -30,28 +33,29 @@ def validate_client(obj: Dict[str, Any]) -> None:
     validate(instance=obj, schema=schema)
 
 
+@app.exception_handler(RequestValidationError)
+async def validation_exception_handler(request: Request, exc: RequestValidationError):
+    return JSONResponse(
+        status_code=HTTP_400_BAD_REQUEST,
+        content={"detail": exc.errors(), "body": exc.body},
+    )
+
+
 @app.get("/clientes")
 def get_clientes(
     q: Optional[str] = Query(None),
     page: int = Query(1, ge=1),
     pageSize: int = Query(25, ge=1, le=100),
+    ubicacionId: Optional[str] = Query(None),
 ):
-    # Validate query params handled by FastAPI via Query validators for numeric constraints
-
-    # Listar clientes con búsqueda y paginación
-    # Valida los parámetros de consulta manejados por FastAPI a través de los validadores de Query para restricciones numéricas
-
-    # Query params:
-    # - q: Optional[str] = Query(None)  # Búsqueda en nombre o correo electrónico (case insensitive, contains)
-    # - page: int = Query(1, ge=1)  # Página (1-based)
-    # - pageSize: int = Query(25, ge=1, le=100)  # Tamaño de página (1-100)
+    # Listar clientes con búsqueda, paginación y filtro por ubicación
 
     try:
         clients = load_clients()
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error leyendo datos: {e}")
 
-    # Filtering
+    # Filtering by search
     if q:
         q_lower = q.lower()
 
@@ -64,6 +68,12 @@ def get_clientes(
     else:
         filtered = clients
 
+    # Filtering by ubicacionId
+    if ubicacionId:
+        filtered = [
+            c for c in filtered if str(c.get("direccion", "")) == str(ubicacionId)
+        ]
+
     total = len(filtered)
 
     # Pagination
@@ -71,22 +81,19 @@ def get_clientes(
     end = start + pageSize
     page_data = filtered[start:end]
 
-    errors = []
-    validated = []
-
     # Validate each client in page
-    for client in page_data:
-        try:
+    try:
+        for client in page_data:
             validate_client(client)
-            validated.append(client)
-        except ValidationError as ve:
-            errors.append({
-                "id": client.get("id"),
-                "error": ve.message
-            })
+    except ValidationError as ve:
+        raise HTTPException(
+            status_code=500, detail=f"Objeto inválido según schema: {ve.message}"
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error validando objetos: {e}")
 
     return JSONResponse(
-        {"total": len(validated), "page": page, "pageSize": pageSize, "data": validated, "errors": errors if errors else None}
+        {"total": total, "page": page, "pageSize": pageSize, "data": page_data}
     )
 
 
@@ -116,17 +123,16 @@ def get_cliente(cliente_id: str):
     raise HTTPException(status_code=404, detail="Cliente no encontrado")
 
 
-# def validate_all_clients() -> int:
-#     """
-#     Helper for quick sanity check: validates all clients and returns the count validated.
-#     Raises ValidationError on first invalid client.
-#     """
-#     clients = load_clients()
-#     for c in clients:
-#         validate_client(c)
-#     return len(clients)
+def validate_all_clients() -> int:
+    """
+    Helper for quick sanity check: validates all clients and returns the count validated.
+    Raises ValidationError on first invalid client.
+    """
+    clients = load_clients()
+    for c in clients:
+        validate_client(c)
+    return len(clients)
 
 
 if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000, reload=True)
+    run(app)
