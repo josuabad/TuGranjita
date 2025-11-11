@@ -26,8 +26,8 @@ def _load_json_file(path: Path):
 
 @lru_cache(maxsize=1)
 def load_schemas():
-    lectura_schema = _load_json_file(SCHEMAS_DIR / "lectura.schema.json")
-    sensor_schema = _load_json_file(SCHEMAS_DIR / "sensor.schema.json")
+    lectura_schema = _load_json_file(SCHEMAS_DIR / "LecturaSensor.schema.json")
+    sensor_schema = _load_json_file(SCHEMAS_DIR / "SensorIoT.schema.json")
     return lectura_schema, sensor_schema
 
 
@@ -62,7 +62,16 @@ def get_sensores(
         # match against the 'ubicacion' field
         results = [s for s in results if s.get("ubicacion") == ubicacionId]
 
-    return JSONResponse(content=results)
+    total = len(results)
+    response = {
+        "status": "success",
+        "message": "Sensores recuperados correctamente",
+        "params": {"tipo": tipo, "ubicacionId": ubicacionId},
+        "total": total,
+        "sensores": results,
+    }
+
+    return JSONResponse(content=response)
 
 
 @app.get("/lecturas")
@@ -164,7 +173,22 @@ def get_lecturas(
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-    return JSONResponse(content=to_return)
+    total = len(filtered)
+    response = {
+        "status": "success",
+        "message": "Lecturas recuperadas correctamente",
+        "params": {
+            "sensorId": sensorId,
+            "ubicacionId": ubicacionId,
+            "from": from_,
+            "to": to,
+            "limit": limit,
+        },
+        "total": total,
+        "lecturas": to_return,
+    }
+
+    return JSONResponse(content=response)
 
 
 if __name__ == "__main__":

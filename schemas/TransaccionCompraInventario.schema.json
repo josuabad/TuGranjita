@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "transaccionCompraInventario",
+  "title": "TransaccionCompraInventario",
+  "type": "object",
+  "properties": {
+    "id_transaccion": { "type": "string" },
+    "id_item_inventario": { "type": "string" },
+    "cantidad": { "type": "number", "minimum": 0 },
+    "proveedor": { "type": "string" },
+    "pasta": { "type": "number", "minimum": 0 },
+    "observaciones": { "type": "string" }
+  },
+  "required": ["id_transaccion", "id_item_inventario", "cantidad", "proveedor", "pasta"]
+}
