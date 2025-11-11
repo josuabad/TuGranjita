@@ -38,7 +38,7 @@
     "direccion": "Rúa do Comercio, 15, 15701 Santiago de Compostela",
     "nif": "B56789012",
     "correo_electronico": "info@cfa-es.com",
-    "numero_telefono": "+34 981 10 20 30"
+    "numero_telefono": "+34981102030"
   },
   {
     "id": "C-1007",
@@ -105,7 +105,7 @@
     "direccion": "Paseo de la Castellana, 150, 28046 Madrid",
     "nif": "B12300456",
     "correo_electronico": "rrhh@rh360.es",
-    "numero_telefono": "+34 919 001 002"
+    "numero_telefono": "+34919001002"
   },
   {
     "id": "C-1017",
@@ -237,7 +237,7 @@
     "direccion": "Calle de la Investigación, 8, 28001 Madrid",
     "nif": "B80080080",
     "correo_electronico": "contact@emglobal.es",
-    "numero_telefono": "+34 912 345 678"
+    "numero_telefono": "+34912345678"
   },
   {
     "id": "C-1037",
@@ -328,7 +328,7 @@
     "direccion": "Avda. de la Protección, 4, 41008 Sevilla",
     "nif": "B90909090",
     "correo_electronico": "operaciones@vsi.es",
-    "numero_telefono": "+34 670 123 456"
+    "numero_telefono": "+34670123456"
   },
   {
     "id": "C-1051",
@@ -400,7 +400,7 @@
     "direccion": "Calle de la Creatividad, 5, 29001 Málaga",
     "nif": "B13579246",
     "correo_electronico": "creatividad@dgp2d.es",
-    "numero_telefono": "+34 952 111 222"
+    "numero_telefono": "+34952111222"
   },
   {
     "id": "C-1062",

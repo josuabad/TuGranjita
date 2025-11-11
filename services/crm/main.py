@@ -10,7 +10,7 @@ from fastapi.exceptions import RequestValidationError
 
 BASE_DIR = Path(__file__).resolve().parent
 DATA_FILE = BASE_DIR / "data" / "clientes.json"
-SCHEMA_FILE = BASE_DIR.parent.parent / "schemas" / "cliente.schema.json"
+SCHEMA_FILE = BASE_DIR.parent.parent / "schemas" / "ClienteProveedor.schema.json"
 
 app = FastAPI(title="CRM Mini (clientes)")
 
