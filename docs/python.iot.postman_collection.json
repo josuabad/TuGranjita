@@ -1,0 +1,297 @@
+{
+	"info": {
+		"_postman_id": "c576e65d-3dd8-4252-b6bb-4a44c82c8f3a",
+		"name": "IoT Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49976229",
+		"_collection_link": "https://josuabad-5023018.postman.co/workspace/d4dc5c72-4eaa-4b29-8f00-f27b1b1f3b34/collection/49976229-c576e65d-3dd8-4252-b6bb-4a44c82c8f3a?action=share&source=collection_link&creator=49976229"
+	},
+	"item": [
+		{
+			"name": "sensores",
+			"item": [
+				{
+					"name": "Get Sensores",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/sensores?tipo=string&ubicacionId=string",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sensores"
+							],
+							"query": [
+								{
+									"key": "tipo",
+									"value": "string"
+								},
+								{
+									"key": "ubicacionId",
+									"value": "string"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/sensores?tipo=string&ubicacionId=string",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sensores"
+									],
+									"query": [
+										{
+											"key": "tipo",
+											"value": "string"
+										},
+										{
+											"key": "ubicacionId",
+											"value": "string"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"name": "Validation Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/sensores?tipo=string&ubicacionId=string",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sensores"
+									],
+									"query": [
+										{
+											"key": "tipo",
+											"value": "string"
+										},
+										{
+											"key": "ubicacionId",
+											"value": "string"
+										}
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        4136,\n        6707\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "lecturas",
+			"item": [
+				{
+					"name": "Get Lecturas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/lecturas?sensorId=string&ubicacionId=string&from=string&to=string&limit=100",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"lecturas"
+							],
+							"query": [
+								{
+									"key": "sensorId",
+									"value": "string"
+								},
+								{
+									"key": "ubicacionId",
+									"value": "string"
+								},
+								{
+									"key": "from",
+									"value": "string"
+								},
+								{
+									"key": "to",
+									"value": "string"
+								},
+								{
+									"key": "limit",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/lecturas?sensorId=string&ubicacionId=string&from=string&to=string&limit=100",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"lecturas"
+									],
+									"query": [
+										{
+											"key": "sensorId",
+											"value": "string"
+										},
+										{
+											"key": "ubicacionId",
+											"value": "string"
+										},
+										{
+											"key": "from",
+											"value": "string"
+										},
+										{
+											"key": "to",
+											"value": "string"
+										},
+										{
+											"key": "limit",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						},
+						{
+							"name": "Validation Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/lecturas?sensorId=string&ubicacionId=string&from=string&to=string&limit=100",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"lecturas"
+									],
+									"query": [
+										{
+											"key": "sensorId",
+											"value": "string"
+										},
+										{
+											"key": "ubicacionId",
+											"value": "string"
+										},
+										{
+											"key": "from",
+											"value": "string"
+										},
+										{
+											"key": "to",
+											"value": "string"
+										},
+										{
+											"key": "limit",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        4136,\n        6707\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/"
+		}
+	]
+}
