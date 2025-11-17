@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sensorIoT",
+  "title": "SensorIoT",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "nombre": { "type": "string" },
+    "tipo": { "type": "string", "enum": ["temperatura", "humedad", "ph", "movimiento", "gps", "otro"] },
+    "ubicacion": { "type": "string" },
+    "modelo": { "type": "string" },
+    "fabricante": { "type": "string" },
+    "unidad_medida": { "type": "string" },
+    "rango_medicion": { "type": "string" },
+    "estado": { "type": "string", "enum": ["activo", "inactivo", "mantenimiento", "error"] }
+  },
+  "required": ["id", "nombre", "tipo", "ubicacion", "estado"]
+}

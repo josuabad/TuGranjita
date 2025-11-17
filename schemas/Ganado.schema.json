@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ganado",
+  "title": "Ganado",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "tipo": { "type": "string", "enum": ["vaca", "cerdo", "oveja", "cabra", "otro"] },
+    "nombre": { "type": "string" },
+    "peso": { "type": "number", "minimum": 0 },
+    "raza": { "type": "string" },
+    "fecha_nacimiento": { "type": "string", "format": "date" },
+    "sexo": { "type": "string", "enum": ["macho", "hembra", "desconocido"] },
+    "salud": { "type": "string" },
+    "ubicacion": { "type": "string" },
+    "vacunas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "nombre": { "type": "string" },
+          "fecha": { "type": "string", "format": "date" },
+          "dosis": { "type": "string" }
+        },
+        "required": ["nombre", "fecha"]
+      }
+    },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" }
+  },
+  "required": ["id", "tipo", "peso", "fecha_nacimiento", "sexo", "salud", "ubicacion"]
+}

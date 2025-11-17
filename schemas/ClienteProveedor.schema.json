@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "clienteProveedor",
+  "title": "ClienteProveedor",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "nombre": { "type": "string" },
+    "direccion": { "type": "string" },
+    "nif": { "type": "string" },
+    "correo_electronico": { "type": "string", "format": "email" },
+    "numero_telefono": { "type": "string", "pattern": "^[0-9+\\- ]{7,15}$" }
+  },
+  "required": ["id", "nombre", "nif"]
+}

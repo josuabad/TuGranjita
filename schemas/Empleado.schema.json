@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "empleado",
+  "title": "Empleado",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "nombre": { "type": "string" },
+    "dni": { "type": "string" },
+    "fecha_nacimiento": { "type": "string", "format": "date" },
+    "telefono": { "type": "string", "pattern": "^[0-9+\\- ]{7,15}$" },
+    "email": { "type": "string", "format": "email" },
+    "direccion": { "type": "string" },
+    "fecha_contratacion": { "type": "string", "format": "date" },
+    "cargo": { "type": "string" },
+    "turno": { "type": "string", "enum": ["mañana", "tarde", "noche", "rotativo"] },
+    "salario": { "type": "number", "minimum": 0 },
+    "estado": { "type": "string", "enum": ["activo", "baja", "despedido", "suspendido"] }
+  },
+  "required": ["id", "nombre", "dni", "fecha_nacimiento", "fecha_contratacion", "cargo", "turno", "estado"]
+}

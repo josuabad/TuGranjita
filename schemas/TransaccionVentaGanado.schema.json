@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "transaccionVentaGanado",
+  "title": "TransaccionVentaGanado",
+  "type": "object",
+  "properties": {
+    "id_transaccion": { "type": "string" },
+    "id_ganado": { "type": "string" },
+    "cliente": { "type": "string" },
+    "pasta": { "type": "number", "minimum": 0 },
+    "fecha_venta": { "type": "string", "format": "date" },
+    "observaciones": { "type": "string" }
+  },
+  "required": ["id_transaccion", "id_ganado", "cliente", "pasta", "fecha_venta"]
+}
