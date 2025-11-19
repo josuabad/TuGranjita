@@ -1,25 +1,16 @@
 # CRM Mini
 
-## Python
-
-### Uso
-
-```bash
-# Desde el directorio raíz
-python -m uvicorn services.crm.main:app --host 127.0.0.1 --port 8001 --reload
-```
-
-### Contexto
+## Contexto
 
 Nuestra empresa (TuGranjita.com) va a desarrollar los sistemas tecnológicos de integración para una granja que actualmente está operando de manera muy rudimentaria y poco automatizada.
 
-### Objetivo
+## Objetivo
 
 Debemos pasar de las definiciones teóricas de la práctica 1 a una implementación mínima funcional.
 
 Objetivo principal: Implementar 2 servicios REST reales: CRM e IoT, ambos simulados. La API unificada llegará en el siguiente tema; ahora hay que centrarse en que estos dos sistemas devuelven datos válidos y estables.
 
-### Requisitos
+## Requisitos
 
 - Rutas mínimas
   - GET /clientes
@@ -38,7 +29,39 @@ Objetivo principal: Implementar 2 servicios REST reales: CRM e IoT, ambos simula
   - Calcular start = (page - 1) \* pageSize y hacer slice sobre el array filtrado.
   - Compilar el schema una sola vez y reutilizar el validador.
 
-### Pruebas con CURL
+## Python
+
+### Uso
+
+```bash
+# Desde el directorio raíz
+python -m uvicorn services.crm.main:app --host 127.0.0.1 --port 8001 --reload
+```
+
+### Dependencias Recomendadas
+
+- `fastapi`: Para la definición de rutas.
+- `uvicorn`: Servidor ASGI.
+- `jsonschema`: Para la validación de objetos contra su JSON Schema.
+
+## Node.js
+
+### Uso
+
+```bash
+# Instalar las dependencias
+npm install
+# Ejecutar el servidor
+npm run start
+```
+
+### Dependencias Recomendadas
+
+- `express`: Para la definición de rutas.
+- `ajv`: Para la validación de objetos contra su JSON Schema.
+
+
+## Pruebas con CURL
 
 - Obtener todos los clientes (200 OK)
 
