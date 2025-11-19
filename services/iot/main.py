@@ -62,6 +62,23 @@ def get_sensores(
         # match against the 'ubicacion' field
         results = [s for s in results if s.get("ubicacion") == ubicacionId]
 
+    _, sensor_schema = load_schemas()
+    format_checker = jsonschema.FormatChecker()
+
+    # Validate each lectura to be returned against schema
+    try:
+        for l in results:
+            jsonschema.validate(
+                instance=l, schema=sensor_schema, format_checker=format_checker
+            )
+    except jsonschema.ValidationError as e:
+        # return 500 if any reading doesn't conform
+        raise HTTPException(
+            status_code=500, detail=f"Lectura no conforme al schema: {e.message}"
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
     total = len(results)
     response = {
         "status": "success",
