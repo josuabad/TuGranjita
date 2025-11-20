@@ -9,6 +9,10 @@ servers:
     description: Servidor CRM local (FastAPI puerto 8001)
   - url: http://localhost:8002
     description: Servidor IoT local (FastAPI puerto 8002)
+  - url: http://localhost:3001
+    description: Servidor CRM local (Node puerto 3001)
+  - url: http://localhost:3002
+    description: Servidor IoT local (Node puerto 3002)
 
 paths:
   /clientes:
