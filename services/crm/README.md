@@ -55,11 +55,12 @@ npm install
 npm run start
 ```
 
+Si eso no funciona, prueba a ejecutar `node services/iot/index.js` desde la raíz de el directorio raíz
+
 ### Dependencias Recomendadas
 
 - `express`: Para la definición de rutas.
 - `ajv`: Para la validación de objetos contra su JSON Schema.
-
 
 ## Pruebas con CURL
 
