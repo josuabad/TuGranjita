@@ -2,8 +2,6 @@
 
 Este documento resume los contratos (endpoints, parámetros, respuestas) expuestos por los servicios incluidos en el repositorio y aporta ejemplos prácticos.
 
-## Python
-
 ### Convenciones
 
 - Todos los endpoints devuelven `application/json`.
@@ -13,7 +11,7 @@ Este documento resume los contratos (endpoints, parámetros, respuestas) expuest
 
 ### CRM - Clientes
 
-Base URL de ejemplo: `http://localhost:8000`
+Base URL de ejemplo: `http://localhost:8001`
 
 #### GET /clientes
 
@@ -80,6 +78,8 @@ Respuesta 404:
 ---
 
 ### IoT - Sensores y Lecturas
+
+Base URL de ejemplo: `http://localhost:8002`
 
 #### GET /sensores
 
@@ -166,13 +166,3 @@ Ejemplo (respuesta):
 
 1. Abrir `app/docs/openapi.yaml` en un editor/visualizador (Swagger UI, Redoc o editor online como editor.swagger.io).
 2. Para probar localmente con los servicios, arrancar los FastAPI apps (por ejemplo `uvicorn app.services.crm.main:app --reload --port 8000` y `uvicorn app.services.iot.main:app --reload --port 8000` en tapas separadas o adaptar puertos) y usar la URL `http://localhost:8000`.
-
----
-
-Si quieres, puedo además:
-
-- Generar un archivo JSON de OpenAPI además del YAML.
-- Añadir ejemplos de peticiones curl/PowerShell para cada endpoint.
-- Integrar la spec en un Swagger UI estático en `app/docs`.
-
-Fin del documento.
