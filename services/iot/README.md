@@ -1,6 +1,5 @@
 # Iot Mini
 
-
 ## Contexto
 
 Nuestra empresa (TuGranjita.com) va a desarrollar los sistemas tecnológicos de integración para una granja que actualmente está operando de manera muy rudimentaria y poco automatizada.
@@ -86,6 +85,8 @@ npm install
 # Ejecutar el servidor
 npm run start
 ```
+
+Si eso no funciona, prueba a ejecutar `node services/iot/index.js` desde la raíz de el directorio raíz
 
 ### Dependencias Recomendadas
 
