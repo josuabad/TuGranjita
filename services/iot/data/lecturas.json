@@ -1,0 +1,481 @@
+[
+  {
+    "id_lectura": "L-20251027-001",
+    "id_sensor": "S-TEMP-04",
+    "valor": 22.5,
+    "unidad": "C",
+    "timestamp": "2025-10-27T10:00:00Z",
+    "nivel_bateria": 95
+  },
+  {
+    "id_lectura": "L-20251027-002",
+    "id_sensor": "S-HUM-01",
+    "valor": 65.2,
+    "unidad": "%RH",
+    "timestamp": "2025-10-27T10:05:00Z",
+    "nivel_bateria": 88
+  },
+  {
+    "id_lectura": "L-20251027-003",
+    "id_sensor": "S-PRES-12",
+    "valor": 1012.3,
+    "unidad": "hPa",
+    "timestamp": "2025-10-27T10:10:00Z",
+    "nivel_bateria": 100
+  },
+  {
+    "id_lectura": "L-20251027-004",
+    "id_sensor": "S-TEMP-04",
+    "valor": 22.6,
+    "unidad": "C",
+    "timestamp": "2025-10-27T10:15:00Z",
+    "nivel_bateria": 94
+  },
+  {
+    "id_lectura": "L-20251027-005",
+    "id_sensor": "S-GAS-07",
+    "valor": 450.0,
+    "unidad": "ppm",
+    "timestamp": "2025-10-27T10:20:00Z",
+    "nivel_bateria": 75
+  },
+  {
+    "id_lectura": "L-20251027-006",
+    "id_sensor": "S-HUM-01",
+    "valor": 65.5,
+    "unidad": "%RH",
+    "timestamp": "2025-10-27T10:25:00Z",
+    "nivel_bateria": 87
+  },
+  {
+    "id_lectura": "L-20251027-007",
+    "id_sensor": "S-LUX-03",
+    "valor": 780.0,
+    "unidad": "Lux",
+    "timestamp": "2025-10-27T10:30:00Z",
+    "nivel_bateria": 60
+  },
+  {
+    "id_lectura": "L-20251027-008",
+    "id_sensor": "S-TEMP-04",
+    "valor": 22.4,
+    "unidad": "C",
+    "timestamp": "2025-10-27T10:35:00Z"
+  },
+  {
+    "id_lectura": "L-20251027-009",
+    "id_sensor": "S-PRES-12",
+    "valor": 1012.5,
+    "unidad": "hPa",
+    "timestamp": "2025-10-27T10:40:00Z",
+    "nivel_bateria": 99
+  },
+  {
+    "id_lectura": "L-20251027-010",
+    "id_sensor": "S-TEMP-04",
+    "valor": 22.7,
+    "unidad": "C",
+    "timestamp": "2025-10-27T10:45:00Z",
+    "nivel_bateria": 93
+  },
+  {
+    "id_lectura": "L-001",
+    "id_sensor": "S-TEMP-OUT-01",
+    "valor": 19.5,
+    "unidad": "C",
+    "timestamp": "2025-10-27T11:00:00Z",
+    "nivel_bateria": 92
+  },
+  {
+    "id_lectura": "L-002",
+    "id_sensor": "S-HUM-INT-02",
+    "valor": 61.2,
+    "unidad": "%RH",
+    "timestamp": "2025-10-27T11:01:00Z",
+    "nivel_bateria": 78
+  },
+  {
+    "id_lectura": "L-003",
+    "id_sensor": "S-PH-05",
+    "valor": 7.05,
+    "unidad": "pH",
+    "timestamp": "2025-10-27T11:02:00Z",
+    "nivel_bateria": 99
+  },
+  {
+    "id_lectura": "L-004",
+    "id_sensor": "S-MOV-PAS-03",
+    "valor": 0,
+    "unidad": "Bool",
+    "timestamp": "2025-10-27T11:03:00Z",
+    "nivel_bateria": 85
+  },
+  {
+    "id_lectura": "L-005",
+    "id_sensor": "S-GPS-VEH-A",
+    "valor": 45.5,
+    "unidad": "km/h",
+    "timestamp": "2025-10-27T11:04:00Z",
+    "nivel_bateria": 67
+  },
+  {
+    "id_lectura": "L-006",
+    "id_sensor": "S-MOV-ENT-09",
+    "valor": 1,
+    "unidad": "Bool",
+    "timestamp": "2025-10-27T11:05:00Z",
+    "nivel_bateria": 89
+  },
+  {
+    "id_lectura": "L-007",
+    "id_sensor": "S-ENERGIA-01",
+    "valor": 125.3,
+    "unidad": "kWh",
+    "timestamp": "2025-10-27T11:06:00Z",
+    "nivel_bateria": 94
+  },
+  {
+    "id_lectura": "L-008",
+    "id_sensor": "S-TEMP-OUT-01",
+    "valor": 19.7,
+    "unidad": "C",
+    "timestamp": "2025-10-27T11:07:00Z",
+    "nivel_bateria": 91
+  },
+  {
+    "id_lectura": "L-009",
+    "id_sensor": "S-HUM-INT-02",
+    "valor": 61.5,
+    "unidad": "%RH",
+    "timestamp": "2025-10-27T11:08:00Z",
+    "nivel_bateria": 77
+  },
+  {
+    "id_lectura": "L-010",
+    "id_sensor": "S-PH-05",
+    "valor": 7.03,
+    "unidad": "pH",
+    "timestamp": "2025-10-27T11:09:00Z",
+    "nivel_bateria": 99
+  },
+  {
+    "id_lectura": "L-011",
+    "id_sensor": "S-MOV-PAS-03",
+    "valor": 0,
+    "unidad": "Bool",
+    "timestamp": "2025-10-27T11:10:00Z",
+    "nivel_bateria": 84
+  },
+  {
+    "id_lectura": "L-012",
+    "id_sensor": "S-GPS-VEH-A",
+    "valor": 55.0,
+    "unidad": "km/h",
+    "timestamp": "2025-10-27T11:11:00Z",
+    "nivel_bateria": 66
+  },
+  {
+    "id_lectura": "L-013",
+    "id_sensor": "S-MOV-ENT-09",
+    "valor": 0,
+    "unidad": "Bool",
+    "timestamp": "2025-10-27T11:12:00Z",
+    "nivel_bateria": 88
+  },
+  {
+    "id_lectura": "L-014",
+    "id_sensor": "S-ENERGIA-01",
+    "valor": 126.1,
+    "unidad": "kWh",
+    "timestamp": "2025-10-27T11:13:00Z",
+    "nivel_bateria": 93
+  },
+  {
+    "id_lectura": "L-015",
+    "id_sensor": "S-TEMP-OUT-01",
+    "valor": 19.9,
+    "unidad": "C",
+    "timestamp": "2025-10-27T11:14:00Z",
+    "nivel_bateria": 91
+  },
+  {
+    "id_lectura": "L-016",
+    "id_sensor": "S-HUM-INT-02",
+    "valor": 61.8,
+    "unidad": "%RH",
+    "timestamp": "2025-10-27T11:15:00Z",
+    "nivel_bateria": 77
+  },
+  {
+    "id_lectura": "L-017",
+    "id_sensor": "S-PH-05",
+    "valor": 7.04,
+    "unidad": "pH",
+    "timestamp": "2025-10-27T11:16:00Z",
+    "nivel_bateria": 98
+  },
+  {
+    "id_lectura": "L-018",
+    "id_sensor": "S-MOV-PAS-03",
+    "valor": 0,
+    "unidad": "Bool",
+    "timestamp": "2025-10-27T11:17:00Z",
+    "nivel_bateria": 84
+  },
+  {
+    "id_lectura": "L-019",
+    "id_sensor": "S-GPS-VEH-A",
+    "valor": 68.2,
+    "unidad": "km/h",
+    "timestamp": "2025-10-27T11:18:00Z",
+    "nivel_bateria": 66
+  },
+  {
+    "id_lectura": "L-020",
+    "id_sensor": "S-MOV-ENT-09",
+    "valor": 0,
+    "unidad": "Bool",
+    "timestamp": "2025-10-27T11:19:00Z",
+    "nivel_bateria": 88
+  },
+  {
+    "id_lectura": "L-021",
+    "id_sensor": "S-ENERGIA-01",
+    "valor": 126.8,
+    "unidad": "kWh",
+    "timestamp": "2025-10-27T11:20:00Z",
+    "nivel_bateria": 93
+  },
+  {
+    "id_lectura": "L-022",
+    "id_sensor": "S-TEMP-OUT-01",
+    "valor": 20.1,
+    "unidad": "C",
+    "timestamp": "2025-10-27T11:21:00Z",
+    "nivel_bateria": 90
+  },
+  {
+    "id_lectura": "L-023",
+    "id_sensor": "S-HUM-INT-02",
+    "valor": 62.1,
+    "unidad": "%RH",
+    "timestamp": "2025-10-27T11:22:00Z",
+    "nivel_bateria": 76
+  },
+  {
+    "id_lectura": "L-024",
+    "id_sensor": "S-PH-05",
+    "valor": 7.02,
+    "unidad": "pH",
+    "timestamp": "2025-10-27T11:23:00Z",
+    "nivel_bateria": 98
+  },
+  {
+    "id_lectura": "L-025",
+    "id_sensor": "S-MOV-PAS-03",
+    "valor": 1,
+    "unidad": "Bool",
+    "timestamp": "2025-10-27T11:24:00Z",
+    "nivel_bateria": 83
+  },
+  {
+    "id_lectura": "L-026",
+    "id_sensor": "S-GPS-VEH-A",
+    "valor": 75.1,
+    "unidad": "km/h",
+    "timestamp": "2025-10-27T11:25:00Z",
+    "nivel_bateria": 65
+  },
+  {
+    "id_lectura": "L-027",
+    "id_sensor": "S-MOV-ENT-09",
+    "valor": 0,
+    "unidad": "Bool",
+    "timestamp": "2025-10-27T11:26:00Z",
+    "nivel_bateria": 87
+  },
+  {
+    "id_lectura": "L-028",
+    "id_sensor": "S-ENERGIA-01",
+    "valor": 127.5,
+    "unidad": "kWh",
+    "timestamp": "2025-10-27T11:27:00Z",
+    "nivel_bateria": 92
+  },
+  {
+    "id_lectura": "L-029",
+    "id_sensor": "S-TEMP-OUT-01",
+    "valor": 20.3,
+    "unidad": "C",
+    "timestamp": "2025-10-27T11:28:00Z",
+    "nivel_bateria": 90
+  },
+  {
+    "id_lectura": "L-030",
+    "id_sensor": "S-HUM-INT-02",
+    "valor": 62.4,
+    "unidad": "%RH",
+    "timestamp": "2025-10-27T11:29:00Z",
+    "nivel_bateria": 76
+  },
+  {
+    "id_lectura": "L-031",
+    "id_sensor": "S-PH-05",
+    "valor": 7.06,
+    "unidad": "pH",
+    "timestamp": "2025-10-27T11:30:00Z",
+    "nivel_bateria": 97
+  },
+  {
+    "id_lectura": "L-032",
+    "id_sensor": "S-MOV-PAS-03",
+    "valor": 0,
+    "unidad": "Bool",
+    "timestamp": "2025-10-27T11:31:00Z",
+    "nivel_bateria": 83
+  },
+  {
+    "id_lectura": "L-033",
+    "id_sensor": "S-GPS-VEH-A",
+    "valor": 80.5,
+    "unidad": "km/h",
+    "timestamp": "2025-10-27T11:32:00Z",
+    "nivel_bateria": 65
+  },
+  {
+    "id_lectura": "L-034",
+    "id_sensor": "S-MOV-ENT-09",
+    "valor": 1,
+    "unidad": "Bool",
+    "timestamp": "2025-10-27T11:33:00Z",
+    "nivel_bateria": 87
+  },
+  {
+    "id_lectura": "L-035",
+    "id_sensor": "S-ENERGIA-01",
+    "valor": 128.2,
+    "unidad": "kWh",
+    "timestamp": "2025-10-27T11:34:00Z",
+    "nivel_bateria": 92
+  },
+  {
+    "id_lectura": "L-036",
+    "id_sensor": "S-TEMP-OUT-01",
+    "valor": 20.5,
+    "unidad": "C",
+    "timestamp": "2025-10-27T11:35:00Z",
+    "nivel_bateria": 89
+  },
+  {
+    "id_lectura": "L-037",
+    "id_sensor": "S-HUM-INT-02",
+    "valor": 62.7,
+    "unidad": "%RH",
+    "timestamp": "2025-10-27T11:36:00Z",
+    "nivel_bateria": 75
+  },
+  {
+    "id_lectura": "L-038",
+    "id_sensor": "S-PH-05",
+    "valor": 7.01,
+    "unidad": "pH",
+    "timestamp": "2025-10-27T11:37:00Z",
+    "nivel_bateria": 97
+  },
+  {
+    "id_lectura": "L-039",
+    "id_sensor": "S-MOV-PAS-03",
+    "valor": 0,
+    "unidad": "Bool",
+    "timestamp": "2025-10-27T11:38:00Z",
+    "nivel_bateria": 82
+  },
+  {
+    "id_lectura": "L-040",
+    "id_sensor": "S-GPS-VEH-A",
+    "valor": 85.9,
+    "unidad": "km/h",
+    "timestamp": "2025-10-27T11:39:00Z",
+    "nivel_bateria": 64
+  },
+  {
+    "id_lectura": "L-041",
+    "id_sensor": "S-MOV-ENT-09",
+    "valor": 0,
+    "unidad": "Bool",
+    "timestamp": "2025-10-27T11:40:00Z",
+    "nivel_bateria": 86
+  },
+  {
+    "id_lectura": "L-042",
+    "id_sensor": "S-ENERGIA-01",
+    "valor": 128.9,
+    "unidad": "kWh",
+    "timestamp": "2025-10-27T11:41:00Z",
+    "nivel_bateria": 91
+  },
+  {
+    "id_lectura": "L-043",
+    "id_sensor": "S-TEMP-OUT-01",
+    "valor": 20.7,
+    "unidad": "C",
+    "timestamp": "2025-10-27T11:42:00Z",
+    "nivel_bateria": 89
+  },
+  {
+    "id_lectura": "L-044",
+    "id_sensor": "S-HUM-INT-02",
+    "valor": 63.0,
+    "unidad": "%RH",
+    "timestamp": "2025-10-27T11:43:00Z",
+    "nivel_bateria": 75
+  },
+  {
+    "id_lectura": "L-045",
+    "id_sensor": "S-PH-05",
+    "valor": 7.03,
+    "unidad": "pH",
+    "timestamp": "2025-10-27T11:44:00Z",
+    "nivel_bateria": 96
+  },
+  {
+    "id_lectura": "L-046",
+    "id_sensor": "S-MOV-PAS-03",
+    "valor": 0,
+    "unidad": "Bool",
+    "timestamp": "2025-10-27T11:45:00Z",
+    "nivel_bateria": 82
+  },
+  {
+    "id_lectura": "L-047",
+    "id_sensor": "S-GPS-VEH-A",
+    "valor": 92.3,
+    "unidad": "km/h",
+    "timestamp": "2025-10-27T11:46:00Z",
+    "nivel_bateria": 64
+  },
+  {
+    "id_lectura": "L-048",
+    "id_sensor": "S-MOV-ENT-09",
+    "valor": 0,
+    "unidad": "Bool",
+    "timestamp": "2025-10-27T11:47:00Z",
+    "nivel_bateria": 86
+  },
+  {
+    "id_lectura": "L-049",
+    "id_sensor": "S-ENERGIA-01",
+    "valor": 129.5,
+    "unidad": "kWh",
+    "timestamp": "2025-10-27T11:48:00Z",
+    "nivel_bateria": 91
+  },
+  {
+    "id_lectura": "L-050",
+    "id_sensor": "S-TEMP-OUT-01",
+    "valor": 20.9,
+    "unidad": "C",
+    "timestamp": "2025-10-27T11:49:00Z",
+    "nivel_bateria": 88
+  }
+]
