@@ -63,6 +63,8 @@ El servicio debe responder con el código HTTP correcto y un cuerpo de error en 
 
 ### Uso
 
+Instala las dependencias con `pip install -r requirements.txt` y ejecuta el siguiente comando:
+
 ```bash
 # Desde el directorio raíz
 python -m uvicorn services.iot.main:app --host 127.0.0.1 --port 8002 --reload
