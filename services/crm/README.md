@@ -33,6 +33,8 @@ Objetivo principal: Implementar 2 servicios REST reales: CRM e IoT, ambos simula
 
 ### Uso
 
+Instala las dependencias con `pip install -r requirements.txt` y ejecuta el siguiente comando:
+
 ```bash
 # Desde el directorio raíz
 python -m uvicorn services.crm.main:app --host 127.0.0.1 --port 8001 --reload
