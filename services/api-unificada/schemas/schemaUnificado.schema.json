@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Unified API Schema",
+  "title": "JSON Schema Unificado",
   "type": "object",
   "oneOf": [
     {
@@ -39,14 +39,63 @@
           "items": {
             "type": "object",
             "properties": {
-              "ubicacionId": { "type": ["string"] },
-              "clientes": { "type": "integer" },
-              "sensores": { "type": "integer" },
-              "ultima_lectura": { "type": ["string", "null"] }
+              "sensor": { "type": "object" },
+              "lecturas": {
+                "type": "array",
+                "items": { "type": "object" }
+              }
             },
-            "required": ["ubicacionId", "clientes", "sensores"]
+            "required": ["sensor", "lecturas"]
           }
         }
+      },
+      "required": ["type", "data"]
+    },
+    {
+      "properties": {
+        "type": { "const": "clientes" },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "nombre": { "type": ["string", "null"] },
+              "correo_electronico": { "type": ["string", "null"] }
+            },
+            "required": ["nombre", "correo_electronico"]
+          }
+        }
+      },
+      "required": ["type", "data"]
+    },
+    {
+      "properties": {
+        "type": { "const": "proovedores" },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "nombre": { "type": ["string", "null"] },
+              "correo_electronico": { "type": ["string", "null"] }
+            },
+            "required": ["nombre", "correo_electronico"]
+          }
+        }
+      },
+      "required": ["type", "data"]
+    },
+    {
+      "properties": {
+        "type": { "const": "cliente_detalle" },
+        "data": { "type": "object" }
+      },
+      "required": ["type", "data"]
+    },
+    {
+      "properties": {
+        "type": { "const": "proveedor_detalle" },
+        "data": { "type": "object" }
       },
       "required": ["type", "data"]
     }
