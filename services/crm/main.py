@@ -1,3 +1,31 @@
+"""
+======================================================================================
+Nombre:
+services/crm/main.py
+
+Descripcion:
+Este paquete implementa un servicio CRM (Customer Relationship Management) que expone endpoints HTTP para la gestión y consulta de clientes.
+Agrupa funciones para la lectura, filtrado, validación y paginación de datos de clientes, asegurando el cumplimiento de esquemas JSON y la correcta validación de parámetros de entrada.
+
+Detalle:
+    - load_clients(): Carga y devuelve la lista de clientes desde el archivo JSON.
+    - load_schema(): Carga y devuelve el esquema JSON para validación.
+    - validate_client(obj): Valida un objeto cliente contra el esquema JSON.
+    - validation_exception_handler(request, exc): Manejador de excepciones para errores de validación de solicitudes.
+    - get_clientes(q, page, pageSize, ubicacionId): Endpoint para listar clientes con búsqueda, paginación y filtro por ubicación.
+    - get_cliente(cliente_id): Endpoint para obtener un cliente específico por su ID.
+    - validate_all_clients(): Valida todos los clientes y retorna la cantidad validada.
+
+---------------------------------------------------------------------------
+
+HISTORICO DE CAMBIOS:
+ISSUE         AUTOR              FECHA                   DESCRIPCION
+--------      ---------          ---------------         ----------------------------------------------------------------------------------
+I002          ***                23-11-2025              Modificaciones para validación y paginación en el endpoint /clientes
+
+======================================================================================
+"""
+
 from typing import List, Optional, Dict, Any
 from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.responses import JSONResponse
@@ -16,18 +44,39 @@ app = FastAPI(title="CRM Mini (clientes)")
 
 
 def load_clients() -> List[Dict[str, Any]]:
+    """Carga y devuelve la lista de clientes desde el archivo JSON de datos.
+
+    Returns:
+        List[Dict[str, Any]]: Lista de objetos cliente leídos desde DATA_FILE.
+    Raises:
+        Exception: Propaga errores de lectura/parseo del fichero.
+    """
     # Carga y devuelve la lista de clientes desde el JSON
     with DATA_FILE.open("r", encoding="utf-8") as file:
         return json.load(file)
 
 
 def load_schema() -> Dict[str, Any]:
+    """Carga y devuelve el esquema JSON usado para validar clientes.
+
+    Returns:
+        Dict[str, Any]: Esquema JSON leído desde SCHEMA_FILE.
+    Raises:
+        Exception: Propaga errores de lectura/parseo del fichero de esquemas.
+    """
     # Carga y devuelve el esquema JSON desde el archivo
     with SCHEMA_FILE.open("r", encoding="utf-8") as file:
         return json.load(file)
 
 
 def validate_client(obj: Dict[str, Any]) -> None:
+    """Valida un objeto cliente contra el esquema JSON cargado.
+
+    Args:
+        obj (Dict[str, Any]): Objeto cliente a validar.
+    Raises:
+        jsonschema.ValidationError: Si el objeto no cumple el esquema.
+    """
     # Valida un objeto cliente contra el esquema JSON
     schema = load_schema()
     validate(instance=obj, schema=schema)
@@ -35,6 +84,10 @@ def validate_client(obj: Dict[str, Any]) -> None:
 
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request: Request, exc: RequestValidationError):
+    """Manejador de excepciones para errores de validación de petición (FastAPI).
+
+    Devuelve una respuesta JSON con detalles del error de validación y el body.
+    """
     return JSONResponse(
         status_code=HTTP_400_BAD_REQUEST,
         content={"detail": exc.errors(), "body": exc.body},
@@ -48,6 +101,15 @@ def get_clientes(
     pageSize: int = Query(25, ge=1, le=100),
     ubicacionId: Optional[str] = Query(None),
 ):
+    """Endpoint para listar clientes.
+
+    Soporta:
+      - q: búsqueda en nombre y correo (case-insensitive).
+      - page, pageSize: paginación (page >=1, 1<=pageSize<=100).
+      - ubicacionId: filtro por campo direccion.
+
+    Valida cada objeto de la página resultante contra el esquema antes de devolver.
+    """
     # Listar clientes con búsqueda, paginación y filtro por ubicación
 
     try:
@@ -99,6 +161,11 @@ def get_clientes(
 
 @app.get("/clientes/{cliente_id}")
 def get_cliente(cliente_id: str):
+    """Endpoint para obtener un cliente por su ID.
+
+    Valida el parámetro de ruta y el objeto cliente contra el esquema.
+    Devuelve 404 si no se encuentra.
+    """
     try:
         clients = load_clients()
     except Exception as e:
@@ -124,6 +191,13 @@ def get_cliente(cliente_id: str):
 
 
 def validate_all_clients() -> int:
+    """Valida todos los clientes del fichero y devuelve el recuento validado.
+
+    Returns:
+        int: Número de clientes validados.
+    Raises:
+        jsonschema.ValidationError: Si alguno de los clientes no cumple el esquema.
+    """
     """
     Helper for quick sanity check: validates all clients and returns the count validated.
     Raises ValidationError on first invalid client.

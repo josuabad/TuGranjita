@@ -1,3 +1,30 @@
+/* 
+======================================================================================
+Nombre:
+services/crm/index.js
+
+Descripcion: 
+Este paquete implementa un servicio CRM (Customer Relationship Management) que expone endpoints HTTP para la gestión y consulta de clientes.
+Agrupa funciones para la lectura, filtrado, validación y paginación de datos de clientes, asegurando el cumplimiento de esquemas JSON y la correcta validación de parámetros de entrada.
+
+Detalle:
+  - readJson(filePath): Lee y parsea un archivo JSON desde disco.
+  - loadSchemas(): Carga y retorna el esquema JSON de ClienteProveedor.
+  - loadData(): Carga y retorna los datos de clientes desde un archivo JSON.
+  - parsePositiveInt(value, fallback): Parsea un valor como entero positivo, o retorna un valor por defecto.
+  - isPositiveIntString(value): Verifica si una cadena representa un entero positivo.
+  - isNonEmptyString(value): Verifica si una cadena no está vacía.
+
+---------------------------------------------------------------------------
+
+HISTORICO DE CAMBIOS:
+ISSUE         AUTOR              FECHA                   DESCRIPCION
+--------      ---------          ---------------         ----------------------------------------------------------------------------------
+I002          ***                23-11-2025              Modificaciones para validación y paginación en el endpoint /clientes
+
+======================================================================================
+*/
+
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
@@ -10,6 +37,12 @@ const BASE_DIR = path.resolve(__dirname, "..", "..");
 const SCHEMAS_DIR = path.join(BASE_DIR, "schemas");
 const DATA_DIR = path.join(__dirname, "data");
 
+/**
+ * Lee y parsea un archivo JSON desde disco.
+ * @param {string} filePath - Ruta al archivo JSON.
+ * @returns {any} Objeto resultante del parseo JSON.
+ * @throws {Error} Error con propiedad status=500 si ocurre un error de lectura o parseo.
+ */
 function readJson(filePath) {
   try {
     const raw = fs.readFileSync(filePath, "utf8");
@@ -21,6 +54,11 @@ function readJson(filePath) {
   }
 }
 
+/**
+ * Carga y retorna los esquemas JSON necesarios (ClienteProveedor).
+ * @returns {{lecturaSchema: Object}} Objeto con los esquemas cargados.
+ * @throws {Error} Propaga errores de lectura desde readJson.
+ */
 function loadSchemas() {
   const lecturaSchema = readJson(
     path.join(SCHEMAS_DIR, "ClienteProveedor.schema.json")
@@ -28,6 +66,11 @@ function loadSchemas() {
   return { lecturaSchema };
 }
 
+/**
+ * Carga y retorna los datos de clientes desde el directorio de datos.
+ * @returns {Array<Object>} Lista de clientes.
+ * @throws {Error} Propaga errores de lectura desde readJson.
+ */
 function loadData() {
   const clientes = readJson(path.join(DATA_DIR, "clientes.json"));
   return clientes;
@@ -44,17 +87,30 @@ function parsePositiveInt(value, fallback) {
   return Number.isFinite(n) && n > 0 ? n : fallback;
 }
 
-// nueva: comprueba que un valor de query sea una cadena que represente un entero positivo
+/**
+ * Comprueba si una cadena representa un entero positivo (sin signo).
+ * @param {any} value - Valor a comprobar.
+ * @returns {boolean} True si es una cadena que representa un entero positivo.
+ */
 function isPositiveIntString(value) {
   if (typeof value !== "string") return false;
   return /^[1-9]\d*$/.test(value);
 }
 
-// nueva: comprueba que una cadena no sea vacía
+/**
+ * Comprueba si un valor es una cadena no vacía (trimmed).
+ * @param {any} value - Valor a comprobar.
+ * @returns {boolean} True si es una cadena no vacía.
+ */
 function isNonEmptyString(value) {
   return typeof value === "string" && value.trim() !== "";
 }
 
+/**
+ * Handler GET /clientes
+ * Lista clientes con soporte de búsqueda (q), paginación (page,pageSize) y filtro por ubicacionId.
+ * Valida parámetros de query y cada cliente contra el esquema antes de devolver la página.
+ */
 app.get("/clientes", (req, res) => {
   const q = typeof req.query.q === "string" ? req.query.q : undefined;
   const ubicacionId =
@@ -154,6 +210,10 @@ app.get("/clientes", (req, res) => {
   return res.json({ total, page, pageSize, data: pageData });
 });
 
+/**
+ * Handler GET /clientes/:cliente_id
+ * Devuelve un cliente por su id. Valida el parámetro de ruta y el objeto cliente contra el esquema.
+ */
 app.get("/clientes/:cliente_id", (req, res) => {
   // validar parámetro de ruta
   const clienteId = req.params.cliente_id;
