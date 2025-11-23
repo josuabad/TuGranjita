@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Unified API Schema",
+  "type": "object",
+  "oneOf": [
+    {
+      "properties": {
+        "type": { "const": "detalle" },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "client": { "type": "object" },
+              "ubicacionId": { "type": ["string", "null"] },
+              "sensores": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "sensor": { "type": "object" },
+                    "lecturas": { "type": "array" }
+                  },
+                  "required": ["sensor", "lecturas"]
+                }
+              }
+            },
+            "required": ["client", "ubicacionId", "sensores"]
+          }
+        }
+      },
+      "required": ["type", "data"]
+    },
+    {
+      "properties": {
+        "type": { "const": "resumen" },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "ubicacionId": { "type": ["string"] },
+              "clientes": { "type": "integer" },
+              "sensores": { "type": "integer" },
+              "ultima_lectura": { "type": ["string", "null"] }
+            },
+            "required": ["ubicacionId", "clientes", "sensores"]
+          }
+        }
+      },
+      "required": ["type", "data"]
+    }
+  ]
+}
