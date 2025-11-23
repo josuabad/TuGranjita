@@ -1,3 +1,32 @@
+/* 
+======================================================================================
+Nombre:
+services/iot/index.js
+
+Descripcion: 
+Este paquete implementa un servicio IoT (Internet of Things) que expone endpoints HTTP para la gestión y consulta de sensores y lecturas de sensores.
+Incluye funciones para la lectura, filtrado, validación y paginación de datos de sensores y lecturas, asegurando el cumplimiento de esquemas JSON y la correcta validación de parámetros de entrada.
+
+Detalle:
+- readJson(filePath): Lee y parsea un archivo JSON desde el sistema de archivos.
+- loadSchemas(): Carga y retorna los esquemas JSON de sensores y lecturas.
+- loadData(): Carga y retorna los datos de sensores y lecturas desde archivos JSON.
+- parseIsoDatetime(value): Parsea y valida una fecha en formato ISO, lanzando error si es inválida.
+
+Endpoints HTTP definidos:
+- GET /sensores: Recupera y filtra sensores según parámetros de consulta (tipo, ubicacionId).
+- GET /lecturas: Recupera y filtra lecturas según parámetros de consulta (sensorId, ubicacionId, from, to, limit), incluyendo validación de fechas y paginación.
+
+---------------------------------------------------------------------------
+
+HISTORICO DE CAMBIOS:
+ISSUE         AUTOR              FECHA                   DESCRIPCION
+--------      ---------          ---------------         ----------------------------------------------------------------------------------
+I002          ***                23-11-2025              Implementación de endpoints y validaciones para sensores y lecturas IoT
+
+======================================================================================
+*/
+
 const express = require("express");
 const fs = require("fs");
 const path = require("path");

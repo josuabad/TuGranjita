@@ -1,3 +1,34 @@
+"""
+======================================================================================
+Nombre:
+services/iot/main.py
+
+Descripcion:
+Este paquete implementa un servicio IoT (Internet of Things) que expone endpoints HTTP para la gestión y consulta de sensores y lecturas de sensores.
+Incluye funciones para la lectura, filtrado, validación y paginación de datos de sensores y lecturas, asegurando el cumplimiento de esquemas JSON y la correcta validación de parámetros de entrada.
+
+Detalle:
+    - _load_json_file(path: Path): Lee y carga un archivo JSON desde el disco.
+    - load_schemas(): Carga y cachea los esquemas JSON de lectura y sensor.
+    - load_data(): Carga y cachea los datos de sensores y lecturas.
+    - parse_iso_datetime(value: str): Parsea una cadena ISO a objeto datetime.
+    - get_sensores(tipo: Optional[str], ubicacionId: Optional[str]): Endpoint GET /sensores, filtra y valida sensores.
+    - get_lecturas(sensorId: Optional[str], ubicacionId: Optional[str], from_: Optional[str], to: Optional[str], limit: int): Endpoint GET /lecturas, filtra, valida y pagina lecturas.
+
+Endpoints HTTP definidos:
+    - GET /sensores: Recupera y filtra sensores según parámetros de consulta (tipo, ubicacionId).
+    - GET /lecturas: Recupera y filtra lecturas según parámetros de consulta (sensorId, ubicacionId, from, to, limit), incluyendo validación de fechas y paginación.
+
+---------------------------------------------------------------------------
+
+HISTORICO DE CAMBIOS:
+ISSUE         AUTOR              FECHA                   DESCRIPCION
+--------      ---------          ---------------         ----------------------------------------------------------------------------------
+I002          ***                23-11-2025              Implementación de endpoints y validaciones para sensores y lecturas IoT
+
+======================================================================================
+"""
+
 from typing import List, Optional
 import json
 from pathlib import Path
