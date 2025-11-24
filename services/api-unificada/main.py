@@ -91,64 +91,6 @@ def call_service(url: str, params: Optional[Dict[str, Any]] = None) -> Any:
         raise HTTPException(status_code=502, detail=f"Error contacting {url}: {e}")
 
 
-# def enrich_client_with_iot(client: Dict[str, Any]) -> Dict[str, Any]:
-#     """
-#     Enriquecer los datos de un cliente con sensores y últimas lecturas asociadas a su ubicación.
-
-#     La función:
-#       - Extrae la 'direccion' del cliente como ubicacion.
-#       - Consulta el servicio IoT para obtener sensores de esa ubicación.
-#       - Para cada sensor obtiene las últimas lecturas (limitadas).
-#       - Devuelve un diccionario con la estructura {'client': client, 'ubicacionId': ..., 'sensores': [...]}.
-
-#     Args:
-#         client (Dict[str, Any]): Objeto cliente proveniente del CRM.
-
-#     Returns:
-#         Dict[str, Any]: Cliente enriquecido con información IoT y posibles indicadores de error.
-#     """
-#     ubicacion = client.get("direccion")
-#     result = {"client": client, "ubicacionId": ubicacion, "sensores": []}
-
-#     if not ubicacion:
-#         return result
-
-#     # Obtener sensores para la ubicación
-#     try:
-#         sensores_resp = call_service(
-#             f"{IOT_URL}/sensores", params={"ubicacionId": ubicacion}
-#         )
-#         sensores = (
-#             sensores_resp.get("sensores")
-#             if isinstance(sensores_resp, dict)
-#             else sensores_resp
-#         )
-#     except HTTPException:
-#         # IoT no disponible -> devolver cliente con sensores vacíos y anotar error
-#         result["iot_error"] = "no_response"
-#         return result
-
-#     # Para cada sensor, obtener últimas lecturas (limitadas)
-#     for s in sensores:
-#         sensor_id = s.get("id") or s.get("id_sensor")
-#         lecturas = []
-#         if sensor_id:
-#             try:
-#                 lecturas_resp = call_service(
-#                     f"{IOT_URL}/lecturas", params={"sensorId": sensor_id, "limit": 5}
-#                 )
-#                 lecturas = (
-#                     lecturas_resp.get("lecturas")
-#                     if isinstance(lecturas_resp, dict)
-#                     else lecturas_resp
-#                 )
-#             except HTTPException:
-#                 lecturas = []
-#         result["sensores"].append({"sensor": s, "lecturas": lecturas})
-
-#     return result
-
-
 def validate_unified(payload: Any) -> None:
     """
     Valida un payload contra el esquema JSON unificado cargado por load_unified_schema.
@@ -167,52 +109,6 @@ def validate_unified(payload: Any) -> None:
             status_code=500,
             detail=f"Respuesta no conforme al schema unificado: {ve.message}",
         )
-
-
-# @app.get("/clientes/detalle")
-# def clientes_detalle(cliente_id: Optional[str] = Query(None)):
-#     """
-#     Endpoint GET /clientes/detalle.
-
-#     Recupera uno o todos los clientes desde el CRM y los enriquece con información IoT.
-#     Parámetros:
-#       - cliente_id (opcional): Si se proporciona, se devuelve solo ese cliente.
-
-#     Returns:
-#         JSONResponse: Payload con tipo 'detalle' y la lista de clientes enriquecidos.
-
-#     Raises:
-#         HTTPException: Re-lanza errores provenientes del CRM o validación de esquema.
-#     """
-#     # Obtener clientes del CRM
-#     try:
-#         if cliente_id:
-#             crm_data = call_service(f"{CRM_URL}/clientes/{cliente_id}")
-#             clients = [crm_data]
-#         else:
-#             crm_resp = call_service(f"{CRM_URL}/clientes")
-#             # CRM puede devolver {data: [...]} o lista directa
-#             clients = (
-#                 crm_resp.get("data")
-#                 if isinstance(crm_resp, dict) and "data" in crm_resp
-#                 else crm_resp
-#             )
-#     except HTTPException as e:
-#         raise HTTPException(status_code=e.status_code, detail=f"CRM error: {e.detail}")
-
-#     enriched = []
-#     for c in clients:
-#         try:
-#             enriched.append(enrich_client_with_iot(c))
-#         except Exception as e:
-#             enriched.append({"client": c, "error": str(e)})
-
-#     payload = {"type": "detalle", "data": enriched}
-
-#     # Validar
-#     validate_unified(payload)
-
-#     return JSONResponse(payload)
 
 
 @app.get("/resumen")
@@ -314,51 +210,6 @@ def clientes():
     return JSONResponse(payload)
 
 
-@app.get("/proovedores")
-def proovedores():
-    """Recupera registros desde el CRM y devuelve sólo aquellos de tipo 'proveedor'.
-
-    Llama al endpoint del CRM para obtener la lista completa de registros. Filtra
-    los elementos cuyo campo 'tipo' (comparado case-insensitive) sea 'proveedor'
-    y construye una lista con los campos seleccionados:
-        {"nombre": ..., "correo_electronico": ...}
-
-    Compone un payload con {"type": "proovedores", "data": [...]}, lo valida contra
-    el esquema unificado y devuelve la respuesta.
-
-    Returns:
-        JSONResponse: Respuesta HTTP con el payload validado.
-
-    Raises:
-        HTTPException: Si la llamada al CRM falla o si la validación del esquema falla.
-    """
-    try:
-        crm_resp = call_service(f"{CRM_URL}/clientes")
-        clients = (
-            crm_resp.get("data")
-            if isinstance(crm_resp, dict) and "data" in crm_resp
-            else crm_resp
-        )
-    except HTTPException as e:
-        raise HTTPException(status_code=e.status_code, detail=f"CRM error: {e.detail}")
-
-    if not isinstance(clients, list):
-        clients = []
-
-    filtered = [
-        {"nombre": c.get("nombre"), "correo_electronico": c.get("correo_electronico")}
-        for c in clients
-        if (c.get("tipo") or "").lower() == "proveedor"
-    ]
-
-    payload = {"type": "proovedores", "data": filtered}
-
-    # Validar contra el schema unificado
-    validate_unified(payload)
-
-    return JSONResponse(payload)
-
-
 @app.get("/clientes/detalles/{cliente_nombre}")
 def cliente_detalle_por_nombre(cliente_nombre: str):
     """
@@ -406,21 +257,66 @@ def cliente_detalle_por_nombre(cliente_nombre: str):
     return JSONResponse(payload)
 
 
+@app.get("/proovedores")
+def proovedores():
+    """Recupera registros desde el CRM y devuelve sólo aquellos de tipo 'proveedor'.
+
+    Llama al endpoint del CRM para obtener la lista completa de registros. Filtra
+    los elementos cuyo campo 'tipo' (comparado case-insensitive) sea 'proveedor'
+    y construye una lista con los campos seleccionados:
+        {"nombre": ..., "correo_electronico": ...}
+
+    Compone un payload con {"type": "proovedores", "data": [...]}, lo valida contra
+    el esquema unificado y devuelve la respuesta.
+
+    Returns:
+        JSONResponse: Respuesta HTTP con el payload validado.
+
+    Raises:
+        HTTPException: Si la llamada al CRM falla o si la validación del esquema falla.
+    """
+    try:
+        crm_resp = call_service(f"{CRM_URL}/clientes")
+        clients = (
+            crm_resp.get("data")
+            if isinstance(crm_resp, dict) and "data" in crm_resp
+            else crm_resp
+        )
+    except HTTPException as e:
+        raise HTTPException(status_code=e.status_code, detail=f"CRM error: {e.detail}")
+
+    if not isinstance(clients, list):
+        clients = []
+
+    filtered = [
+        {"nombre": c.get("nombre"), "correo_electronico": c.get("correo_electronico")}
+        for c in clients
+        if (c.get("tipo") or "").lower() == "proveedor"
+    ]
+
+    payload = {"type": "proovedores", "data": filtered}
+
+    # Validar contra el schema unificado
+    validate_unified(payload)
+
+    return JSONResponse(payload)
+
+
 @app.get("/proovedores/detalles/{proveedor_nombre}")
 def proveedor_detalle_por_nombre(proveedor_nombre: str):
     """
     Recupera información detallada de un proveedor por su nombre.
 
-    Esta función consulta el servicio CRM para obtener una lista de clientes, filtra aquellos de tipo "proveedor",
+    Consulta el servicio CRM para obtener todos los registros, filtra aquellos de tipo "proveedor"
     y busca un proveedor cuyo nombre coincida con el `proveedor_nombre` proporcionado (ignorando mayúsculas/minúsculas).
-    Si se encuentra, valida y devuelve los detalles del proveedor en el formato de respuesta unificada de la API.
+    Si se encuentra, devuelve los detalles del proveedor junto con los sensores asociados (si aplica) en el formato de respuesta unificada.
     Si no se encuentra, o si ocurre un error al comunicarse con el CRM, se lanza una HTTPException.
 
     Args:
         proveedor_nombre (str): El nombre del proveedor a buscar.
 
     Returns:
-        JSONResponse: Una respuesta JSON que contiene los detalles del proveedor.
+        JSONResponse: Una respuesta JSON que contiene los detalles del proveedor y sus sensores asociados.
 
     Raises:
         HTTPException: Si ocurre un error con el servicio CRM o si el proveedor no es encontrado.
@@ -452,7 +348,28 @@ def proveedor_detalle_por_nombre(proveedor_nombre: str):
             status_code=404, detail=f"Proveedor '{proveedor_nombre}' no encontrado"
         )
 
-    payload = {"type": "proveedor_detalle", "data": match}
+    # Obtener sensores asociados a este proveedor
+    try:
+        sensores_resp = call_service(f"{IOT_URL}/sensores")
+        sensores = (
+            sensores_resp.get("sensores")
+            if isinstance(sensores_resp, dict) and "sensores" in sensores_resp
+            else sensores_resp
+        )
+    except HTTPException:
+        sensores = []
+
+    # Asociar sensores por campo proveedor (ajustar el campo según el modelo de datos real)
+    sensores_asociados = []
+    for s in sensores:
+        if s.get("id") in match.get("transacciones_detalladas"):
+            sensores_asociados.append(s)
+
+    payload = {
+        "type": "proveedor_detalle_con_sensores",
+        "data": {"proveedor": match, "sensores_asociados": sensores_asociados},
+    }
+
     validate_unified(payload)
     return JSONResponse(payload)
 
