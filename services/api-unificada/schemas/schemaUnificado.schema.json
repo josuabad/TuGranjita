@@ -98,6 +98,23 @@
         "data": { "type": "object" }
       },
       "required": ["type", "data"]
+    },
+    {
+      "properties": {
+        "type": { "const": "proveedor_detalle_con_sensores" },
+        "data": {
+          "type": "object",
+          "properties": {
+            "proveedor": { "type": "object" },
+            "sensores_asociados": {
+              "type": "array",
+              "items": { "type": "object" }
+            }
+          },
+          "required": ["proveedor", "sensores_asociados"]
+        }
+      },
+      "required": ["type", "data"]
     }
   ]
 }
