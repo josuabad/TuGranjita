@@ -10,14 +10,16 @@ Incluye funciones para la obtención, enriquecimiento y validación de datos pro
 Detalle:
     - load_unified_schema(): Carga el esquema JSON unificado para validar las respuestas.
     - call_service(url, params): Realiza llamadas HTTP a servicios externos con manejo de errores y timeout.
-    - enrich_client_with_iot(client): Enriquecer los datos de un cliente con información de sensores y lecturas IoT asociadas a su ubicación.
     - validate_unified(payload): Valida la respuesta contra el esquema unificado.
-    - Endpoint GET /clientes/detalle: Devuelve detalles de clientes enriquecidos con información IoT.
-    - Endpoint GET /resumen: Devuelve un resumen agregado por ubicación de clientes, sensores y últimas lecturas.
+    - Endpoints GET /resumen, /resumen/{sensor_id}, /clientes, /clientes/detalles/{cliente_nombre}, /proveedores, /proveedores/detalles/{proveedor_nombre}: Exponen datos integrados y validados de CRM e IoT.
 
 Endpoints HTTP definidos:
-    - GET /clientes/detalle: Recupera clientes (uno o todos) y los enriquece con sensores y lecturas IoT.
-    - GET /resumen: Devuelve un resumen por ubicación con conteos de clientes, sensores y última lectura.
+    - GET /resumen: Devuelve un resumen agregado de sensores y lecturas.
+    - GET /resumen/{sensor_id}: Devuelve las últimas lecturas de un sensor específico.
+    - GET /clientes: Lista clientes del CRM.
+    - GET /clientes/detalles/{cliente_nombre}: Detalle de cliente por nombre.
+    - GET /proveedores: Lista proveedores del CRM.
+    - GET /proveedores/detalles/{proveedor_nombre}: Detalle de proveedor y sensores asociados.
 
 ---------------------------------------------------------------------------
 
@@ -53,13 +55,13 @@ app = FastAPI(title="API Unificada")
 
 def load_unified_schema() -> Dict[str, Any]:
     """
-    Carga el esquema JSON unificado desde el archivo de esquema.
+    Load the unified JSON schema from file.
 
     Returns:
-        dict: El esquema JSON como diccionario.
+        dict: The unified JSON schema as a dictionary.
 
     Raises:
-        RuntimeError: Si ocurre un error al leer o parsear el archivo de esquema.
+        RuntimeError: If there is an error reading or parsing the schema file.
     """
     try:
         with SCHEMA_FILE.open("r", encoding="utf-8") as f:
@@ -70,17 +72,17 @@ def load_unified_schema() -> Dict[str, Any]:
 
 def call_service(url: str, params: Optional[Dict[str, Any]] = None) -> Any:
     """
-    Realiza una petición HTTP GET al servicio externo especificado y devuelve el cuerpo como JSON.
+    Make an HTTP GET request to an external service and return the JSON body.
 
     Args:
-        url (str): URL del servicio externo.
-        params (dict, opcional): Parámetros de consulta para la petición.
+        url (str): The external service URL.
+        params (dict, optional): Query parameters for the request.
 
     Returns:
-        dict | list: El contenido JSON devuelto por el servicio.
+        dict | list: The JSON content returned by the service.
 
     Raises:
-        HTTPException: Si ocurre un error de red, timeout o respuesta inválida.
+        HTTPException: If a network error, timeout, or invalid response occurs.
     """
     try:
         resp = requests.get(url, params=params, timeout=DEFAULT_TIMEOUT)
@@ -95,13 +97,13 @@ def call_service(url: str, params: Optional[Dict[str, Any]] = None) -> Any:
 
 def validate_unified(payload: Any) -> None:
     """
-    Valida un payload contra el esquema JSON unificado.
+    Validate a payload against the unified JSON schema.
 
     Args:
-        payload (Any): Estructura de datos a validar.
+        payload (Any): The data structure to validate.
 
     Raises:
-        HTTPException: Si la validación contra el esquema falla.
+        HTTPException: If validation against the schema fails.
     """
     schema = load_unified_schema()
     try:
@@ -116,13 +118,13 @@ def validate_unified(payload: Any) -> None:
 @app.get("/resumen")
 def resumen():
     """
-    Devuelve un resumen agregado de sensores y sus últimas lecturas desde el servicio IoT.
+    Return an aggregated summary of sensors and their latest readings from the IoT service.
 
     Returns:
-        JSONResponse: Respuesta HTTP con el resumen validado contra el esquema unificado.
+        JSONResponse: HTTP response with the summary validated against the unified schema.
 
     Raises:
-        HTTPException: Si ocurre un error de comunicación con servicios externos o de validación.
+        HTTPException: If there is a communication or validation error.
     """
     try:
         sensores_resp = call_service(f"{IOT_URL}/sensores")
@@ -164,17 +166,17 @@ def resumen():
 @app.get("/resumen/{sensor_id}")
 def resumen_sensor(sensor_id: str, q: int = Query(10, ge=1, le=100)):
     """
-    Devuelve las últimas 'q' lecturas del sensor especificado por su ID.
+    Return the latest 'q' readings for the specified sensor by ID.
 
     Args:
-        sensor_id (str): ID del sensor.
-        q (int): Número de lecturas a devolver (1-100, por defecto 10).
+        sensor_id (str): Sensor ID.
+        q (int): Number of readings to return (default 10, range 1-100).
 
     Returns:
-        JSONResponse: Respuesta HTTP con el sensor y sus últimas lecturas.
+        JSONResponse: HTTP response with the sensor and its latest readings.
 
     Raises:
-        HTTPException: Si el sensor no existe o ocurre un error de comunicación.
+        HTTPException: If the sensor does not exist or a communication error occurs.
     """
     # Obtener información del sensor
     try:
@@ -239,13 +241,13 @@ def resumen_sensor(sensor_id: str, q: int = Query(10, ge=1, le=100)):
 @app.get("/clientes")
 def clientes():
     """
-    Recupera registros desde el CRM y devuelve sólo aquellos de tipo 'cliente'.
+    Retrieve records from the CRM and return only those of type 'cliente'.
 
     Returns:
-        JSONResponse: Respuesta HTTP con la lista de clientes validada contra el esquema unificado.
+        JSONResponse: HTTP response with the list of clients validated against the unified schema.
 
     Raises:
-        HTTPException: Si la llamada al CRM falla o si la validación del esquema falla.
+        HTTPException: If the CRM call fails or schema validation fails.
     """
     try:
         crm_resp = call_service(f"{CRM_URL}/clientes", params={"pageSize": 100})
@@ -284,10 +286,10 @@ def cliente_detalle_por_nombre(cliente_nombre: str):
         cliente_nombre (str): Nombre del cliente a buscar.
 
     Returns:
-        JSONResponse: Respuesta JSON con los detalles del cliente.
+        JSONResponse: JSON response with client details.
 
     Raises:
-        HTTPException: Si ocurre un error al comunicarse con el CRM o si el cliente no es encontrado.
+        HTTPException: If there is a CRM communication error or the client is not found.
     """
     try:
         crm_resp = call_service(f"{CRM_URL}/clientes", params={"q": cliente_nombre})
@@ -308,13 +310,13 @@ def cliente_detalle_por_nombre(cliente_nombre: str):
 @app.get("/proveedores")
 def proveedores():
     """
-    Recupera registros desde el CRM y devuelve sólo aquellos de tipo 'proveedor'.
+    Retrieve records from the CRM and return only those of type 'proveedor'.
 
     Returns:
-        JSONResponse: Respuesta HTTP con la lista de proveedores validada contra el esquema unificado.
+        JSONResponse: HTTP response with the list of providers validated against the unified schema.
 
     Raises:
-        HTTPException: Si la llamada al CRM falla o si la validación del esquema falla.
+        HTTPException: If the CRM call fails or schema validation fails.
     """
     try:
         crm_resp = call_service(f"{CRM_URL}/clientes", params={"pageSize": 100})
@@ -347,16 +349,16 @@ def proveedores():
 @app.get("/proveedores/detalles/{proveedor_nombre}")
 def proveedor_detalle_por_nombre(proveedor_nombre: str):
     """
-    Recupera información detallada de un proveedor por su nombre, junto con sensores asociados.
+    Retrieve detailed information for a provider by name, along with associated sensors.
 
     Args:
-        proveedor_nombre (str): Nombre del proveedor a buscar.
+        proveedor_nombre (str): Name of the provider to search for.
 
     Returns:
-        JSONResponse: Respuesta JSON con los detalles del proveedor y sensores asociados.
+        JSONResponse: JSON response with provider details and associated sensors.
 
     Raises:
-        HTTPException: Si ocurre un error con el CRM o si el proveedor no es encontrado.
+        HTTPException: If there is a CRM error or the provider is not found.
     """
     try:
         crm_resp = call_service(f"{CRM_URL}/clientes", params={"q": proveedor_nombre})
