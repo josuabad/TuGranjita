@@ -5,34 +5,6 @@
   "oneOf": [
     {
       "properties": {
-        "type": { "const": "detalle" },
-        "data": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "client": { "type": "object" },
-              "ubicacionId": { "type": ["string", "null"] },
-              "sensores": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "sensor": { "type": "object" },
-                    "lecturas": { "type": "array" }
-                  },
-                  "required": ["sensor", "lecturas"]
-                }
-              }
-            },
-            "required": ["client", "ubicacionId", "sensores"]
-          }
-        }
-      },
-      "required": ["type", "data"]
-    },
-    {
-      "properties": {
         "type": { "const": "resumen" },
         "data": {
           "type": "array",
@@ -70,7 +42,14 @@
     },
     {
       "properties": {
-        "type": { "const": "proovedores" },
+        "type": { "const": "cliente_detalle" },
+        "data": { "oneOf": [{ "type": "object" }, { "type": "array" }] }
+      },
+      "required": ["type", "data"]
+    },
+    {
+      "properties": {
+        "type": { "const": "proveedores" },
         "data": {
           "type": "array",
           "items": {
@@ -87,31 +66,24 @@
     },
     {
       "properties": {
-        "type": { "const": "cliente_detalle" },
-        "data": { "type": "object" }
-      },
-      "required": ["type", "data"]
-    },
-    {
-      "properties": {
-        "type": { "const": "proveedor_detalle" },
-        "data": { "type": "object" }
-      },
-      "required": ["type", "data"]
-    },
-    {
-      "properties": {
         "type": { "const": "proveedor_detalle_con_sensores" },
         "data": {
-          "type": "object",
-          "properties": {
-            "proveedor": { "type": "object" },
-            "sensores_asociados": {
-              "type": "array",
-              "items": { "type": "object" }
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "proveedor": { "type": ["object", "array"] },
+                "sensores_asociados": {
+                  "type": "array",
+                  "items": { "type": "object" }
+                }
+              },
+              "required": ["proveedor", "sensores_asociados"]
+            },
+            {
+              "type": "array"
             }
-          },
-          "required": ["proveedor", "sensores_asociados"]
+          ]
         }
       },
       "required": ["type", "data"]
