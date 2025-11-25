@@ -16,12 +16,16 @@ Detalle:
     - get_cliente(cliente_id): Endpoint para obtener un cliente específico por su ID.
     - validate_all_clients(): Valida todos los clientes y retorna la cantidad validada.
 
+Endpoints HTTP definidos:
+    - GET /clientes: Lista clientes con soporte de búsqueda, paginación y filtro por ubicación.
+    - GET /clientes/:cliente_id: Recupera un cliente por su ID.
+
 ---------------------------------------------------------------------------
 
 HISTORICO DE CAMBIOS:
 ISSUE         AUTOR              FECHA                   DESCRIPCION
 --------      ---------          ---------------         ----------------------------------------------------------------------------------
-I002          ***                23-11-2025              Modificaciones para validación y paginación en el endpoint /clientes
+I002          JAO                23-11-2025              Modificaciones para validación y paginación en el endpoint /clientes
 
 ======================================================================================
 """

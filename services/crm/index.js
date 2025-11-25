@@ -15,12 +15,16 @@ Detalle:
   - isPositiveIntString(value): Verifica si una cadena representa un entero positivo.
   - isNonEmptyString(value): Verifica si una cadena no está vacía.
 
+Endpoints HTTP definidos:
+  - GET /clientes: Lista clientes con soporte de búsqueda, paginación y filtro por ubicación.
+  - GET /clientes/:cliente_id: Recupera un cliente por su ID.
+
 ---------------------------------------------------------------------------
 
 HISTORICO DE CAMBIOS:
 ISSUE         AUTOR              FECHA                   DESCRIPCION
 --------      ---------          ---------------         ----------------------------------------------------------------------------------
-I002          ***                23-11-2025              Modificaciones para validación y paginación en el endpoint /clientes
+I002          JAO                23-11-2025              Modificaciones para validación y paginación en el endpoint /clientes
 
 ======================================================================================
 */
