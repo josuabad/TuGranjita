@@ -25,6 +25,23 @@
     },
     {
       "properties": {
+        "type": { "const": "resumen_sensor" },
+        "data": {
+          "type": "object",
+          "properties": {
+            "sensor": { "type": "object" },
+            "lecturas": {
+              "type": "array",
+              "items": { "type": "object" }
+            }
+          },
+          "required": ["sensor", "lecturas"]
+        }
+      },
+      "required": ["type", "data"]
+    },
+    {
+      "properties": {
         "type": { "const": "clientes" },
         "data": {
           "type": "array",
