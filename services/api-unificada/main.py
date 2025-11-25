@@ -34,11 +34,12 @@ from typing import Any, Dict, List, Optional
 import os
 import requests
 from requests.exceptions import RequestException, Timeout
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import JSONResponse
 import json
 from pathlib import Path
 from jsonschema import validate, ValidationError
+from dateutil import parser as date_parser
 
 BASE_DIR = Path(__file__).resolve().parent
 SCHEMA_FILE = BASE_DIR / "schemas" / "schemaUnificado.schema.json"
@@ -154,6 +155,81 @@ def resumen():
         data.append({"sensor": s, "lecturas": lecturas})
 
     payload = {"type": "resumen", "data": data}
+
+    validate_unified(payload)
+
+    return JSONResponse(payload)
+
+
+@app.get("/resumen/{sensor_id}")
+def resumen_sensor(sensor_id: str, q: int = Query(10, ge=1, le=100)):
+    """
+    Devuelve las últimas 'q' lecturas del sensor especificado por su ID.
+
+    Args:
+        sensor_id (str): ID del sensor.
+        q (int): Número de lecturas a devolver (1-100, por defecto 10).
+
+    Returns:
+        JSONResponse: Respuesta HTTP con el sensor y sus últimas lecturas.
+
+    Raises:
+        HTTPException: Si el sensor no existe o ocurre un error de comunicación.
+    """
+    # Obtener información del sensor
+    try:
+        sensores_resp = call_service(f"{IOT_URL}/sensores")
+        sensores = (
+            sensores_resp.get("sensores")
+            if isinstance(sensores_resp, dict) and "sensores" in sensores_resp
+            else sensores_resp
+        )
+    except HTTPException:
+        raise HTTPException(
+            status_code=404, detail=f"Sensor '{sensor_id}' no encontrado"
+        )
+
+    sensor = None
+    for s in sensores:
+        if s.get("id") == sensor_id:
+            sensor = s
+            break
+
+    if not sensor:
+        raise HTTPException(
+            status_code=404, detail=f"Sensor '{sensor_id}' no encontrado"
+        )
+
+    # Obtener lecturas del sensor
+    lecturas = []
+    try:
+        lect_resp = call_service(
+            f"{IOT_URL}/lecturas", params={"sensorId": sensor_id, "limit": 1000}
+        )
+        lecturas = (
+            lect_resp.get("lecturas")
+            if isinstance(lect_resp, dict) and "lecturas" in lect_resp
+            else lect_resp
+        )
+    except HTTPException:
+        lecturas = []
+
+    # Ordenar por timestamp descendente (más recientes primero)
+    try:
+        lecturas.sort(
+            key=lambda x: date_parser.isoparse(x.get("timestamp", "")), reverse=True
+        )
+    except Exception:
+        # Si hay error en timestamp, devolver sin ordenar
+        pass
+
+    # Tomar las primeras q lecturas
+    ultimas_lecturas = lecturas[:q]
+
+    payload = {
+        "type": "resumen_sensor",
+        "data": {"sensor": sensor, "lecturas": ultimas_lecturas},
+    }
 
     validate_unified(payload)
 

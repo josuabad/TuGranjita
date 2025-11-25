@@ -9,6 +9,7 @@ Principales endpoints añadidos:
 - `GET /clientes/detalles/{cliente_nombre}` — Devuelve toda la información del cliente cuyo `nombre` coincide exactamente (case-insensitive). Respuesta: `{ "type": "cliente_detalle", "data": { ... objeto cliente completo ... } }`.
 - `GET /proveedores/detalles/{proveedor_nombre}` — Devuelve toda la información del proveedor por nombre (case-insensitive), incluyendo sensores asociados. Respuesta: `{ "type": "proveedor_detalle_con_sensores", "data": { "proveedor": {...}, "sensores_asociados": [...] } }`.
 - `GET /resumen` — Devuelve resumen por ubicación con sensores y lecturas.
+- `GET /resumen/{sensor_id}?q={numero}` — Devuelve las últimas 'q' lecturas del sensor especificado por su ID. Parámetro 'q' es entero entre 1 y 100 (por defecto 10). Respuesta: `{ "type": "resumen_sensor", "data": { "sensor": {...}, "lecturas": [...] } }`.
 
 Notas sobre comportamiento:
 
@@ -48,6 +49,9 @@ curl "http://localhost:4000/proveedores/detalles/GlobalTech%20Proveedores"
 
 # Resumen de sensores y lecturas
 curl "http://localhost:4000/resumen"
+
+# Últimas 5 lecturas del sensor S-TEMP-OUT-01
+curl "http://localhost:4000/resumen/S-TEMP-OUT-01?q=5"
 ```
 
 Si necesitas que la búsqueda por nombre sea parcial, acepte aliases o corrija la ortografía de la ruta `/proveedores` a `/proveedores`, puedo implementarlo.
