@@ -1,3 +1,32 @@
+/* 
+======================================================================================
+Nombre:
+services/iot/index.js
+
+Descripcion: 
+Este paquete implementa un servicio IoT (Internet of Things) que expone endpoints HTTP para la gestión y consulta de sensores y lecturas de sensores.
+Incluye funciones para la lectura, filtrado, validación y paginación de datos de sensores y lecturas, asegurando el cumplimiento de esquemas JSON y la correcta validación de parámetros de entrada.
+
+Detalle:
+- readJson(filePath): Lee y parsea un archivo JSON desde el sistema de archivos.
+- loadSchemas(): Carga y retorna los esquemas JSON de sensores y lecturas.
+- loadData(): Carga y retorna los datos de sensores y lecturas desde archivos JSON.
+- parseIsoDatetime(value): Parsea y valida una fecha en formato ISO, lanzando error si es inválida.
+
+Endpoints HTTP definidos:
+- GET /sensores: Recupera y filtra sensores según parámetros de consulta (tipo, ubicacionId).
+- GET /lecturas: Recupera y filtra lecturas según parámetros de consulta (sensorId, ubicacionId, from, to, limit), incluyendo validación de fechas y paginación.
+
+---------------------------------------------------------------------------
+
+HISTORICO DE CAMBIOS:
+ISSUE         AUTOR              FECHA                   DESCRIPCION
+--------      ---------          ---------------         ----------------------------------------------------------------------------------
+I002          JAO                23-11-2025              Implementación de endpoints y validaciones para sensores y lecturas IoT
+
+======================================================================================
+*/
+
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
@@ -10,6 +39,13 @@ const BASE_DIR = path.resolve(__dirname, "..", "..");
 const SCHEMAS_DIR = path.join(BASE_DIR, "schemas");
 const DATA_DIR = path.join(__dirname, "data");
 
+/**
+ * Lee y parsea un archivo JSON desde el sistema de archivos.
+ *
+ * @param {string} filePath - Ruta absoluta o relativa al archivo JSON.
+ * @returns {any} Objeto JavaScript resultante del parseo del JSON.
+ * @throws {Error} Error con propiedad `status = 500` si la lectura o parseo falla.
+ */
 function readJson(filePath) {
   try {
     const raw = fs.readFileSync(filePath, "utf8");
@@ -21,6 +57,12 @@ function readJson(filePath) {
   }
 }
 
+/**
+ * Carga los esquemas JSON desde el directorio de esquemas.
+ *
+ * @returns {{lecturaSchema: object, sensorSchema: object}} Objetos con los esquemas de lectura y sensor.
+ * @throws {Error} Propaga errores de lectura de archivos con `status = 500`.
+ */
 function loadSchemas() {
   const lecturaSchema = readJson(
     path.join(SCHEMAS_DIR, "LecturaSensor.schema.json")
@@ -31,12 +73,25 @@ function loadSchemas() {
   return { lecturaSchema, sensorSchema };
 }
 
+/**
+ * Carga los datos de sensores y lecturas desde el directorio de datos.
+ *
+ * @returns {{sensores: Array<any>, lecturas: Array<any>}} Objetos con listas de sensores y lecturas.
+ * @throws {Error} Propaga errores de lectura de archivos con `status = 500`.
+ */
 function loadData() {
   const sensores = readJson(path.join(DATA_DIR, "sensores.json"));
   const lecturas = readJson(path.join(DATA_DIR, "lecturas.json"));
   return { sensores, lecturas };
 }
 
+/**
+ * Parsea y valida una cadena de fecha en formato ISO a un objeto Date.
+ *
+ * @param {string} value - Cadena en formato ISO (ej. "2025-11-23T12:34:56Z").
+ * @returns {Date} Instancia Date correspondiente.
+ * @throws {Error} Error con propiedad `status = 400` si la fecha es inválida.
+ */
 function parseIsoDatetime(value) {
   const d = new Date(value);
   if (Number.isNaN(d.getTime())) {
@@ -54,6 +109,13 @@ const { lecturaSchema, sensorSchema } = loadSchemas();
 const validateLectura = ajv.compile(lecturaSchema);
 const validateSensor = ajv.compile(sensorSchema);
 
+/**
+ * Manejador GET /sensores: filtra y valida sensores según query params.
+ *
+ * @param {import('express').Request} req - Objeto de petición Express.
+ * @param {import('express').Response} res - Objeto de respuesta Express.
+ * @returns {import('express').Response} Respuesta JSON con resultado o error.
+ */
 app.get("/sensores", (req, res) => {
   const tipo = typeof req.query.tipo === "string" ? req.query.tipo : undefined;
   const ubicacionId =
@@ -101,6 +163,14 @@ app.get("/sensores", (req, res) => {
   return res.json(response);
 });
 
+/**
+ * Manejador GET /lecturas: filtra lecturas por sensor, ubicación y rango temporal (from/to),
+ * valida límites y esquemas, y aplica paginación (limit).
+ *
+ * @param {import('express').Request} req - Objeto de petición Express.
+ * @param {import('express').Response} res - Objeto de respuesta Express.
+ * @returns {import('express').Response} Respuesta JSON con lecturas o error.
+ */
 app.get("/lecturas", (req, res) => {
   const sensorId =
     typeof req.query.sensorId === "string" ? req.query.sensorId : undefined;
