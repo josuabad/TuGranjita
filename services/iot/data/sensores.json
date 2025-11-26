@@ -1,0 +1,112 @@
+[
+  {
+    "id": "S-TEMP-OUT-01",
+    "nombre": "Sensor de Temperatura Exterior",
+    "tipo": "temperatura",
+    "ubicacion": "Techo del Edificio A",
+    "modelo": "DHT-22-Pro",
+    "fabricante": "TechSense Co.",
+    "unidad_medida": "C",
+    "rango_medicion": "-40 a 80 C",
+    "estado": "activo"
+  },
+  {
+    "id": "S-HUM-INT-02",
+    "nombre": "Sensor de Humedad Interior",
+    "tipo": "humedad",
+    "ubicacion": "Sala de Servidores 1",
+    "modelo": "HM-V3",
+    "fabricante": "EnviroGuard",
+    "unidad_medida": "%RH",
+    "rango_medicion": "0 a 100 %RH",
+    "estado": "activo"
+  },
+  {
+    "id": "S-PH-05",
+    "nombre": "Medidor de PH del Tanque",
+    "tipo": "ph",
+    "ubicacion": "Tanque de Agua Potable P1",
+    "modelo": "LiquidSense-500",
+    "fabricante": "AquaMetrics",
+    "unidad_medida": "pH",
+    "rango_medicion": "0 a 14 pH",
+    "estado": "activo"
+  },
+  {
+    "id": "S-MOV-PAS-03",
+    "nombre": "Detector de Movimiento Pasillo Central",
+    "tipo": "movimiento",
+    "ubicacion": "Pasillo Central, Nivel 2",
+    "modelo": "PIR-LITE",
+    "fabricante": "SecurityPlus",
+    "unidad_medida": "Detección",
+    "rango_medicion": "5 metros",
+    "estado": "activo"
+  },
+  {
+    "id": "S-GPS-VEH-A",
+    "nombre": "Localizador Vehículo A",
+    "tipo": "gps",
+    "ubicacion": "Flota de Vehículos",
+    "modelo": "GeoTrack-M8",
+    "fabricante": "Global Nav",
+    "unidad_medida": "Coordenadas",
+    "rango_medicion": "N/A",
+    "estado": "activo"
+  },
+  {
+    "id": "S-TEMP-SERVER-04",
+    "nombre": "Temperatura Sala de Servidores",
+    "tipo": "temperatura",
+    "ubicacion": "Sala de Servidores 2",
+    "modelo": "TS-4000",
+    "fabricante": "TechSense Co.",
+    "unidad_medida": "C",
+    "rango_medicion": "10 a 50 C",
+    "estado": "mantenimiento"
+  },
+  {
+    "id": "S-HUM-BODEGA-10",
+    "nombre": "Sensor de Humedad Bodega",
+    "tipo": "humedad",
+    "ubicacion": "Bodega Principal, Área Húmeda",
+    "modelo": "HM-V3",
+    "fabricante": "EnviroGuard",
+    "unidad_medida": "%RH",
+    "rango_medicion": "0 a 100 %RH",
+    "estado": "error"
+  },
+  {
+    "id": "S-PH-LAB-06",
+    "nombre": "Medidor de PH Laboratorio",
+    "tipo": "ph",
+    "ubicacion": "Laboratorio de Calidad",
+    "modelo": "LiquidSense-200",
+    "fabricante": "AquaMetrics",
+    "unidad_medida": "pH",
+    "rango_medicion": "0 a 14 pH",
+    "estado": "inactivo"
+  },
+  {
+    "id": "S-MOV-ENT-09",
+    "nombre": "Detector de Movimiento Entrada",
+    "tipo": "movimiento",
+    "ubicacion": "Entrada Principal, Nivel 1",
+    "modelo": "PIR-LITE",
+    "fabricante": "SecurityPlus",
+    "unidad_medida": "Detección",
+    "rango_medicion": "5 metros",
+    "estado": "activo"
+  },
+  {
+    "id": "S-ENERGIA-01",
+    "nombre": "Medidor de Energía Inteligente",
+    "tipo": "otro",
+    "ubicacion": "Panel Eléctrico General",
+    "modelo": "SmartMet-E5",
+    "fabricante": "Global Energy",
+    "unidad_medida": "kWh",
+    "rango_medicion": "0 a 1000 kWh",
+    "estado": "activo"
+  }
+]
