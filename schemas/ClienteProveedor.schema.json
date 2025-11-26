@@ -6,10 +6,27 @@
   "properties": {
     "id": { "type": "string" },
     "nombre": { "type": "string" },
+    "tipo": { "type": "string", "enum": ["cliente", "proveedor"] },
     "direccion": { "type": "string" },
     "nif": { "type": "string" },
     "correo_electronico": { "type": "string", "format": "email" },
-    "numero_telefono": { "type": "string", "pattern": "^[0-9+\\- ]{7,15}$" }
+    "numero_telefono": { "type": "string", "pattern": "^[0-9+\\- ]{7,15}$" },
+    "transacciones_detalladas": {
+      "type": "array",
+      "description": "Lista de identificadores (IDs) de las transacciones (compras/ventas) asociadas a este cliente/proveedor.",
+      "items": {
+        "type": "string",
+        "description": "ID único de una transacción."
+      },
+      "uniqueItems": true
+    }
   },
-  "required": ["id", "nombre", "nif"]
+  "required": [
+    "id",
+    "nombre",
+    "tipo",
+    "nif",
+    "correo_electronico",
+    "transacciones_detalladas"
+  ]
 }
