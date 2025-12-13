@@ -1,655 +1,1904 @@
 [
   {
-    "id": "C-1001",
-    "nombre": "Soluciones Tecnológicas S.L.",
-    "direccion": "Avda. de la Innovación, 45, 28005 Madrid",
-    "nif": "B87654321",
-    "correo_electronico": "ventas@soluciones-tech.es",
-    "numero_telefono": "+34911234567"
+    "id": "C001",
+    "nombre": "Acme Suministros S.L.",
+    "tipo": "cliente",
+    "direccion": "Calle Falsa 123, Madrid",
+    "nif": "B12345678",
+    "correo_electronico": "acme.suministros@example.com",
+    "numero_telefono": "+34 91 123 4567",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1002",
-    "nombre": "Distribuciones Alimentarias A.B.",
-    "nif": "A12345678"
+    "id": "P001",
+    "nombre": "GlobalTech Proveedores",
+    "tipo": "proveedor",
+    "direccion": "Avenida Siempre Viva 45",
+    "nif": "A87654321",
+    "correo_electronico": "contacto@globaltech.es",
+    "numero_telefono": "600-111-222",
+    "transacciones_detalladas": ["S-TEMP-OUT-01", "S-HUM-INT-02"]
   },
   {
-    "id": "C-1003",
-    "nombre": "Hardware Industrial, C.A.",
-    "direccion": "Pol. Ind. El Pino, Nave 12",
-    "nif": "J90123456",
-    "correo_electronico": "pedidos@hardware-ind.com",
-    "numero_telefono": "555-876-5432"
-  },
-  {
-    "id": "C-1004",
-    "nombre": "María López (Freelance)",
-    "nif": "48765432H",
-    "correo_electronico": "maria.lopez@ejemplo.net"
-  },
-  {
-    "id": "C-1005",
-    "nombre": "Proveedor de Servicios Globales",
-    "nif": "Z00000001",
-    "numero_telefono": "001-212-9876543"
-  },
-  {
-    "id": "C-1006",
-    "nombre": "Consultoría Financiera Atlántico",
-    "direccion": "Rúa do Comercio, 15, 15701 Santiago de Compostela",
-    "nif": "B56789012",
-    "correo_electronico": "info@cfa-es.com",
-    "numero_telefono": "+34981102030"
-  },
-  {
-    "id": "C-1007",
-    "nombre": "Tecnología Avanzada del Levante",
-    "nif": "A23456789",
-    "correo_electronico": "support@tal.net"
-  },
-  {
-    "id": "C-1008",
-    "nombre": "Distribuidora de Componentes Electrónicos",
-    "direccion": "Pol. Ind. Las Mercedes, Nave 5",
+    "id": "C002",
+    "nombre": "Innova Solutions",
+    "tipo": "cliente",
+    "direccion": "Plaza Mayor 5, Barcelona",
     "nif": "B98765432",
-    "numero_telefono": "918-555-444"
+    "correo_electronico": "ventas@innovasolutions.com",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1009",
-    "nombre": "Laura Pérez (Diseñadora)",
-    "nif": "54321098P",
-    "correo_electronico": "laura.perez.design@ejemplo.com",
-    "numero_telefono": "677 123 456"
-  },
-  {
-    "id": "C-1010",
-    "nombre": "Logística y Transporte Rápido S.A.",
+    "id": "P002",
+    "nombre": "Materias Primas del Sur",
+    "tipo": "proveedor",
+    "direccion": "Polígono Industrial, Sevilla",
     "nif": "A11223344",
-    "direccion": "Carrer de la Logística, 8, 08040 Barcelona"
+    "correo_electronico": "primosur@materiales.net",
+    "numero_telefono": "+34654789012",
+    "transacciones_detalladas": ["S-PH-05"]
   },
   {
-    "id": "C-1011",
-    "nombre": "Suministros de Oficina del Sur",
-    "nif": "B33445566",
-    "correo_electronico": "pedidos@suministros-sur.es"
+    "id": "C003",
+    "nombre": "TecnoHardware Ltda.",
+    "tipo": "cliente",
+    "direccion": "Ronda Universitat 15",
+    "nif": "C55443322",
+    "correo_electronico": "info@tecnohardware.org",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1012",
-    "nombre": "Ricardo Gómez",
-    "direccion": "Calle Ficticia, 12, 41001 Sevilla",
-    "nif": "21098765G",
-    "numero_telefono": "954-111-222"
+    "id": "P003",
+    "nombre": "Servicios Logísticos Rápidos",
+    "tipo": "proveedor",
+    "direccion": "Calle de la Paz 8",
+    "nif": "F99887766",
+    "correo_electronico": "logistica@servicioslr.com",
+    "numero_telefono": "934567890",
+    "transacciones_detalladas": [
+      "S-MOV-PAS-03",
+      "S-GPS-VEH-A",
+      "S-TEMP-SERVER-04"
+    ]
   },
   {
-    "id": "C-1013",
-    "nombre": "Construcciones Modernas C.B.",
-    "nif": "E76543210",
-    "correo_electronico": "contacto@conmo.es",
-    "numero_telefono": "+34600-99-88-77"
-  },
-  {
-    "id": "C-1014",
-    "nombre": "Inmobiliaria Centro",
-    "direccion": "Gran Vía, 1, 28013 Madrid",
-    "nif": "A00112233"
-  },
-  {
-    "id": "C-1015",
-    "nombre": "Software de Gestión Empresarial",
-    "nif": "B40000000",
-    "correo_electronico": "ventas@sge-corp.net",
-    "numero_telefono": "555 987 6543"
-  },
-  {
-    "id": "C-1016",
-    "nombre": "Recursos Humanos 360, S.L.",
-    "direccion": "Paseo de la Castellana, 150, 28046 Madrid",
-    "nif": "B12300456",
-    "correo_electronico": "rrhh@rh360.es",
-    "numero_telefono": "+34919001002"
-  },
-  {
-    "id": "C-1017",
-    "nombre": "Asesoría Contable Global",
-    "nif": "A76500321",
-    "correo_electronico": "asesoria@acglobal.com"
-  },
-  {
-    "id": "C-1018",
-    "nombre": "Ferretería y Herramientas Pro",
-    "direccion": "Pol. Ind. Oeste, Calle 5, Nave 3",
-    "nif": "B87600543",
-    "numero_telefono": "968-333-000"
-  },
-  {
-    "id": "C-1019",
-    "nombre": "Javier Martín (Arquitecto)",
-    "nif": "40000000J",
-    "correo_electronico": "javier.martin.arq@mail.net"
-  },
-  {
-    "id": "C-1020",
-    "nombre": "Agencia de Viajes Sol y Mar",
-    "nif": "A10000022",
-    "direccion": "Avenida del Puerto, 20, 46024 Valencia",
-    "numero_telefono": "963 123 789"
-  },
-  {
-    "id": "C-1021",
-    "nombre": "Productos Ecológicos Km 0",
-    "nif": "B55544433",
-    "correo_electronico": "info@km0eco.es",
-    "numero_telefono": "650-999-888"
-  },
-  {
-    "id": "C-1022",
-    "nombre": "Mobiliario de Oficina Deluxe",
-    "nif": "A90001000"
-  },
-  {
-    "id": "C-1023",
-    "nombre": "Instalaciones Eléctricas Rápidas",
-    "direccion": "Calle de la Luz, 10, 08001 Barcelona",
-    "nif": "B00998877",
-    "correo_electronico": "servicios@ierapidas.com",
-    "numero_telefono": "+34600100200"
-  },
-  {
-    "id": "C-1024",
-    "nombre": "Carla Ruiz (Fotógrafa)",
-    "nif": "39988776C",
-    "numero_telefono": "555-123-4567"
-  },
-  {
-    "id": "C-1025",
-    "nombre": "Editorial Libros Nuevos, S.A.",
-    "nif": "A44455566",
-    "direccion": "Plaza Mayor, 5, 37001 Salamanca",
-    "correo_electronico": "edicion@librosnuevos.net"
-  },
-  {
-    "id": "C-1026",
-    "nombre": "Distribución de Bebidas Frías",
-    "nif": "B70707070",
-    "numero_telefono": "922 456 789"
-  },
-  {
-    "id": "C-1027",
-    "nombre": "Desarrollo de Software Innovador",
-    "direccion": "Parque Tecnológico, Edificio 3",
-    "nif": "A80000008",
-    "correo_electronico": "tech@dsinnovador.com"
-  },
-  {
-    "id": "C-1028",
-    "nombre": "Miguel Ángel Torres",
-    "nif": "71122334M",
-    "correo_electronico": "miguel.a.torres@mail.es",
-    "numero_telefono": "609-876-543"
-  },
-  {
-    "id": "C-1029",
-    "nombre": "Centro Médico Integral",
-    "nif": "B01020304"
-  },
-  {
-    "id": "C-1030",
-    "nombre": "Academia de Idiomas Global",
-    "direccion": "Calle Larga, 7, 11001 Cádiz",
-    "nif": "G55443322",
-    "correo_electronico": "matriculas@aiglobal.es",
-    "numero_telefono": "+34956112233"
-  },
-  {
-    "id": "C-1031",
-    "nombre": "Sistemas de Seguridad Avanzada",
-    "nif": "B99887766",
-    "numero_telefono": "001-800-555-1234"
-  },
-  {
-    "id": "C-1032",
-    "nombre": "Elisa Fernández (Consultora)",
-    "nif": "45678901E",
-    "direccion": "Avda. Principal, 22, 03001 Alicante"
-  },
-  {
-    "id": "C-1033",
-    "nombre": "Hostelería Moderna del Norte",
-    "nif": "A11100099",
-    "correo_electronico": "gerencia@hmnorte.com"
-  },
-  {
-    "id": "C-1034",
-    "nombre": "Reparaciones de Vehículos Rápidos",
-    "direccion": "Pol. Ind. La Campana, Parcela 1",
-    "nif": "B60606060",
-    "numero_telefono": "944-777-666"
-  },
-  {
-    "id": "C-1035",
-    "nombre": "Proveedores de Materias Primas",
-    "nif": "Z99999999",
-    "correo_electronico": "ventas@pmpr.eu",
-    "numero_telefono": "622 334 455"
-  },
-  {
-    "id": "C-1036",
-    "nombre": "Estudios de Mercado Global, S.L.",
-    "direccion": "Calle de la Investigación, 8, 28001 Madrid",
-    "nif": "B80080080",
-    "correo_electronico": "contact@emglobal.es",
-    "numero_telefono": "+34912345678"
-  },
-  {
-    "id": "C-1037",
-    "nombre": "Materiales de Construcción Segura",
-    "nif": "A19988776",
-    "numero_telefono": "955-111-999"
-  },
-  {
-    "id": "C-1038",
-    "nombre": "Repuestos Industriales del Norte",
-    "direccion": "Pol. Ind. Jundiz, Pabellón 1",
-    "nif": "B33322211",
-    "correo_electronico": "pedidos@rinorte.com"
-  },
-  {
-    "id": "C-1039",
-    "nombre": "Elena García (Consultora IT)",
-    "nif": "49876543E",
-    "correo_electronico": "elena.garcia.it@mailficticio.net"
-  },
-  {
-    "id": "C-1040",
-    "nombre": "Agencia de Publicidad Creativa",
-    "nif": "A50050050",
-    "direccion": "Rambla de Cataluña, 55, 08007 Barcelona",
-    "numero_telefono": "934 000 111"
-  },
-  {
-    "id": "C-1041",
-    "nombre": "Servicios de Limpieza Profesional 24h",
-    "nif": "B77700111",
-    "correo_electronico": "info@slp24h.es",
-    "numero_telefono": "690-900-900"
-  },
-  {
-    "id": "C-1042",
-    "nombre": "Taller Mecánico Rápido",
-    "nif": "B00112233"
-  },
-  {
-    "id": "C-1043",
-    "nombre": "María Isabel Santos",
-    "direccion": "Avda. de los Naranjos, 10, 46022 Valencia",
-    "nif": "70000000M",
-    "correo_electronico": "m.isabel.santos@correo.org",
-    "numero_telefono": "+34611112222"
-  },
-  {
-    "id": "C-1044",
-    "nombre": "Telecomunicaciones del Sur",
-    "nif": "A12121212",
-    "numero_telefono": "950 555 444"
-  },
-  {
-    "id": "C-1045",
-    "nombre": "Mayorista de Frutas y Verduras",
-    "direccion": "Mercado Central, Nave 3",
-    "nif": "B40404040",
-    "correo_electronico": "compras@frutas-mv.com"
-  },
-  {
-    "id": "C-1046",
-    "nombre": "Formación Online y Cursos",
-    "nif": "B88877766",
-    "numero_telefono": "555-800-0000"
-  },
-  {
-    "id": "C-1047",
-    "nombre": "David López (Desarrollador)",
-    "nif": "34543454D",
-    "correo_electronico": "david.lopez.dev@mail.co"
-  },
-  {
-    "id": "C-1048",
-    "nombre": "Sistemas de Climatización Industrial",
-    "direccion": "Calle del Aire, 20, 08030 Barcelona",
-    "nif": "A60060060",
-    "numero_telefono": "936-000-000"
-  },
-  {
-    "id": "C-1049",
-    "nombre": "Inversiones de Capital Riesgo",
-    "nif": "Z11122233"
-  },
-  {
-    "id": "C-1050",
-    "nombre": "Vigilancia y Seguridad Integral",
-    "direccion": "Avda. de la Protección, 4, 41008 Sevilla",
-    "nif": "B90909090",
-    "correo_electronico": "operaciones@vsi.es",
-    "numero_telefono": "+34670123456"
-  },
-  {
-    "id": "C-1051",
-    "nombre": "Exportadora de Productos Artesanales",
-    "nif": "A20000020",
-    "numero_telefono": "001-212-900-1000"
-  },
-  {
-    "id": "C-1052",
-    "nombre": "Pablo Jiménez (Abogado)",
-    "nif": "25252525P",
-    "correo_electronico": "pablo.jimenez@lex.net"
-  },
-  {
-    "id": "C-1053",
-    "nombre": "Hostelería Servicios Integrales",
-    "direccion": "Calle de la Gastronomía, 3",
-    "nif": "B10101010",
-    "numero_telefono": "941-888-777"
-  },
-  {
-    "id": "C-1054",
-    "nombre": "Distribución Farmacéutica Europa",
-    "nif": "A33300099",
-    "correo_electronico": "ventas@dfeuro.com"
-  },
-  {
-    "id": "C-1055",
-    "nombre": "Transporte Marítimo Internacional",
-    "nif": "Z44455566",
-    "direccion": "Puerto Principal, Terminal 2"
-  },
-  {
-    "id": "C-1056",
-    "nombre": "Proveedores de Energía Renovable",
-    "nif": "A70007000",
-    "correo_electronico": "info@per.es",
-    "numero_telefono": "986 123 789"
-  },
-  {
-    "id": "C-1057",
-    "nombre": "Cristina Soto (Marketing)",
-    "nif": "11223344C",
-    "numero_telefono": "+34666000111"
-  },
-  {
-    "id": "C-1058",
-    "nombre": "Venta de Automóviles de Lujo",
-    "direccion": "Avda. del Concesionario, 1",
-    "nif": "B50505050",
-    "correo_electronico": "lujo@autosval.com"
-  },
-  {
-    "id": "C-1059",
-    "nombre": "Software de Contabilidad en la Nube",
-    "nif": "A99887766",
-    "numero_telefono": "918 000 000"
-  },
-  {
-    "id": "C-1060",
-    "nombre": "Gestión de Eventos y Congresos",
-    "nif": "B20202020",
-    "correo_electronico": "eventos@gec.net",
-    "numero_telefono": "654-765-432"
-  },
-  {
-    "id": "C-1061",
-    "nombre": "Diseño Gráfico Profesional 2D",
-    "direccion": "Calle de la Creatividad, 5, 29001 Málaga",
+    "id": "C004",
+    "nombre": "Distribuidora del Norte",
+    "tipo": "cliente",
+    "direccion": "Vía Augusta 101",
     "nif": "B13579246",
-    "correo_electronico": "creatividad@dgp2d.es",
-    "numero_telefono": "+34952111222"
+    "correo_electronico": "dort@example.com",
+    "numero_telefono": "+34 670 123 456",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1062",
-    "nombre": "Sistemas de Información Avanzada",
-    "nif": "A98765000",
-    "numero_telefono": "678 901 234"
+    "id": "P004",
+    "nombre": "Consumibles Generales S.L.",
+    "tipo": "proveedor",
+    "direccion": "Carrer d'Aragó 300",
+    "nif": "A24680135",
+    "correo_electronico": "suministro@cgen.net",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1063",
-    "nombre": "Comercio Electrónico Fácil, S.L.",
-    "direccion": "Pol. Ind. de Internet, Nave 10",
-    "nif": "B00011122",
-    "correo_electronico": "ventas@cef-sl.com"
+    "id": "C005",
+    "nombre": "El Almacén de María",
+    "tipo": "cliente",
+    "direccion": "Paseo de Gracia 50",
+    "nif": "E11335577",
+    "correo_electronico": "maria@almacen.com",
+    "numero_telefono": "934-222-333",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1064",
-    "nombre": "Jorge Nieto (Programador)",
-    "nif": "41112233J",
-    "correo_electronico": "jorge.nieto.dev@ejemplo.info"
+    "id": "P005",
+    "nombre": "Software y Sistemas Avanzados",
+    "tipo": "proveedor",
+    "direccion": "Gran Vía 10",
+    "nif": "S00112233",
+    "correo_electronico": "soporte@sysa.biz",
+    "numero_telefono": "612 345 678",
+    "transacciones_detalladas": ["S-HUM-BODEGA-10", "S-PH-LAB-06"]
   },
   {
-    "id": "C-1065",
-    "nombre": "Proveedores de Metales Especiales",
-    "nif": "A55566677",
-    "direccion": "Zona Industrial Pesada, Bloque A"
+    "id": "C006",
+    "nombre": "Pequeña Empresa SL",
+    "tipo": "cliente",
+    "nif": "B01020304",
+    "correo_electronico": "pequena@empresa.com",
+    "numero_telefono": "+34919876543",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1066",
-    "nombre": "Consultores de Gestión de Calidad",
-    "nif": "B24680135",
-    "correo_electronico": "calidad@cgc.es",
-    "numero_telefono": "913-000-999"
+    "id": "P006",
+    "nombre": "Consultoría y Auditoría",
+    "tipo": "proveedor",
+    "direccion": "Calle Real 45, Valencia",
+    "nif": "A40302010",
+    "correo_electronico": "auditoria@consul.net",
+    "transacciones_detalladas": ["S-MOV-ENT-09", "S-ENERGIA-01"]
   },
   {
-    "id": "C-1067",
-    "nombre": "Servicios de Mantenimiento Integral",
-    "nif": "A10101010"
+    "id": "C007",
+    "nombre": "Ferretería Juan",
+    "tipo": "cliente",
+    "direccion": "Rambla Catalunya 7",
+    "nif": "F54321098",
+    "correo_electronico": "juan@ferreteria.es",
+    "numero_telefono": "+34 687 111 222",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1068",
-    "nombre": "Almacenes Logísticos del Centro",
-    "direccion": "Avda. de los Almacenes, 50, 47008 Valladolid",
-    "nif": "B77700011",
-    "correo_electronico": "logistica@alc.net",
-    "numero_telefono": "+34983456789"
+    "id": "P007",
+    "nombre": "Mobiliario Urbano S.A.",
+    "tipo": "proveedor",
+    "direccion": "Calle Alcalá 90",
+    "nif": "A09876543",
+    "correo_electronico": "mu@urbano.com",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1069",
-    "nombre": "Sara Ruiz (Interiorista)",
-    "nif": "23456789S",
-    "numero_telefono": "600-111-222"
+    "id": "C008",
+    "nombre": "Agencia de Viajes Sol",
+    "tipo": "cliente",
+    "direccion": "C/ Goya 10",
+    "nif": "B34567890",
+    "correo_electronico": "sol@viajes.com",
+    "numero_telefono": "913-445-566",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1070",
-    "nombre": "Tienda de Ropa Deportiva Online",
-    "nif": "A30000040",
-    "direccion": "Calle del Deporte, 1, 08003 Barcelona",
-    "correo_electronico": "atencion@tros.com"
+    "id": "P008",
+    "nombre": "Transportes Rápidos 24h",
+    "tipo": "proveedor",
+    "direccion": "Carrer Balmes 200",
+    "nif": "A00998877",
+    "correo_electronico": "transporte@rapidos.net",
+    "numero_telefono": "+34 601 234 567",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1071",
-    "nombre": "Empresa de Sonido e Iluminación",
-    "nif": "B66677788",
-    "numero_telefono": "555-999-0000"
+    "id": "C009",
+    "nombre": "Pastelería Delicias",
+    "tipo": "cliente",
+    "nif": "P12345678",
+    "correo_electronico": "delicias@pasteleria.net",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1072",
-    "nombre": "Ricardo Castro (Traductor)",
-    "nif": "00000001R",
-    "correo_electronico": "traducciones@ricardocastro.es"
+    "id": "P009",
+    "nombre": "Embalajes Seguros",
+    "tipo": "proveedor",
+    "direccion": "Av. Diagonal 500",
+    "nif": "E87654321",
+    "correo_electronico": "seguros@embalajes.com",
+    "numero_telefono": "93-987-6543",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1073",
-    "nombre": "Distribuidora de Juguetes Infantiles",
-    "direccion": "Pol. Ind. del Juguete, Parcela 7",
-    "nif": "A50000011",
-    "numero_telefono": "960 123 456"
+    "id": "C010",
+    "nombre": "Centro Médico Vital",
+    "tipo": "cliente",
+    "direccion": "Pza. España 1",
+    "nif": "M11223344",
+    "correo_electronico": "vital@medico.es",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1074",
-    "nombre": "Gestión de Propiedades Urbanas",
-    "nif": "B99988877",
-    "correo_electronico": "info@gpu.es"
+    "id": "P010",
+    "nombre": "Herramientas Profesionales",
+    "tipo": "proveedor",
+    "direccion": "Calle Orense 10",
+    "nif": "H99887766",
+    "correo_electronico": "profesional@herramientas.com",
+    "numero_telefono": "+34666555444",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1075",
-    "nombre": "Servicios de Catering Gourmet",
-    "direccion": "Calle de la Cocina, 1, 08010 Barcelona",
-    "nif": "B20020020",
-    "numero_telefono": "+34690909090"
-  },
-  {
-    "id": "C-1076",
-    "nombre": "Importadora de Electrónica Asia",
-    "nif": "Z33300011",
-    "correo_electronico": "import@iea.net"
-  },
-  {
-    "id": "C-1077",
-    "nombre": "Laura Méndez (Analista)",
-    "nif": "76543210L",
-    "direccion": "Plaza del Análisis, 3, 28004 Madrid"
-  },
-  {
-    "id": "C-1078",
-    "nombre": "Empresa de Ingeniería Civil",
-    "nif": "A40040040",
-    "numero_telefono": "923 111 222"
-  },
-  {
-    "id": "C-1079",
-    "nombre": "Venta de Maquinaria Industrial",
-    "direccion": "Pol. Ind. de la Maquinaria, Nave 15",
-    "nif": "B70000700",
-    "correo_electronico": "ventas@vmi.com"
-  },
-  {
-    "id": "C-1080",
-    "nombre": "Academia de Formación Profesional",
-    "nif": "G87654321",
-    "numero_telefono": "955-444-333"
-  },
-  {
-    "id": "C-1081",
-    "nombre": "Marketing de Contenidos 2.0",
-    "direccion": "Avenida del Éxito, 1, 41002 Sevilla",
+    "id": "C011",
+    "nombre": "Tienda de Regalos S.A.",
+    "tipo": "cliente",
+    "direccion": "Calle Serrano 20",
     "nif": "B10010010",
-    "correo_electronico": "info@mc20.es"
+    "correo_electronico": "regalos@tienda.com",
+    "numero_telefono": "915-000-111",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1082",
-    "nombre": "Distribuciones Alimentarias de Calidad",
-    "nif": "A56789123"
+    "id": "P011",
+    "nombre": "Mantenimiento Integral",
+    "tipo": "proveedor",
+    "direccion": "Carrer Marina 15",
+    "nif": "A01010101",
+    "correo_electronico": "mantenimiento@integral.net",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1083",
-    "nombre": "Servicios Técnicos de Informática",
-    "direccion": "Calle de la Tecnología, 15",
-    "nif": "B90090090",
-    "correo_electronico": "soporte@sti.net",
-    "numero_telefono": "+34680808080"
+    "id": "C012",
+    "nombre": "Imprenta Digital Express",
+    "tipo": "cliente",
+    "direccion": "Av. de América 5",
+    "nif": "D20202020",
+    "correo_electronico": "imprenta@digital.es",
+    "numero_telefono": "+34 938 765 432",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1084",
-    "nombre": "Manuel Blanco (Gestor)",
-    "nif": "10101010M",
-    "numero_telefono": "555-777-6666"
+    "id": "P012",
+    "nombre": "Seguridad Total",
+    "tipo": "proveedor",
+    "direccion": "Calle Bailén 10",
+    "nif": "S30303030",
+    "correo_electronico": "info@seguridadtotal.com",
+    "numero_telefono": "622 333 444",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1085",
-    "nombre": "Construcción y Reformas Rápidas",
-    "nif": "B30000030",
-    "direccion": "Calle del Ladrillo, 5, 46001 Valencia"
+    "id": "C013",
+    "nombre": "Gimnasio Fitness Center",
+    "tipo": "cliente",
+    "nif": "G40404040",
+    "correo_electronico": "gym@fitness.com",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1086",
-    "nombre": "Agencia de Eventos Corporativos",
-    "nif": "A22334455",
-    "correo_electronico": "eventos@aevents.com",
-    "numero_telefono": "937 111 222"
+    "id": "P013",
+    "nombre": "Agencia de Marketing Online",
+    "tipo": "proveedor",
+    "direccion": "Paseo del Prado 1",
+    "nif": "M50505050",
+    "correo_electronico": "marketing@online.es",
+    "numero_telefono": "91-111-2223",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1087",
-    "nombre": "Tienda de Deportes de Montaña",
-    "nif": "B88800077"
+    "id": "C014",
+    "nombre": "Academia de Idiomas",
+    "tipo": "cliente",
+    "direccion": "Rambla Principal 3",
+    "nif": "I60606060",
+    "correo_electronico": "idiomas@academia.net",
+    "numero_telefono": "+34 933 111 222",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1088",
-    "nombre": "Inmobiliaria de Lujo Costa",
-    "direccion": "Paseo Marítimo, 100, 03002 Alicante",
-    "nif": "A11223344",
-    "correo_electronico": "ventas@ilcosta.es",
-    "numero_telefono": "+34965123456"
+    "id": "P014",
+    "nombre": "Equipos de Oficina SL",
+    "tipo": "proveedor",
+    "direccion": "Calle Mayor 80",
+    "nif": "E70707070",
+    "correo_electronico": "oficina@equipos.com",
+    "numero_telefono": "644-777-888",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1089",
-    "nombre": "Fernando Díaz (Freelance)",
-    "nif": "77665544F",
-    "numero_telefono": "600-987-654"
+    "id": "C015",
+    "nombre": "Hotel El Descanso",
+    "tipo": "cliente",
+    "direccion": "Avenida de la Playa 25",
+    "nif": "H80808080",
+    "correo_electronico": "descanso@hotel.com",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1090",
-    "nombre": "Venta de Neumáticos y Accesorios",
-    "nif": "B44433322",
-    "direccion": "Avda. de los Talleres, 30"
+    "id": "P015",
+    "nombre": "Productos Químicos",
+    "tipo": "proveedor",
+    "direccion": "Pol. Industrial Este, Parcela 10",
+    "nif": "Q90909090",
+    "correo_electronico": "quimicos@proquim.net",
+    "numero_telefono": "+34 955 666 777",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1091",
-    "nombre": "Distribución de Productos Químicos",
-    "nif": "A90090090",
-    "correo_electronico": "logistica@dpq.net",
-    "numero_telefono": "944 555 666"
+    "id": "C016",
+    "nombre": "Floristería Pétalos",
+    "tipo": "cliente",
+    "direccion": "Calle de la Rosa 5",
+    "nif": "F11223355",
+    "correo_electronico": "petalos@floristería.es",
+    "numero_telefono": "917-000-000",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1092",
-    "nombre": "Sofía Pérez (Periodista)",
-    "nif": "45000000S"
+    "id": "P016",
+    "nombre": "Iluminación Profesional",
+    "tipo": "proveedor",
+    "direccion": "Av. de la Luz 1",
+    "nif": "I12345679",
+    "correo_electronico": "iluminacion@pro.com",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1093",
-    "nombre": "Centro de Idiomas y Culturas",
-    "direccion": "Calle de las Lenguas, 20",
-    "nif": "G00011122",
-    "correo_electronico": "info@ciculturas.es",
-    "numero_telefono": "910 101 010"
+    "id": "C017",
+    "nombre": "Cafetería El Buen Día",
+    "tipo": "cliente",
+    "nif": "C23456780",
+    "correo_electronico": "buendia@cafeteria.net",
+    "numero_telefono": "+34 690 123 456",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1094",
-    "nombre": "Hardware y Software para Empresas",
-    "nif": "B76543210",
-    "numero_telefono": "555-111-2222"
+    "id": "P017",
+    "nombre": "Material Eléctrico",
+    "tipo": "proveedor",
+    "direccion": "Paseo de las Delicias 5",
+    "nif": "E34567891",
+    "correo_electronico": "electrico@material.es",
+    "numero_telefono": "911-222-333",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1095",
-    "nombre": "Transporte de Mercancías Refrigeradas",
-    "direccion": "Pol. Ind. del Frío, Nave 8",
-    "nif": "A10000100",
-    "correo_electronico": "frio@tmr.com"
+    "id": "C018",
+    "nombre": "Restaurante Gourmet",
+    "tipo": "cliente",
+    "direccion": "Gran Vía 5",
+    "nif": "R45678902",
+    "correo_electronico": "reservas@gourmet.com",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1096",
-    "nombre": "Estudio de Arquitectura Bio",
-    "nif": "B33300333",
-    "numero_telefono": "+34633-44-55-66"
+    "id": "P018",
+    "nombre": "Artes Gráficas Modernas",
+    "tipo": "proveedor",
+    "direccion": "Ronda Sant Pere 10",
+    "nif": "A56789013",
+    "correo_electronico": "graficas@modernas.net",
+    "numero_telefono": "+34 934 000 111",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1097",
-    "nombre": "Elena Torres (Finanzas)",
-    "nif": "12345678E",
-    "direccion": "Paseo del Ahorro, 10"
+    "id": "C019",
+    "nombre": "Estudio de Arquitectura",
+    "tipo": "cliente",
+    "direccion": "Calle Atocha 10",
+    "nif": "A67890124",
+    "correo_electronico": "arquitectura@estudio.com",
+    "numero_telefono": "630 123 456",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1098",
-    "nombre": "Agencia de Viajes de Negocios",
-    "nif": "A90009000",
-    "correo_electronico": "corporate@avnegocios.net"
+    "id": "P019",
+    "nombre": "Sistemas de Climatización",
+    "tipo": "proveedor",
+    "direccion": "Av. Meridiana 100",
+    "nif": "C78901235",
+    "correo_electronico": "clima@sistemas.es",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1099",
-    "nombre": "Consultoría de Estrategia Digital",
-    "nif": "B50000500",
-    "numero_telefono": "914 999 888"
+    "id": "C020",
+    "nombre": "Distribuciones Alimentarias",
+    "tipo": "cliente",
+    "direccion": "Calle de Toledo 50",
+    "nif": "D89012346",
+    "correo_electronico": "alimentos@distri.net",
+    "numero_telefono": "+34925789012",
+    "transacciones_detalladas": []
   },
   {
-    "id": "C-1100",
-    "nombre": "Sistemas de Automatización y Control",
-    "direccion": "Calle de la Robótica, 4, 08038 Barcelona",
-    "nif": "A60000600",
-    "correo_electronico": "automatizacion@sac.es",
-    "numero_telefono": "938-123-456"
+    "id": "P020",
+    "nombre": "Limpieza Profesional",
+    "tipo": "proveedor",
+    "direccion": "Av. Pío XII 5",
+    "nif": "L90123457",
+    "correo_electronico": "contacto@limpieza.com",
+    "numero_telefono": "917-888-999",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C021",
+    "nombre": "Taller Mecánico Rápido",
+    "tipo": "cliente",
+    "nif": "T01234568",
+    "correo_electronico": "taller@rapido.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P021",
+    "nombre": "Componentes Electrónicos",
+    "tipo": "proveedor",
+    "direccion": "Polígono Industrial Sur, 1",
+    "nif": "C12345670",
+    "correo_electronico": "celectronicos@prov.net",
+    "numero_telefono": "600 000 111",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C022",
+    "nombre": "Academia de Baile",
+    "tipo": "cliente",
+    "direccion": "Calle Tuset 25",
+    "nif": "B23456781",
+    "correo_electronico": "baile@academia.com",
+    "numero_telefono": "+34 932 505 505",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P022",
+    "nombre": "Envases Biodegradables",
+    "tipo": "proveedor",
+    "direccion": "Carrer Muntaner 100",
+    "nif": "E34567892",
+    "correo_electronico": "info@envasesbio.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C023",
+    "nombre": "Librería El Saber",
+    "tipo": "cliente",
+    "direccion": "Plaza Cataluña 1",
+    "nif": "L45678903",
+    "correo_electronico": "saber@libreria.net",
+    "numero_telefono": "93-456-7890",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P023",
+    "nombre": "Software de Contabilidad",
+    "tipo": "proveedor",
+    "direccion": "Calle Fuencarral 30",
+    "nif": "S56789014",
+    "correo_electronico": "contable@software.com",
+    "numero_telefono": "+34 91 600 0000",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C024",
+    "nombre": "Bodega La Cepa",
+    "tipo": "cliente",
+    "nif": "B67890125",
+    "correo_electronico": "cepa@bodega.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P024",
+    "nombre": "Publicidad Exterior",
+    "tipo": "proveedor",
+    "direccion": "Av. de Madrid 50",
+    "nif": "P78901236",
+    "correo_electronico": "publicidad@exterior.net",
+    "numero_telefono": "678-111-222",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C025",
+    "nombre": "Veterinaria Animalia",
+    "tipo": "cliente",
+    "direccion": "Calle Sagasta 15",
+    "nif": "V89012347",
+    "correo_electronico": "animalia@vet.com",
+    "numero_telefono": "+34 934 987 654",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P025",
+    "nombre": "Recursos Humanos S.A.",
+    "tipo": "proveedor",
+    "direccion": "Paseo de la Castellana 200",
+    "nif": "R90123458",
+    "correo_electronico": "rrhh@recursoshumanos.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C026",
+    "nombre": "Impulsora de Proyectos",
+    "tipo": "cliente",
+    "direccion": "Calle Valencia 10",
+    "nif": "I01234569",
+    "correo_electronico": "proyectos@impulso.net",
+    "numero_telefono": "91 400 5000",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P026",
+    "nombre": "Servicios de Jardinería",
+    "tipo": "proveedor",
+    "direccion": "Carrer Sicília 50",
+    "nif": "J12345678",
+    "correo_electronico": "jardineria@servicios.com",
+    "numero_telefono": "+34 600 123 789",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C027",
+    "nombre": "Tienda de Electrónica",
+    "tipo": "cliente",
+    "nif": "T23456789",
+    "correo_electronico": "electronica@tienda.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P027",
+    "nombre": "Consultoría de Calidad",
+    "tipo": "proveedor",
+    "direccion": "Av. Gran Vía de les Corts Catalanes 10",
+    "nif": "C34567890",
+    "correo_electronico": "calidad@consulting.net",
+    "numero_telefono": "93-222-3333",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C028",
+    "nombre": "Agencia de Modelos",
+    "tipo": "cliente",
+    "direccion": "Calle Génova 2",
+    "nif": "M45678901",
+    "correo_electronico": "modelos@agencia.com",
+    "numero_telefono": "+34 654 000 111",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P028",
+    "nombre": "Catering Eventos",
+    "tipo": "proveedor",
+    "direccion": "Paseo de la Castellana 10",
+    "nif": "E56789012",
+    "correo_electronico": "eventos@catering.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C029",
+    "nombre": "Distribuidora de Juguetes",
+    "tipo": "cliente",
+    "direccion": "Ronda de Dalt, 5",
+    "nif": "J67890123",
+    "correo_electronico": "juguetes@distri.com",
+    "numero_telefono": "93-777-8888",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P029",
+    "nombre": "Artículos de Limpieza",
+    "tipo": "proveedor",
+    "direccion": "Calle Sants 1",
+    "nif": "L78901234",
+    "correo_electronico": "limpieza@articulos.net",
+    "numero_telefono": "+34 680 900 123",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C030",
+    "nombre": "Farmacia Central",
+    "tipo": "cliente",
+    "direccion": "Calle Tetuán 1",
+    "nif": "F89012345",
+    "correo_electronico": "central@farmacia.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P030",
+    "nombre": "Uniformes y Ropa de Trabajo",
+    "tipo": "proveedor",
+    "direccion": "Av. Paral·lel 10",
+    "nif": "U90123456",
+    "correo_electronico": "uniformes@ropa.com",
+    "numero_telefono": "933 456 789",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C031",
+    "nombre": "Óptica Visión Clara",
+    "tipo": "cliente",
+    "direccion": "C/ Velázquez 30",
+    "nif": "O11122233",
+    "correo_electronico": "visionclara@optica.net",
+    "numero_telefono": "+34 91 000 0000",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P031",
+    "nombre": "Papelería Mayorista",
+    "tipo": "proveedor",
+    "direccion": "Calle Toledo 100",
+    "nif": "P33322211",
+    "correo_electronico": "mayorista@papeleria.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C032",
+    "nombre": "Joyería Diamante",
+    "tipo": "cliente",
+    "direccion": "Paseo de la Castellana 5",
+    "nif": "J44455566",
+    "correo_electronico": "diamante@joyeria.com",
+    "numero_telefono": "610-100-200",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P032",
+    "nombre": "Alquiler de Maquinaria",
+    "tipo": "proveedor",
+    "direccion": "Polígono Industrial Norte 5",
+    "nif": "A66655544",
+    "correo_electronico": "alquiler@maquinaria.net",
+    "numero_telefono": "+34 938 123 456",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C033",
+    "nombre": "Autoescuela El Semáforo",
+    "tipo": "cliente",
+    "nif": "A77788899",
+    "correo_electronico": "semaforo@autoescuela.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P033",
+    "nombre": "Sistemas de Riego",
+    "tipo": "proveedor",
+    "direccion": "Calle de la Agricultura 1",
+    "nif": "S99988877",
+    "correo_electronico": "riego@sistemas.com",
+    "numero_telefono": "91-777-8888",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C034",
+    "nombre": "Peluquería Estilo",
+    "tipo": "cliente",
+    "direccion": "Rambla de Sant Sebastià 12",
+    "nif": "P01020305",
+    "correo_electronico": "estilo@peluqueria.net",
+    "numero_telefono": "+34 605 102 030",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P034",
+    "nombre": "Productos Ecológicos",
+    "tipo": "proveedor",
+    "direccion": "Carrer del Sol 10",
+    "nif": "E50403020",
+    "correo_electronico": "eco@productos.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C035",
+    "nombre": "Guardería Infantil",
+    "tipo": "cliente",
+    "direccion": "Paseo Marítimo 5",
+    "nif": "G12131415",
+    "correo_electronico": "guarderia@infantil.com",
+    "numero_telefono": "930-111-222",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P035",
+    "nombre": "Distribución de Bebidas",
+    "tipo": "proveedor",
+    "direccion": "Calle de los Vinos 1",
+    "nif": "D15141312",
+    "correo_electronico": "bebidas@distribucion.net",
+    "numero_telefono": "+34 650 999 888",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C036",
+    "nombre": "Gestoría Administrativa",
+    "tipo": "cliente",
+    "nif": "G21222324",
+    "correo_electronico": "gestoria@admin.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P036",
+    "nombre": "Empresa de Reformas",
+    "tipo": "proveedor",
+    "direccion": "Av. Diagonal 10",
+    "nif": "R42322212",
+    "correo_electronico": "reformas@empresa.com",
+    "numero_telefono": "93-888-9999",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C037",
+    "nombre": "Centro de Yoga",
+    "tipo": "cliente",
+    "direccion": "Calle de la Paz 1",
+    "nif": "Y31323334",
+    "correo_electronico": "yoga@centro.net",
+    "numero_telefono": "+34 600 200 300",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P037",
+    "nombre": "Reparación de Equipos",
+    "tipo": "proveedor",
+    "direccion": "Carrer del Mig 50",
+    "nif": "R43332313",
+    "correo_electronico": "soporte@reparacion.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C038",
+    "nombre": "Taller de Cerámica",
+    "tipo": "cliente",
+    "direccion": "Ronda Litoral s/n",
+    "nif": "C41424344",
+    "correo_electronico": "ceramica@taller.com",
+    "numero_telefono": "931-234-567",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P038",
+    "nombre": "Material de Construcción",
+    "tipo": "proveedor",
+    "direccion": "Pol. Ind. Oeste, Parcela 2",
+    "nif": "M44342414",
+    "correo_electronico": "construccion@materiales.net",
+    "numero_telefono": "+34 91 100 0001",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C039",
+    "nombre": "Asesoría Fiscal",
+    "tipo": "cliente",
+    "nif": "A51525354",
+    "correo_electronico": "fiscal@asesoria.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P039",
+    "nombre": "Servicios de Traducción",
+    "tipo": "proveedor",
+    "direccion": "Carrer València 200",
+    "nif": "T45352515",
+    "correo_electronico": "traduccion@servicios.com",
+    "numero_telefono": "629-100-300",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C040",
+    "nombre": "Tienda de Mascotas",
+    "tipo": "cliente",
+    "direccion": "Calle Bravo Murillo 50",
+    "nif": "M61626364",
+    "correo_electronico": "mascotas@tienda.net",
+    "numero_telefono": "+34 930 100 200",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P040",
+    "nombre": "Sistemas Informáticos",
+    "tipo": "proveedor",
+    "direccion": "Av. Diagonal 600",
+    "nif": "I64362616",
+    "correo_electronico": "informatica@sistemas.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C041",
+    "nombre": "Distribuidora de Café",
+    "tipo": "cliente",
+    "direccion": "Calle Princesa 10",
+    "nif": "D71727374",
+    "correo_electronico": "cafe@distribuidora.com",
+    "numero_telefono": "93 500 6000",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P041",
+    "nombre": "Gráficas de Impresión",
+    "tipo": "proveedor",
+    "direccion": "Carrer Indústria 10",
+    "nif": "G47372717",
+    "correo_electronico": "impresion@graficas.net",
+    "numero_telefono": "+34 600 000 000",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C042",
+    "nombre": "Frutería Fresca",
+    "tipo": "cliente",
+    "nif": "F81828384",
+    "correo_electronico": "fresca@fruteria.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P042",
+    "nombre": "Proveedores de Redes",
+    "tipo": "proveedor",
+    "direccion": "Av. Sarrià 5",
+    "nif": "R48382818",
+    "correo_electronico": "redes@proveedores.com",
+    "numero_telefono": "93-666-7777",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C043",
+    "nombre": "Clínica Dental Sonrisa",
+    "tipo": "cliente",
+    "direccion": "Calle Bailén 50",
+    "nif": "D91929394",
+    "correo_electronico": "sonrisa@dental.net",
+    "numero_telefono": "+34 934 000 000",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P043",
+    "nombre": "Repuestos de Vehículos",
+    "tipo": "proveedor",
+    "direccion": "Vía Layetana 20",
+    "nif": "V49392919",
+    "correo_electronico": "repuestos@vehiculos.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C044",
+    "nombre": "Fotografía Profesional",
+    "tipo": "cliente",
+    "direccion": "Calle de la Luna 1",
+    "nif": "F01030507",
+    "correo_electronico": "foto@profesional.com",
+    "numero_telefono": "600 100 200",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P044",
+    "nombre": "Suministros de Oficina",
+    "tipo": "proveedor",
+    "direccion": "Paseo de San Juan 5",
+    "nif": "O70503010",
+    "correo_electronico": "oficina@suministros.net",
+    "numero_telefono": "+34 91 222 3333",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C045",
+    "nombre": "Agencia de Viajes Mundo",
+    "tipo": "cliente",
+    "nif": "A91827364",
+    "correo_electronico": "mundo@viajes.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P045",
+    "nombre": "Software de Diseño",
+    "tipo": "proveedor",
+    "direccion": "Carrer Girona 10",
+    "nif": "D46372819",
+    "correo_electronico": "diseno@software.com",
+    "numero_telefono": "93-400-5000",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C046",
+    "nombre": "Panadería Tradicional",
+    "tipo": "cliente",
+    "direccion": "Calle Mayor 1",
+    "nif": "P00112233",
+    "correo_electronico": "pan@tradicional.net",
+    "numero_telefono": "+34 933 123 456",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P046",
+    "nombre": "Artículos de Ferretería",
+    "tipo": "proveedor",
+    "direccion": "Av. Tibidabo 5",
+    "nif": "F33221100",
+    "correo_electronico": "ferreteria@articulos.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C047",
+    "nombre": "Escuela de Música",
+    "tipo": "cliente",
+    "direccion": "Calle Enric Granados 5",
+    "nif": "E44556677",
+    "correo_electronico": "musica@escuela.com",
+    "numero_telefono": "609 876 543",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P047",
+    "nombre": "Mobiliario Escolar",
+    "tipo": "proveedor",
+    "direccion": "Ronda Sant Antoni 1",
+    "nif": "M77665544",
+    "correo_electronico": "escolar@mobiliario.net",
+    "numero_telefono": "+34 91 700 8000",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C048",
+    "nombre": "Estudio de Grabación",
+    "tipo": "cliente",
+    "nif": "G88990011",
+    "correo_electronico": "grabacion@estudio.net",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P048",
+    "nombre": "Equipos de Sonido",
+    "tipo": "proveedor",
+    "direccion": "Calle Roselló 200",
+    "nif": "S11009988",
+    "correo_electronico": "sonido@equipos.es",
+    "numero_telefono": "93-111-0000",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C049",
+    "nombre": "Tienda de Deportes",
+    "tipo": "cliente",
+    "direccion": "Pza. de Lesseps 1",
+    "nif": "D22334455",
+    "correo_electronico": "deportes@tienda.com",
+    "numero_telefono": "+34 607 123 789",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P049",
+    "nombre": "Ropa Deportiva",
+    "tipo": "proveedor",
+    "direccion": "Av. Diagonal 700",
+    "nif": "R55443322",
+    "correo_electronico": "ropa@deportiva.net",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C050",
+    "nombre": "Lavandería Industrial",
+    "tipo": "cliente",
+    "direccion": "Polígono Industrial Sur, 5",
+    "nif": "L66778899",
+    "correo_electronico": "industrial@lavanderia.es",
+    "numero_telefono": "93-200-3000",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P050",
+    "nombre": "Productos de Lavado",
+    "tipo": "proveedor",
+    "direccion": "Calle de la Industria 1",
+    "nif": "P99887766",
+    "correo_electronico": "lavado@productos.com",
+    "numero_telefono": "+34 91 999 8888",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C051",
+    "nombre": "Marketing Creativo SL",
+    "tipo": "cliente",
+    "direccion": "Paseo de Recoletos 5",
+    "nif": "B14725836",
+    "correo_electronico": "creatividad@marketing.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P051",
+    "nombre": "Hosting Web Global",
+    "tipo": "proveedor",
+    "direccion": "Av. del Puerto 10",
+    "nif": "A63852741",
+    "correo_electronico": "soporte@hosting.net",
+    "numero_telefono": "651-111-222",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C052",
+    "nombre": "Cadena de Restaurantes",
+    "tipo": "cliente",
+    "direccion": "Carrer Diputació 20",
+    "nif": "C25836914",
+    "correo_electronico": "restaurantes@cadena.com",
+    "numero_telefono": "+34 93 456 1111",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P052",
+    "nombre": "Pescados y Mariscos Frescos",
+    "tipo": "proveedor",
+    "direccion": "Mercado Central, Puesto 5",
+    "nif": "P41963287",
+    "correo_electronico": "mariscos@frescos.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C053",
+    "nombre": "Academia de Cocina",
+    "tipo": "cliente",
+    "nif": "A36914725",
+    "correo_electronico": "cocina@academia.net",
+    "numero_telefono": "91-123-4567",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P053",
+    "nombre": "Utensilios de Cocina",
+    "tipo": "proveedor",
+    "direccion": "Calle del Menaje 3",
+    "nif": "U58197463",
+    "correo_electronico": "utensilios@proveedor.com",
+    "numero_telefono": "+34 600 900 700",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C054",
+    "nombre": "Empresa de Limpieza de Cristales",
+    "tipo": "cliente",
+    "direccion": "Av. Diagonal 50",
+    "nif": "B47258369",
+    "correo_electronico": "cristales@limpieza.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P054",
+    "nombre": "Productos de Vidrio",
+    "tipo": "proveedor",
+    "direccion": "Polígono Ind. Sur, Nave 10",
+    "nif": "V69384752",
+    "correo_electronico": "vidrio@productos.net",
+    "numero_telefono": "93-789-0123",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C055",
+    "nombre": "Bufete de Abogados",
+    "tipo": "cliente",
+    "direccion": "Calle Almagro 1",
+    "nif": "A58369147",
+    "correo_electronico": "abogados@bufete.com",
+    "numero_telefono": "+34 91 555 6666",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P055",
+    "nombre": "Fotocopiadoras y Escáneres",
+    "tipo": "proveedor",
+    "direccion": "Carrer d'Aribau 10",
+    "nif": "F74185296",
+    "correo_electronico": "ofimatica@proveedor.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C056",
+    "nombre": "Distribuidora de Electrónica",
+    "tipo": "cliente",
+    "direccion": "Polígono Industrial Central 1",
+    "nif": "D69147258",
+    "correo_electronico": "electronica@distri.net",
+    "numero_telefono": "654-321-000",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P056",
+    "nombre": "Componentes de Plástico",
+    "tipo": "proveedor",
+    "direccion": "Calle de la Tecnología 5",
+    "nif": "P85296374",
+    "correo_electronico": "plastico@componentes.com",
+    "numero_telefono": "+34 93 123 9876",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C057",
+    "nombre": "Clínica Veterinaria",
+    "tipo": "cliente",
+    "nif": "V71428571",
+    "correo_electronico": "veterinaria@clinica.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P057",
+    "nombre": "Alimentos para Animales",
+    "tipo": "proveedor",
+    "direccion": "Av. Paral·lel 100",
+    "nif": "A96374185",
+    "correo_electronico": "animales@alimentos.net",
+    "numero_telefono": "93-555-4444",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C058",
+    "nombre": "Taller de Joyería",
+    "tipo": "cliente",
+    "direccion": "Paseo de Gracia 10",
+    "nif": "J82571428",
+    "correo_electronico": "joyeria@taller.com",
+    "numero_telefono": "+34 600 111 222",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P058",
+    "nombre": "Metales Preciosos",
+    "tipo": "proveedor",
+    "direccion": "Ronda Sant Pere 5",
+    "nif": "M07469385",
+    "correo_electronico": "preciosos@metales.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C059",
+    "nombre": "Estudio de Diseño Web",
+    "tipo": "cliente",
+    "nif": "D93681574",
+    "correo_electronico": "web@diseno.net",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P059",
+    "nombre": "Plataformas de Pago",
+    "tipo": "proveedor",
+    "direccion": "Calle de la Moneda 1",
+    "nif": "P18520746",
+    "correo_electronico": "pago@plataformas.com",
+    "numero_telefono": "91-999-0000",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C060",
+    "nombre": "Academia de Danza",
+    "tipo": "cliente",
+    "direccion": "Calle Lérida 5",
+    "nif": "A04791536",
+    "correo_electronico": "danza@academia.es",
+    "numero_telefono": "+34 610 300 400",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P060",
+    "nombre": "Material de Baile",
+    "tipo": "proveedor",
+    "direccion": "Carrer de la Música 5",
+    "nif": "B29603817",
+    "correo_electronico": "baile@material.net",
+    "numero_telefono": "93-210-4321",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C061",
+    "nombre": "Editorial Libros",
+    "tipo": "cliente",
+    "direccion": "Pza. de la Villa 1",
+    "nif": "E11335579",
+    "correo_electronico": "editorial@libros.com",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P061",
+    "nombre": "Distribuidora Papelera",
+    "tipo": "proveedor",
+    "direccion": "Calle del Libro 1",
+    "nif": "D99775533",
+    "correo_electronico": "papelera@distri.es",
+    "numero_telefono": "+34 91 765 4321",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C062",
+    "nombre": "Empresa de Seguridad",
+    "tipo": "cliente",
+    "direccion": "Av. de la Paz 1",
+    "nif": "S22446688",
+    "correo_electronico": "seguridad@empresa.net",
+    "numero_telefono": "670-000-111",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P062",
+    "nombre": "Alarmas y Vigilancia",
+    "tipo": "proveedor",
+    "direccion": "Carrer de la Guardia 1",
+    "nif": "A88664422",
+    "correo_electronico": "alarmas@vigilancia.com",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C063",
+    "nombre": "Hotel de Lujo",
+    "tipo": "cliente",
+    "nif": "H33557799",
+    "correo_electronico": "lujo@hotel.es",
+    "numero_telefono": "93-111-2222",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P063",
+    "nombre": "Suministros Hosteleros",
+    "tipo": "proveedor",
+    "direccion": "Calle de las Tapas 1",
+    "nif": "S77553311",
+    "correo_electronico": "hosteleria@suministros.net",
+    "numero_telefono": "+34 600 500 400",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C064",
+    "nombre": "Centro de Estética",
+    "tipo": "cliente",
+    "direccion": "Ronda Universitat 1",
+    "nif": "C44668800",
+    "correo_electronico": "estetica@centro.com",
+    "numero_telefono": "93-555-6666",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P064",
+    "nombre": "Productos Cosméticos",
+    "tipo": "proveedor",
+    "direccion": "Paseo del Bienestar 1",
+    "nif": "P00886644",
+    "correo_electronico": "cosmeticos@productos.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C065",
+    "nombre": "Tienda de Antigüedades",
+    "tipo": "cliente",
+    "direccion": "Calle Serrano 50",
+    "nif": "A55779911",
+    "correo_electronico": "antiguedades@tienda.net",
+    "numero_telefono": "91-666-7777",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P065",
+    "nombre": "Restauración de Muebles",
+    "tipo": "proveedor",
+    "direccion": "Calle del Artista 1",
+    "nif": "R11997755",
+    "correo_electronico": "restauracion@muebles.com",
+    "numero_telefono": "+34 677 888 999",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C066",
+    "nombre": "Agencia de Eventos",
+    "tipo": "cliente",
+    "nif": "E66880022",
+    "correo_electronico": "eventos@agencia.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P066",
+    "nombre": "Alquiler de Carpas",
+    "tipo": "proveedor",
+    "direccion": "Av. del Ferial 1",
+    "nif": "A22008866",
+    "correo_electronico": "carpas@alquiler.net",
+    "numero_telefono": "93-333-4444",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C067",
+    "nombre": "Gimnasio Municipal",
+    "tipo": "cliente",
+    "direccion": "Calle del Deporte 1",
+    "nif": "G77991133",
+    "correo_electronico": "gimnasio@municipal.com",
+    "numero_telefono": "+34 91 100 2000",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P067",
+    "nombre": "Maquinaria Deportiva",
+    "tipo": "proveedor",
+    "direccion": "Paseo de la Forma 1",
+    "nif": "M33119977",
+    "correo_electronico": "deportiva@maquinaria.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C068",
+    "nombre": "Farmacia 24 Horas",
+    "tipo": "cliente",
+    "direccion": "Calle Gran Vía 1",
+    "nif": "F88002244",
+    "correo_electronico": "farmacia@24h.net",
+    "numero_telefono": "91-500-6000",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P068",
+    "nombre": "Medicamentos al Por Mayor",
+    "tipo": "proveedor",
+    "direccion": "Av. de la Salud 1",
+    "nif": "M44220088",
+    "correo_electronico": "mayor@medicamentos.com",
+    "numero_telefono": "+34 600 700 800",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C069",
+    "nombre": "Consultoría de Negocios",
+    "tipo": "cliente",
+    "nif": "C99113355",
+    "correo_electronico": "negocios@consultoria.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P069",
+    "nombre": "Soluciones Financieras",
+    "tipo": "proveedor",
+    "direccion": "Paseo de la Riqueza 1",
+    "nif": "S55331199",
+    "correo_electronico": "financieras@soluciones.net",
+    "numero_telefono": "93-000-1111",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C070",
+    "nombre": "Librería de Ocasión",
+    "tipo": "cliente",
+    "direccion": "Calle del Paseo 10",
+    "nif": "L00224466",
+    "correo_electronico": "ocasion@libreria.com",
+    "numero_telefono": "+34 934 000 011",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P070",
+    "nombre": "Material de Embalaje",
+    "tipo": "proveedor",
+    "direccion": "Pol. Ind. Las Naves 1",
+    "nif": "M66442200",
+    "correo_electronico": "embalaje@material.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C071",
+    "nombre": "Agencia de Marketing Digital",
+    "tipo": "cliente",
+    "direccion": "Calle de Internet 10",
+    "nif": "B12001200",
+    "correo_electronico": "digital@marketing.com",
+    "numero_telefono": "611-222-333",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P071",
+    "nombre": "Servidores Cloud",
+    "tipo": "proveedor",
+    "direccion": "Av. de la Nube 1",
+    "nif": "A00210021",
+    "correo_electronico": "cloud@servidores.net",
+    "numero_telefono": "+34 91 888 7777",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C072",
+    "nombre": "Distribuidora de Juguetes Educativos",
+    "tipo": "cliente",
+    "nif": "J34003400",
+    "correo_electronico": "educativos@juguetes.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P072",
+    "nombre": "Juguetes al por Mayor",
+    "tipo": "proveedor",
+    "direccion": "Carrer de la Infancia 1",
+    "nif": "J45004500",
+    "correo_electronico": "mayor@juguetes.com",
+    "numero_telefono": "93-600-7000",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C073",
+    "nombre": "Tienda de Ropa de Bebé",
+    "tipo": "cliente",
+    "direccion": "Ronda de Sant Pau 1",
+    "nif": "B56005600",
+    "correo_electronico": "bebe@ropa.net",
+    "numero_telefono": "+34 600 000 111",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P073",
+    "nombre": "Tejidos Infantiles",
+    "tipo": "proveedor",
+    "direccion": "Calle del Algodón 1",
+    "nif": "T67006700",
+    "correo_electronico": "infantiles@tejidos.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C074",
+    "nombre": "Restaurante Vegetariano",
+    "tipo": "cliente",
+    "direccion": "Calle de la Verdura 1",
+    "nif": "V78007800",
+    "correo_electronico": "vegetariano@restaurante.com",
+    "numero_telefono": "91-333-4444",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P074",
+    "nombre": "Verduras Frescas",
+    "tipo": "proveedor",
+    "direccion": "Mercado de Abastos 1",
+    "nif": "F89008900",
+    "correo_electronico": "frescas@verduras.net",
+    "numero_telefono": "+34 655 444 333",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C075",
+    "nombre": "Gabinete de Fisioterapia",
+    "tipo": "cliente",
+    "nif": "F90009000",
+    "correo_electronico": "fisio@gabinete.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P075",
+    "nombre": "Material de Rehabilitación",
+    "tipo": "proveedor",
+    "direccion": "Av. de la Recuperación 1",
+    "nif": "R01000100",
+    "correo_electronico": "rehabilitacion@material.com",
+    "numero_telefono": "93-200-1000",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C076",
+    "nombre": "Academia de Informática",
+    "tipo": "cliente",
+    "direccion": "Calle de los Bits 1",
+    "nif": "I12001201",
+    "correo_electronico": "informatica@academia.net",
+    "numero_telefono": "+34 91 000 1111",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P076",
+    "nombre": "Equipos Informáticos",
+    "tipo": "proveedor",
+    "direccion": "Carrer del Chip 1",
+    "nif": "E23002302",
+    "correo_electronico": "equipos@informaticos.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C077",
+    "nombre": "Tienda de Manualidades",
+    "tipo": "cliente",
+    "direccion": "Paseo de las Artes 1",
+    "nif": "M34003403",
+    "correo_electronico": "manualidades@tienda.com",
+    "numero_telefono": "670-987-654",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P077",
+    "nombre": "Material para Manualidades",
+    "tipo": "proveedor",
+    "direccion": "Calle de la Creatividad 1",
+    "nif": "A45004504",
+    "correo_electronico": "artesania@material.net",
+    "numero_telefono": "+34 934 789 012",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C078",
+    "nombre": "Asociación Cultural",
+    "tipo": "cliente",
+    "nif": "C56005605",
+    "correo_electronico": "cultura@asociacion.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P078",
+    "nombre": "Organización de Eventos",
+    "tipo": "proveedor",
+    "direccion": "Av. de la Cultura 1",
+    "nif": "O67006706",
+    "correo_electronico": "eventos@organizacion.com",
+    "numero_telefono": "91-234-5678",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C079",
+    "nombre": "Empresa de Publicidad",
+    "tipo": "cliente",
+    "direccion": "Calle del Anuncio 1",
+    "nif": "P78007807",
+    "correo_electronico": "publicidad@empresa.net",
+    "numero_telefono": "+34 600 300 400",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P079",
+    "nombre": "Medios de Comunicación",
+    "tipo": "proveedor",
+    "direccion": "Paseo del Periodismo 1",
+    "nif": "M89008908",
+    "correo_electronico": "comunicacion@medios.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C080",
+    "nombre": "Distribuidora de Semillas",
+    "tipo": "cliente",
+    "direccion": "Calle de la Agricultura 10",
+    "nif": "S90009009",
+    "correo_electronico": "semillas@distri.com",
+    "numero_telefono": "93-100-2000",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P080",
+    "nombre": "Productos Agrícolas",
+    "tipo": "proveedor",
+    "direccion": "Pol. Ind. del Campo 1",
+    "nif": "A01000100",
+    "correo_electronico": "agricolas@productos.net",
+    "numero_telefono": "+34 954 111 222",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C081",
+    "nombre": "Agencia de Viajes Aventura",
+    "tipo": "cliente",
+    "direccion": "Calle de la Exploración 1",
+    "nif": "B11122234",
+    "correo_electronico": "aventura@viajes.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P081",
+    "nombre": "Seguros de Viaje",
+    "tipo": "proveedor",
+    "direccion": "Av. del Riesgo 1",
+    "nif": "S43221111",
+    "correo_electronico": "viaje@seguros.com",
+    "numero_telefono": "91-777-6666",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C082",
+    "nombre": "Supermercado Local",
+    "tipo": "cliente",
+    "direccion": "Ronda de Abastos 1",
+    "nif": "S22334456",
+    "correo_electronico": "local@supermercado.net",
+    "numero_telefono": "+34 933 555 777",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P082",
+    "nombre": "Bebidas Refrescantes",
+    "tipo": "proveedor",
+    "direccion": "Calle del Agua 1",
+    "nif": "B65443322",
+    "correo_electronico": "refrescantes@bebidas.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C083",
+    "nombre": "Tienda de Electrónica de Consumo",
+    "tipo": "cliente",
+    "nif": "E33445567",
+    "correo_electronico": "consumo@electronica.com",
+    "numero_telefono": "620-100-200",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P083",
+    "nombre": "Cableado y Conexiones",
+    "tipo": "proveedor",
+    "direccion": "Carrer de la Electricidad 1",
+    "nif": "C76554433",
+    "correo_electronico": "conexiones@cableado.net",
+    "numero_telefono": "+34 91 000 3333",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C084",
+    "nombre": "Peluquería de Caballeros",
+    "tipo": "cliente",
+    "direccion": "Calle del Peine 1",
+    "nif": "P44556678",
+    "correo_electronico": "caballeros@peluqueria.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P084",
+    "nombre": "Productos para el Cabello",
+    "tipo": "proveedor",
+    "direccion": "Paseo de la Belleza 1",
+    "nif": "C87665544",
+    "correo_electronico": "cabello@productos.com",
+    "numero_telefono": "93-400-9000",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C085",
+    "nombre": "Academia de Idiomas Modernos",
+    "tipo": "cliente",
+    "direccion": "Ronda del Saber 1",
+    "nif": "I55667789",
+    "correo_electronico": "modernos@idiomas.net",
+    "numero_telefono": "+34 600 123 987",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P085",
+    "nombre": "Material Didáctico",
+    "tipo": "proveedor",
+    "direccion": "Calle del Aprendizaje 1",
+    "nif": "D98776655",
+    "correo_electronico": "didactico@material.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C086",
+    "nombre": "Consultoría Tecnológica",
+    "tipo": "cliente",
+    "nif": "T66778890",
+    "correo_electronico": "tecnologia@consultoria.com",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P086",
+    "nombre": "Servicios de Redes",
+    "tipo": "proveedor",
+    "direccion": "Av. de la Fibra 1",
+    "nif": "R09887766",
+    "correo_electronico": "redes@servicios.net",
+    "numero_telefono": "91-111-3333",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C087",
+    "nombre": "Estudio de Arquitectura Verde",
+    "tipo": "cliente",
+    "direccion": "Calle de la Ecología 1",
+    "nif": "A77889901",
+    "correo_electronico": "verde@arquitectura.es",
+    "numero_telefono": "+34 934 111 222",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P087",
+    "nombre": "Materiales Sostenibles",
+    "tipo": "proveedor",
+    "direccion": "Paseo de la Sostenibilidad 1",
+    "nif": "S10998877",
+    "correo_electronico": "sostenibles@materiales.com",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C088",
+    "nombre": "Librería Infantil",
+    "tipo": "cliente",
+    "nif": "L88990012",
+    "correo_electronico": "infantil@libreria.net",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P088",
+    "nombre": "Libros Educativos",
+    "tipo": "proveedor",
+    "direccion": "Carrer de los Cuentos 1",
+    "nif": "E21009988",
+    "correo_electronico": "educativos@libros.es",
+    "numero_telefono": "93-222-3333",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C089",
+    "nombre": "Taller de Diseño Gráfico",
+    "tipo": "cliente",
+    "direccion": "Av. de la Imagen 1",
+    "nif": "D99001123",
+    "correo_electronico": "grafico@diseno.com",
+    "numero_telefono": "+34 600 400 500",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P089",
+    "nombre": "Imprenta Rápida",
+    "tipo": "proveedor",
+    "direccion": "Calle de la Tinta 1",
+    "nif": "I32110099",
+    "correo_electronico": "rapida@imprenta.net",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C090",
+    "nombre": "Distribuidora de Vinos",
+    "tipo": "cliente",
+    "direccion": "Calle del Vino 1",
+    "nif": "V00112234",
+    "correo_electronico": "vinos@distribuidora.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P090",
+    "nombre": "Bodegas de Origen",
+    "tipo": "proveedor",
+    "direccion": "Paseo de la Uva 1",
+    "nif": "B43221100",
+    "correo_electronico": "origen@bodegas.com",
+    "numero_telefono": "91-444-5555",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C091",
+    "nombre": "Agencia de Inversiones",
+    "tipo": "cliente",
+    "direccion": "Calle de la Bolsa 1",
+    "nif": "I11223345",
+    "correo_electronico": "inversiones@agencia.net",
+    "numero_telefono": "+34 934 567 890",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P091",
+    "nombre": "Asesoría Legal y Fiscal",
+    "tipo": "proveedor",
+    "direccion": "Av. de las Leyes 1",
+    "nif": "L54332211",
+    "correo_electronico": "legal@asesoria.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C092",
+    "nombre": "Consultoría de Seguridad Informática",
+    "tipo": "cliente",
+    "nif": "S22334457",
+    "correo_electronico": "ciberseguridad@consultoria.com",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P092",
+    "nombre": "Software Antivirus",
+    "tipo": "proveedor",
+    "direccion": "Carrer del Firewall 1",
+    "nif": "A76554433",
+    "correo_electronico": "antivirus@software.net",
+    "numero_telefono": "600-999-888",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C093",
+    "nombre": "Tienda de Calzado",
+    "tipo": "cliente",
+    "direccion": "Calle del Zapato 1",
+    "nif": "C33445568",
+    "correo_electronico": "calzado@tienda.es",
+    "numero_telefono": "+34 91 234 5678",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P093",
+    "nombre": "Pieles y Cueros",
+    "tipo": "proveedor",
+    "direccion": "Paseo del Cuero 1",
+    "nif": "P87665544",
+    "correo_electronico": "cueros@pieles.com",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C094",
+    "nombre": "Empresa de Transportes Terrestres",
+    "tipo": "cliente",
+    "nif": "T44556679",
+    "correo_electronico": "terrestres@transportes.net",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P094",
+    "nombre": "Reparación de Vehículos Pesados",
+    "tipo": "proveedor",
+    "direccion": "Pol. Ind. del Camión 1",
+    "nif": "V98776655",
+    "correo_electronico": "pesados@reparacion.es",
+    "numero_telefono": "93-500-6000",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C095",
+    "nombre": "Jardinería Profesional",
+    "tipo": "cliente",
+    "direccion": "Calle de las Flores 1",
+    "nif": "J55667780",
+    "correo_electronico": "profesional@jardineria.com",
+    "numero_telefono": "+34 600 000 777",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P095",
+    "nombre": "Abonos y Fertilizantes",
+    "tipo": "proveedor",
+    "direccion": "Av. del Cultivo 1",
+    "nif": "A09887766",
+    "correo_electronico": "abonos@fertilizantes.net",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C096",
+    "nombre": "Centro de Ocio Familiar",
+    "tipo": "cliente",
+    "nif": "O66778891",
+    "correo_electronico": "ocio@familiar.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P096",
+    "nombre": "Juegos y Atracciones",
+    "tipo": "proveedor",
+    "direccion": "Paseo de la Diversión 1",
+    "nif": "J10998877",
+    "correo_electronico": "atracciones@juegos.com",
+    "numero_telefono": "91-777-8888",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C097",
+    "nombre": "Editorial Científica",
+    "tipo": "cliente",
+    "direccion": "Calle del Laboratorio 1",
+    "nif": "E77889902",
+    "correo_electronico": "cientifica@editorial.net",
+    "numero_telefono": "+34 934 222 333",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P097",
+    "nombre": "Instrumentos de Laboratorio",
+    "tipo": "proveedor",
+    "direccion": "Carrer de la Ciencia 1",
+    "nif": "I21009988",
+    "correo_electronico": "laboratorio@instrumentos.es",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C098",
+    "nombre": "Tienda de Muebles de Diseño",
+    "tipo": "cliente",
+    "nif": "M88990013",
+    "correo_electronico": "diseno@muebles.com",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P098",
+    "nombre": "Madera y Derivados",
+    "tipo": "proveedor",
+    "direccion": "Av. del Carpintero 1",
+    "nif": "D32110099",
+    "correo_electronico": "madera@derivados.net",
+    "numero_telefono": "93-666-7777",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C099",
+    "nombre": "Correduría de Seguros",
+    "tipo": "cliente",
+    "direccion": "Calle del Seguro 1",
+    "nif": "C99001124",
+    "correo_electronico": "correduria@seguros.es",
+    "numero_telefono": "+34 91 000 4444",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P099",
+    "nombre": "Productos de Marketing",
+    "tipo": "proveedor",
+    "direccion": "Paseo de la Publicidad 1",
+    "nif": "M43221100",
+    "correo_electronico": "productos@marketing.com",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "C100",
+    "nombre": "Empresa de Telecomunicaciones",
+    "tipo": "cliente",
+    "nif": "T00112235",
+    "correo_electronico": "telecom@empresa.net",
+    "transacciones_detalladas": []
+  },
+  {
+    "id": "P100",
+    "nombre": "Material de Fibra Óptica",
+    "tipo": "proveedor",
+    "direccion": "Av. de las Comunicaciones 1",
+    "nif": "F54332211",
+    "correo_electronico": "fibra@material.es",
+    "numero_telefono": "93-000-0000",
+    "transacciones_detalladas": []
   }
 ]
