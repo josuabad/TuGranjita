@@ -1,0 +1,284 @@
+openapi: "3.1.0"
+info:
+  title: TuGranjita API
+  version: 1.0.0
+  description: |
+    Documentación OpenAPI para los servicios incluidos en este repositorio (CRM e IoT).
+servers:
+  - url: http://localhost:8001
+    description: Servidor CRM local (FastAPI puerto 8001)
+  - url: http://localhost:8002
+    description: Servidor IoT local (FastAPI puerto 8002)
+  - url: http://localhost:3001
+    description: Servidor CRM local (Node puerto 3001)
+  - url: http://localhost:3002
+    description: Servidor IoT local (Node puerto 3002)
+
+paths:
+  /clientes:
+    get:
+      summary: Listar clientes
+      description: Lista clientes con búsqueda, paginación y filtro por ubicación.
+      parameters:
+        - name: q
+          in: query
+          description: Texto de búsqueda (nombre o correo)
+          schema:
+            type: string
+        - name: page
+          in: query
+          description: Página (1-based)
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+        - name: pageSize
+          in: query
+          description: Tamaño de página (máx. 100)
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 25
+        - name: ubicacionId
+          in: query
+          description: Filtrar por campo 'direccion' (ubicación)
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Lista paginada de clientes
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  total:
+                    type: integer
+                    example: 125
+                  page:
+                    type: integer
+                    example: 1
+                  pageSize:
+                    type: integer
+                    example: 25
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Cliente'
+              examples:
+                ejemplo:
+                  summary: Respuesta ejemplo
+                  value:
+                    total: 125
+                    page: 1
+                    pageSize: 25
+                    data:
+                      - id: C-1001
+                        nombre: Soluciones Tecnológicas S.L.
+                        direccion: Avda. de la Innovación, 45, 28005 Madrid
+                        nif: B87654321
+                        correo_electronico: ventas@soluciones-tech.es
+                        numero_telefono: +34911234567
+
+  /clientes/{cliente_id}:
+    get:
+      summary: Obtener cliente por id
+      parameters:
+        - name: cliente_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Cliente encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cliente'
+              examples:
+                ejemplo:
+                  value:
+                    id: C-1001
+                    nombre: Soluciones Tecnológicas S.L.
+                    direccion: Avda. de la Innovación, 45, 28005 Madrid
+                    nif: B87654321
+                    correo_electronico: ventas@soluciones-tech.es
+                    numero_telefono: +34911234567
+        '404':
+          description: Cliente no encontrado
+          content:
+            application/json:
+              example:
+                detail: Cliente no encontrado
+
+  /sensores:
+    get:
+      summary: Listar sensores
+      description: Devuelve lista de sensores, opcionalmente filtrada por tipo o ubicación.
+      parameters:
+        - name: tipo
+          in: query
+          schema:
+            type: string
+        - name: ubicacionId
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Array de sensores
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Sensor'
+              examples:
+                ejemplo:
+                  value:
+                    - id: S-TEMP-OUT-01
+                      nombre: Sensor de Temperatura Exterior
+                      tipo: temperatura
+                      ubicacion: Techo del Edificio A
+                      modelo: DHT-22-Pro
+                      fabricante: TechSense Co.
+                      unidad_medida: C
+                      rango_medicion: "-40 a 80 C"
+                      estado: activo
+
+  /lecturas:
+    get:
+      summary: Listar lecturas
+      description: Filtrado por sensorId, ubicacionId, rango temporal (from/to) y límite.
+      parameters:
+        - name: sensorId
+          in: query
+          schema:
+            type: string
+        - name: ubicacionId
+          in: query
+          schema:
+            type: string
+        - name: from
+          in: query
+          description: Fecha ISO de inicio (inclusive)
+          schema:
+            type: string
+            format: date-time
+        - name: to
+          in: query
+          description: Fecha ISO de fin (inclusive)
+          schema:
+            type: string
+            format: date-time
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 100
+            minimum: 1
+            maximum: 1000
+      responses:
+        '200':
+          description: Array de lecturas
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Lectura'
+              examples:
+                ejemplo:
+                  value:
+                    - id_lectura: L-001
+                      id_sensor: S-TEMP-OUT-01
+                      valor: 19.5
+                      unidad: C
+                      timestamp: "2025-10-27T11:00:00Z"
+                      nivel_bateria: 92
+                    - id_lectura: L-002
+                      id_sensor: S-HUM-INT-02
+                      valor: 61.2
+                      unidad: "%RH"
+                      timestamp: "2025-10-27T11:01:00Z"
+                      nivel_bateria: 78
+
+components:
+  schemas:
+    Cliente:
+      type: object
+      properties:
+        id:
+          type: string
+        nombre:
+          type: string
+        direccion:
+          type: string
+        nif:
+          type: string
+        correo_electronico:
+          type: string
+          format: email
+        numero_telefono:
+          type: string
+      required:
+        - id
+        - nombre
+        - nif
+
+    Sensor:
+      type: object
+      properties:
+        id:
+          type: string
+        nombre:
+          type: string
+        tipo:
+          type: string
+          enum: [temperatura, humedad, ph, movimiento, gps, otro]
+        ubicacion:
+          type: string
+        modelo:
+          type: string
+        fabricante:
+          type: string
+        unidad_medida:
+          type: string
+        rango_medicion:
+          type: string
+        estado:
+          type: string
+          enum: [activo, inactivo, mantenimiento, error]
+      required:
+        - id
+        - nombre
+        - tipo
+        - ubicacion
+        - estado
+
+    Lectura:
+      type: object
+      properties:
+        id_lectura:
+          type: string
+        id_sensor:
+          type: string
+        valor:
+          type: number
+        unidad:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+        nivel_bateria:
+          type: number
+          minimum: 0
+          maximum: 100
+      required:
+        - id_lectura
+        - id_sensor
+        - valor
+        - unidad
+        - timestamp
