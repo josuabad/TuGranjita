@@ -1,0 +1,109 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "JSON Schema Unificado",
+  "type": "object",
+  "oneOf": [
+    {
+      "properties": {
+        "type": { "const": "resumen" },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "sensor": { "type": "object" },
+              "lecturas": {
+                "type": "array",
+                "items": { "type": "object" }
+              }
+            },
+            "required": ["sensor", "lecturas"]
+          }
+        }
+      },
+      "required": ["type", "data"]
+    },
+    {
+      "properties": {
+        "type": { "const": "resumen_sensor" },
+        "data": {
+          "type": "object",
+          "properties": {
+            "sensor": { "type": "object" },
+            "lecturas": {
+              "type": "array",
+              "items": { "type": "object" }
+            }
+          },
+          "required": ["sensor", "lecturas"]
+        }
+      },
+      "required": ["type", "data"]
+    },
+    {
+      "properties": {
+        "type": { "const": "clientes" },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "nombre": { "type": ["string", "null"] },
+              "correo_electronico": { "type": ["string", "null"] }
+            },
+            "required": ["nombre", "correo_electronico"]
+          }
+        }
+      },
+      "required": ["type", "data"]
+    },
+    {
+      "properties": {
+        "type": { "const": "cliente_detalle" },
+        "data": { "oneOf": [{ "type": "object" }, { "type": "array" }] }
+      },
+      "required": ["type", "data"]
+    },
+    {
+      "properties": {
+        "type": { "const": "proveedores" },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "nombre": { "type": ["string", "null"] },
+              "correo_electronico": { "type": ["string", "null"] }
+            },
+            "required": ["nombre", "correo_electronico"]
+          }
+        }
+      },
+      "required": ["type", "data"]
+    },
+    {
+      "properties": {
+        "type": { "const": "proveedor_detalle_con_sensores" },
+        "data": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "proveedor": { "type": ["object", "array"] },
+                "sensores_asociados": {
+                  "type": "array",
+                  "items": { "type": "object" }
+                }
+              },
+              "required": ["proveedor", "sensores_asociados"]
+            },
+            {
+              "type": "array"
+            }
+          ]
+        }
+      },
+      "required": ["type", "data"]
+    }
+  ]
+}
